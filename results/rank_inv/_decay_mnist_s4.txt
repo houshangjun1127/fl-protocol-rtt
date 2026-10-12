@@ -1,0 +1,28 @@
+mnist scaffold-decay probe (seed 4, 60 rounds, lr=0.05)
+hypothesis: SCAFFOLD's collapse is caused by lr_decay=1.0, not by the method
+
+=== scaffold
+  decay=0.90  late=0.9355 final=0.9365 peak=0.9380 drop=0.2p last10sd=0.0004  STABLE
+  decay=0.95  late=0.9605 final=0.9600 peak=0.9605 drop=0.2p last10sd=0.0005  STABLE
+  decay=0.98  late=0.9655 final=0.9665 peak=0.9680 drop=0.1p last10sd=0.0013  STABLE
+  decay=1.00  late=0.0980 final=0.0980 peak=0.7915 drop=69.3p last10sd=0.0000  unstable
+
+=== fedavg
+  decay=0.90  late=0.9125 final=0.9145 peak=0.9150 drop=0.1p last10sd=0.0010  STABLE
+  decay=0.95  late=0.9385 final=0.9435 peak=0.9435 drop=0.0p last10sd=0.0015  STABLE
+  decay=0.98  late=0.9520 final=0.9620 peak=0.9640 drop=0.5p last10sd=0.0034  STABLE
+  decay=1.00  late=0.9640 final=0.9685 peak=0.9700 drop=0.3p last10sd=0.0021  STABLE
+
+--- scaffold: 3/4 decay values stable
+    best STABLE  decay=0.98 late=0.9655 final=0.9665
+    best overall decay=1.00 late=0.0980 final=0.0980 (unstable, vol=0.0000 drop=69.3p)
+    spread of late acc across knob: 0.0980 - 0.9655 = 0.8675
+--- fedavg: 4/4 decay values stable
+    best STABLE  decay=1.00 late=0.9640 final=0.9685
+    spread of late acc across knob: 0.9125 - 0.9640 = 0.0515
+
+NOTE: this deliberately does NOT reduce the result to one
+verdict word. 'Collapses everywhere' and 'merely loses accuracy'
+are different claims, and an arbitrary aliveness threshold
+(the first version used late > 0.35) would have declared a
+STABLE 0.3475 run dead. Read the rows, not the verdict.

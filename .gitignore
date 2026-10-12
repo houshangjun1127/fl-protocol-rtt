@@ -1,0 +1,26 @@
+# ---- environments
+.venv/
+venv/
+env/
+
+# ---- python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# ---- data (downloaded by scripts/fetch_data.py; ~486 MB, not tracked)
+data/
+
+# ---- generated artefacts (rebuild with the commands in README.md)
+results/figures/
+results/table_knob.md
+results/bootstrap_ci.md
+results/PHASE5_LEDGER.md
+results/_*.log
+results/smoke/
+
+# ---- editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

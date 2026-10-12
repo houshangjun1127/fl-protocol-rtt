@@ -1,0 +1,11 @@
+cifar10 scaffold-decay probe (seed 0, 60 rounds, lr=0.05)
+hypothesis: SCAFFOLD's collapse is caused by lr_decay=1.0, not by the method
+
+=== scaffold
+  decay=0.90  late=0.3475 final=0.3490 peak=0.3515 drop=1.4p last10sd=0.0017  STABLE
+  decay=0.95  late=0.3870 final=0.3955 peak=0.3955 drop=0.0p last10sd=0.0161  unstable
+  decay=0.98  late=0.2395 final=0.3270 peak=0.3385 drop=2.9p last10sd=0.0363  unstable
+  decay=1.00  late=0.2490 final=0.2005 peak=0.2785 drop=7.8p last10sd=0.0218  unstable
+
+VERDICT: scaffold stable AND >0.35 late at decays NONE
+  -> scaffold fails on this dataset across all decays; the pair really cannot be tested here.

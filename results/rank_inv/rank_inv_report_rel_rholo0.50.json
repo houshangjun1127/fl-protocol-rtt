@@ -1,0 +1,2580 @@
+{
+ "target_mode": "relative",
+ "target_range": {
+  "cifar10|a0.1": [
+   0.2705,
+   0.5302
+  ],
+  "fashion|a0.05": [
+   0.4358,
+   0.8541
+  ],
+  "fashion|a0.1": [
+   0.4358,
+   0.8541
+  ],
+  "fashion|a0.3": [
+   0.4358,
+   0.8541
+  ],
+  "mnist|a0.05": [
+   0.4905,
+   0.9614
+  ],
+  "mnist|a0.1": [
+   0.4905,
+   0.9614
+  ],
+  "mnist|a0.3": [
+   0.4905,
+   0.9614
+  ]
+ },
+ "targets": {
+  "cifar10": [
+   0.2705,
+   0.2813,
+   0.2921,
+   0.303,
+   0.3138,
+   0.3246,
+   0.3354,
+   0.3462,
+   0.3571,
+   0.3679,
+   0.3787,
+   0.3895,
+   0.4003,
+   0.4112,
+   0.422,
+   0.4328,
+   0.4436,
+   0.4544,
+   0.4653,
+   0.4761,
+   0.4869,
+   0.4977,
+   0.5085,
+   0.5194,
+   0.5302
+  ],
+  "fashion": [
+   0.4358,
+   0.4532,
+   0.4706,
+   0.488,
+   0.5055,
+   0.5229,
+   0.5403,
+   0.5578,
+   0.5752,
+   0.5926,
+   0.61,
+   0.6275,
+   0.6449,
+   0.6623,
+   0.6798,
+   0.6972,
+   0.7146,
+   0.7321,
+   0.7495,
+   0.7669,
+   0.7844,
+   0.8018,
+   0.8192,
+   0.8366,
+   0.8541
+  ],
+  "mnist": [
+   0.4905,
+   0.5101,
+   0.5297,
+   0.5494,
+   0.569,
+   0.5886,
+   0.6082,
+   0.6278,
+   0.6475,
+   0.6671,
+   0.6867,
+   0.7063,
+   0.7259,
+   0.7456,
+   0.7652,
+   0.7848,
+   0.8044,
+   0.824,
+   0.8437,
+   0.8633,
+   0.8829,
+   0.9025,
+   0.9221,
+   0.9418,
+   0.9614
+  ]
+ },
+ "tau": 2,
+ "vol_max": 0.01,
+ "drop_max": 5.0,
+ "r4_basis": "R5",
+ "summary": {
+  "cifar10|a0.1": {
+   "n_seeds": 6,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "unstable_runs": {
+    "0": [
+     "feddyn"
+    ],
+    "1": [
+     "feddyn"
+    ],
+    "2": [
+     "feddyn"
+    ],
+    "3": [
+     "feddyn"
+    ],
+    "4": [
+     "feddyn"
+    ],
+    "5": [
+     "feddyn"
+    ]
+   },
+   "n_inversions_all": 121,
+   "n_inversions_robust_R1": 0,
+   "n_pairs_with_any_inversion": 8,
+   "n_pairs_robust_R1": 0,
+   "R2_pass": false,
+   "n_inversions_robust_R5": 0,
+   "n_pairs_robust_R5": 0,
+   "robust_pairs_R5": [],
+   "crossing_points_R5": {},
+   "robust_pairs": [],
+   "crossing_points": {},
+   "examples": [],
+   "kendall_tau_first_vs_last": {
+    "0": 0.5238095238095238,
+    "1": 0.42857142857142855,
+    "2": 0.5238095238095238,
+    "3": 0.5238095238095238,
+    "4": 0.6190476190476191,
+    "5": 0.7142857142857143
+   }
+  },
+  "fashion|a0.05": {
+   "n_seeds": 6,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "unstable_runs": {
+    "0": [
+     "feddyn"
+    ],
+    "1": [
+     "feddyn"
+    ],
+    "2": [
+     "feddyn"
+    ],
+    "3": [
+     "feddyn"
+    ],
+    "4": [
+     "feddyn"
+    ],
+    "5": [
+     "feddyn"
+    ]
+   },
+   "n_inversions_all": 443,
+   "n_inversions_robust_R1": 68,
+   "n_pairs_with_any_inversion": 15,
+   "n_pairs_robust_R1": 6,
+   "R2_pass": true,
+   "n_inversions_robust_R5": 36,
+   "n_pairs_robust_R5": 3,
+   "robust_pairs_R5": [
+    [
+     "fedavg",
+     "fedavgm"
+    ],
+    [
+     "fedavg",
+     "scaffold"
+    ],
+    [
+     "fedproxw",
+     "scaffold"
+    ]
+   ],
+   "crossing_points_R5": {
+    "fedavg|fedavgm": [
+     0.6972,
+     0.7146,
+     0.7321,
+     0.7495
+    ],
+    "fedavg|scaffold": [
+     0.6798,
+     0.6972,
+     0.7321
+    ],
+    "fedproxw|scaffold": [
+     0.7146,
+     0.7321
+    ]
+   },
+   "robust_pairs": [
+    [
+     "fedavg",
+     "fedavgm"
+    ],
+    [
+     "fedavg",
+     "feddyn"
+    ],
+    [
+     "fedavg",
+     "scaffold"
+    ],
+    [
+     "feddyn",
+     "fedproxw"
+    ],
+    [
+     "feddyn",
+     "uniform"
+    ],
+    [
+     "fedproxw",
+     "scaffold"
+    ]
+   ],
+   "crossing_points": {
+    "fedavg|fedavgm": [
+     0.6972,
+     0.7146,
+     0.7321,
+     0.7495
+    ],
+    "fedavg|feddyn": [
+     0.6275,
+     0.6449,
+     0.6623,
+     0.6972,
+     0.7146,
+     0.7495
+    ],
+    "fedavg|scaffold": [
+     0.6798,
+     0.6972,
+     0.7321
+    ],
+    "feddyn|fedproxw": [
+     0.7146
+    ],
+    "feddyn|uniform": [
+     0.61,
+     0.6275
+    ],
+    "fedproxw|scaffold": [
+     0.7146,
+     0.7321
+    ]
+   },
+   "examples": [
+    {
+     "pair": [
+      "fedavg",
+      "fedavgm"
+     ],
+     "t1": 0.5578,
+     "t2": 0.6972,
+     "seeds": [
+      0,
+      2
+     ],
+     "at_t1": [
+      [
+       3,
+       5
+      ],
+      [
+       3,
+       6
+      ]
+     ],
+     "at_t2": [
+      [
+       13,
+       11
+      ],
+      [
+       12,
+       10
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "fedavgm"
+     ],
+     "t1": 0.5578,
+     "t2": 0.7146,
+     "seeds": [
+      0,
+      2
+     ],
+     "at_t1": [
+      [
+       3,
+       5
+      ],
+      [
+       3,
+       6
+      ]
+     ],
+     "at_t2": [
+      [
+       14,
+       11
+      ],
+      [
+       19,
+       10
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "fedavgm"
+     ],
+     "t1": 0.5578,
+     "t2": 0.7321,
+     "seeds": [
+      0,
+      2
+     ],
+     "at_t1": [
+      [
+       3,
+       5
+      ],
+      [
+       3,
+       6
+      ]
+     ],
+     "at_t2": [
+      [
+       24,
+       18
+      ],
+      [
+       32,
+       10
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "fedavgm"
+     ],
+     "t1": 0.5578,
+     "t2": 0.7495,
+     "seeds": [
+      0,
+      2
+     ],
+     "at_t1": [
+      [
+       3,
+       5
+      ],
+      [
+       3,
+       6
+      ]
+     ],
+     "at_t2": [
+      [
+       34,
+       22
+      ],
+      [
+       49,
+       11
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "feddyn"
+     ],
+     "t1": 0.5403,
+     "t2": 0.6275,
+     "seeds": [
+      0,
+      5
+     ],
+     "at_t1": [
+      [
+       3,
+       5
+      ],
+      [
+       8,
+       10
+      ]
+     ],
+     "at_t2": [
+      [
+       7,
+       5
+      ],
+      [
+       14,
+       11
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "feddyn"
+     ],
+     "t1": 0.5403,
+     "t2": 0.6449,
+     "seeds": [
+      0,
+      5
+     ],
+     "at_t1": [
+      [
+       3,
+       5
+      ],
+      [
+       8,
+       10
+      ]
+     ],
+     "at_t2": [
+      [
+       7,
+       5
+      ],
+      [
+       22,
+       11
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "feddyn"
+     ],
+     "t1": 0.5403,
+     "t2": 0.6623,
+     "seeds": [
+      0,
+      5
+     ],
+     "at_t1": [
+      [
+       3,
+       5
+      ],
+      [
+       8,
+       10
+      ]
+     ],
+     "at_t2": [
+      [
+       8,
+       5
+      ],
+      [
+       23,
+       11
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "feddyn"
+     ],
+     "t1": 0.5403,
+     "t2": 0.7495,
+     "seeds": [
+      0,
+      2
+     ],
+     "at_t1": [
+      [
+       3,
+       5
+      ],
+      [
+       3,
+       5
+      ]
+     ],
+     "at_t2": [
+      [
+       34,
+       23
+      ],
+      [
+       49,
+       10
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "feddyn"
+     ],
+     "t1": 0.5578,
+     "t2": 0.6449,
+     "seeds": [
+      0,
+      1
+     ],
+     "at_t1": [
+      [
+       3,
+       5
+      ],
+      [
+       5,
+       8
+      ]
+     ],
+     "at_t2": [
+      [
+       7,
+       5
+      ],
+      [
+       19,
+       14
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "feddyn"
+     ],
+     "t1": 0.5578,
+     "t2": 0.6623,
+     "seeds": [
+      0,
+      1
+     ],
+     "at_t1": [
+      [
+       3,
+       5
+      ],
+      [
+       5,
+       8
+      ]
+     ],
+     "at_t2": [
+      [
+       8,
+       5
+      ],
+      [
+       19,
+       14
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "feddyn"
+     ],
+     "t1": 0.5578,
+     "t2": 0.7495,
+     "seeds": [
+      0,
+      2
+     ],
+     "at_t1": [
+      [
+       3,
+       5
+      ],
+      [
+       3,
+       6
+      ]
+     ],
+     "at_t2": [
+      [
+       34,
+       23
+      ],
+      [
+       49,
+       10
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "feddyn"
+     ],
+     "t1": 0.5752,
+     "t2": 0.6449,
+     "seeds": [
+      0,
+      1
+     ],
+     "at_t1": [
+      [
+       3,
+       5
+      ],
+      [
+       6,
+       8
+      ]
+     ],
+     "at_t2": [
+      [
+       7,
+       5
+      ],
+      [
+       19,
+       14
+      ]
+     ]
+    }
+   ],
+   "kendall_tau_first_vs_last": {
+    "0": 0.5238095238095238,
+    "1": 0.42857142857142855,
+    "2": 0.5238095238095238,
+    "3": 0.42857142857142855,
+    "4": 0.42857142857142855,
+    "5": 0.3333333333333333
+   }
+  },
+  "fashion|a0.1": {
+   "n_seeds": 6,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "unstable_runs": {
+    "0": [
+     "feddyn"
+    ],
+    "1": [
+     "feddyn"
+    ],
+    "2": [
+     "feddyn"
+    ],
+    "3": [
+     "feddyn"
+    ],
+    "4": [
+     "feddyn"
+    ],
+    "5": [
+     "feddyn"
+    ]
+   },
+   "n_inversions_all": 286,
+   "n_inversions_robust_R1": 2,
+   "n_pairs_with_any_inversion": 13,
+   "n_pairs_robust_R1": 1,
+   "R2_pass": false,
+   "n_inversions_robust_R5": 0,
+   "n_pairs_robust_R5": 0,
+   "robust_pairs_R5": [],
+   "crossing_points_R5": {},
+   "robust_pairs": [
+    [
+     "fedavg",
+     "feddyn"
+    ]
+   ],
+   "crossing_points": {
+    "fedavg|feddyn": [
+     0.7146,
+     0.7321
+    ]
+   },
+   "examples": [
+    {
+     "pair": [
+      "fedavg",
+      "feddyn"
+     ],
+     "t1": 0.5926,
+     "t2": 0.7146,
+     "seeds": [
+      1,
+      4
+     ],
+     "at_t1": [
+      [
+       8,
+       10
+      ],
+      [
+       4,
+       6
+      ]
+     ],
+     "at_t2": [
+      [
+       35,
+       19
+      ],
+      [
+       14,
+       12
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "feddyn"
+     ],
+     "t1": 0.5926,
+     "t2": 0.7321,
+     "seeds": [
+      1,
+      4
+     ],
+     "at_t1": [
+      [
+       8,
+       10
+      ],
+      [
+       4,
+       6
+      ]
+     ],
+     "at_t2": [
+      [
+       50,
+       19
+      ],
+      [
+       21,
+       13
+      ]
+     ]
+    }
+   ],
+   "kendall_tau_first_vs_last": {
+    "0": 0.3333333333333333,
+    "1": 0.42857142857142855,
+    "2": 0.42857142857142855,
+    "3": 0.23809523809523808,
+    "4": 0.42857142857142855,
+    "5": 0.8095238095238095
+   }
+  },
+  "fashion|a0.3": {
+   "n_seeds": 6,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "unstable_runs": {
+    "0": [
+     "feddyn"
+    ],
+    "1": [
+     "feddyn"
+    ],
+    "2": [
+     "feddyn"
+    ],
+    "3": [
+     "feddyn"
+    ],
+    "4": [
+     "feddyn"
+    ],
+    "5": [
+     "feddyn"
+    ]
+   },
+   "n_inversions_all": 92,
+   "n_inversions_robust_R1": 16,
+   "n_pairs_with_any_inversion": 8,
+   "n_pairs_robust_R1": 3,
+   "R2_pass": true,
+   "n_inversions_robust_R5": 7,
+   "n_pairs_robust_R5": 2,
+   "robust_pairs_R5": [
+    [
+     "fedavg",
+     "fedavgm"
+    ],
+    [
+     "fedavg",
+     "scaffold"
+    ]
+   ],
+   "crossing_points_R5": {
+    "fedavg|fedavgm": [
+     0.7495,
+     0.7669
+    ],
+    "fedavg|scaffold": [
+     0.7321,
+     0.7495
+    ]
+   },
+   "robust_pairs": [
+    [
+     "fedavg",
+     "fedavgm"
+    ],
+    [
+     "fedavg",
+     "feddyn"
+    ],
+    [
+     "fedavg",
+     "scaffold"
+    ]
+   ],
+   "crossing_points": {
+    "fedavg|fedavgm": [
+     0.7495,
+     0.7669
+    ],
+    "fedavg|feddyn": [
+     0.7669,
+     0.7844
+    ],
+    "fedavg|scaffold": [
+     0.7321,
+     0.7495
+    ]
+   },
+   "examples": [
+    {
+     "pair": [
+      "fedavg",
+      "fedavgm"
+     ],
+     "t1": 0.6798,
+     "t2": 0.7495,
+     "seeds": [
+      0,
+      1,
+      5
+     ],
+     "at_t1": [
+      [
+       7,
+       9
+      ],
+      [
+       5,
+       9
+      ],
+      [
+       5,
+       8
+      ]
+     ],
+     "at_t2": [
+      [
+       17,
+       13
+      ],
+      [
+       46,
+       15
+      ],
+      [
+       15,
+       11
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "feddyn"
+     ],
+     "t1": 0.6798,
+     "t2": 0.7669,
+     "seeds": [
+      0,
+      2,
+      5
+     ],
+     "at_t1": [
+      [
+       7,
+       11
+      ],
+      [
+       6,
+       8
+      ],
+      [
+       5,
+       9
+      ]
+     ],
+     "at_t2": [
+      [
+       31,
+       21
+      ],
+      [
+       25,
+       20
+      ],
+      [
+       24,
+       18
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "fedavgm"
+     ],
+     "t1": 0.6623,
+     "t2": 0.7495,
+     "seeds": [
+      0,
+      1
+     ],
+     "at_t1": [
+      [
+       6,
+       9
+      ],
+      [
+       5,
+       8
+      ]
+     ],
+     "at_t2": [
+      [
+       17,
+       13
+      ],
+      [
+       46,
+       15
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "fedavgm"
+     ],
+     "t1": 0.6798,
+     "t2": 0.7669,
+     "seeds": [
+      0,
+      5
+     ],
+     "at_t1": [
+      [
+       7,
+       9
+      ],
+      [
+       5,
+       8
+      ]
+     ],
+     "at_t2": [
+      [
+       31,
+       17
+      ],
+      [
+       24,
+       12
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "fedavgm"
+     ],
+     "t1": 0.6972,
+     "t2": 0.7495,
+     "seeds": [
+      0,
+      5
+     ],
+     "at_t1": [
+      [
+       7,
+       9
+      ],
+      [
+       6,
+       8
+      ]
+     ],
+     "at_t2": [
+      [
+       17,
+       13
+      ],
+      [
+       15,
+       11
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "fedavgm"
+     ],
+     "t1": 0.6972,
+     "t2": 0.7669,
+     "seeds": [
+      0,
+      5
+     ],
+     "at_t1": [
+      [
+       7,
+       9
+      ],
+      [
+       6,
+       8
+      ]
+     ],
+     "at_t2": [
+      [
+       31,
+       17
+      ],
+      [
+       24,
+       12
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "feddyn"
+     ],
+     "t1": 0.6449,
+     "t2": 0.7669,
+     "seeds": [
+      0,
+      5
+     ],
+     "at_t1": [
+      [
+       5,
+       9
+      ],
+      [
+       4,
+       9
+      ]
+     ],
+     "at_t2": [
+      [
+       31,
+       21
+      ],
+      [
+       24,
+       18
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "feddyn"
+     ],
+     "t1": 0.6623,
+     "t2": 0.7669,
+     "seeds": [
+      0,
+      5
+     ],
+     "at_t1": [
+      [
+       6,
+       9
+      ],
+      [
+       5,
+       9
+      ]
+     ],
+     "at_t2": [
+      [
+       31,
+       21
+      ],
+      [
+       24,
+       18
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "feddyn"
+     ],
+     "t1": 0.6972,
+     "t2": 0.7669,
+     "seeds": [
+      0,
+      5
+     ],
+     "at_t1": [
+      [
+       7,
+       14
+      ],
+      [
+       6,
+       9
+      ]
+     ],
+     "at_t2": [
+      [
+       31,
+       21
+      ],
+      [
+       24,
+       18
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "feddyn"
+     ],
+     "t1": 0.7146,
+     "t2": 0.7669,
+     "seeds": [
+      0,
+      2
+     ],
+     "at_t1": [
+      [
+       12,
+       14
+      ],
+      [
+       9,
+       14
+      ]
+     ],
+     "at_t2": [
+      [
+       31,
+       21
+      ],
+      [
+       25,
+       20
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "feddyn"
+     ],
+     "t1": 0.7495,
+     "t2": 0.7669,
+     "seeds": [
+      0,
+      2
+     ],
+     "at_t1": [
+      [
+       17,
+       19
+      ],
+      [
+       16,
+       18
+      ]
+     ],
+     "at_t2": [
+      [
+       31,
+       21
+      ],
+      [
+       25,
+       20
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "scaffold"
+     ],
+     "t1": 0.6972,
+     "t2": 0.7321,
+     "seeds": [
+      0,
+      3
+     ],
+     "at_t1": [
+      [
+       7,
+       9
+      ],
+      [
+       6,
+       8
+      ]
+     ],
+     "at_t2": [
+      [
+       14,
+       12
+      ],
+      [
+       11,
+       8
+      ]
+     ]
+    }
+   ],
+   "kendall_tau_first_vs_last": {
+    "0": 0.3333333333333333,
+    "1": 0.3333333333333333,
+    "2": 0.42857142857142855,
+    "3": 0.5238095238095238,
+    "4": -0.047619047619047616,
+    "5": 0.42857142857142855
+   }
+  },
+  "mnist|a0.05": {
+   "n_seeds": 6,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "unstable_runs": {
+    "1": [
+     "feddyn"
+    ],
+    "2": [
+     "feddyn"
+    ],
+    "3": [
+     "feddyn"
+    ],
+    "4": [
+     "feddyn"
+    ],
+    "5": [
+     "feddyn"
+    ]
+   },
+   "n_inversions_all": 384,
+   "n_inversions_robust_R1": 98,
+   "n_pairs_with_any_inversion": 7,
+   "n_pairs_robust_R1": 5,
+   "R2_pass": true,
+   "n_inversions_robust_R5": 76,
+   "n_pairs_robust_R5": 3,
+   "robust_pairs_R5": [
+    [
+     "fedavg",
+     "fedavgm"
+    ],
+    [
+     "fedavg",
+     "scaffold"
+    ],
+    [
+     "fedproxw",
+     "scaffold"
+    ]
+   ],
+   "crossing_points_R5": {
+    "fedavg|fedavgm": [
+     0.7063,
+     0.7259,
+     0.7456,
+     0.7652,
+     0.7848,
+     0.8044,
+     0.824,
+     0.8437
+    ],
+    "fedavg|scaffold": [
+     0.7848,
+     0.8044,
+     0.824,
+     0.8437
+    ],
+    "fedproxw|scaffold": [
+     0.7848,
+     0.8044,
+     0.824,
+     0.8437
+    ]
+   },
+   "robust_pairs": [
+    [
+     "fedavg",
+     "fedavgm"
+    ],
+    [
+     "fedavg",
+     "feddyn"
+    ],
+    [
+     "fedavg",
+     "scaffold"
+    ],
+    [
+     "feddyn",
+     "scaffold"
+    ],
+    [
+     "fedproxw",
+     "scaffold"
+    ]
+   ],
+   "crossing_points": {
+    "fedavg|fedavgm": [
+     0.7063,
+     0.7259,
+     0.7456,
+     0.7652,
+     0.7848,
+     0.8044,
+     0.824,
+     0.8437
+    ],
+    "fedavg|feddyn": [
+     0.7456,
+     0.7652,
+     0.7848,
+     0.8044,
+     0.824,
+     0.8437
+    ],
+    "fedavg|scaffold": [
+     0.7848,
+     0.8044,
+     0.824,
+     0.8437
+    ],
+    "feddyn|scaffold": [
+     0.9221
+    ],
+    "fedproxw|scaffold": [
+     0.7848,
+     0.8044,
+     0.824,
+     0.8437
+    ]
+   },
+   "examples": [
+    {
+     "pair": [
+      "feddyn",
+      "scaffold"
+     ],
+     "t1": 0.7652,
+     "t2": 0.9221,
+     "seeds": [
+      0,
+      2
+     ],
+     "at_t1": [
+      [
+       6,
+       13
+      ],
+      [
+       8,
+       10
+      ]
+     ],
+     "at_t2": [
+      [
+       28,
+       20
+      ],
+      [
+       49,
+       46
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "feddyn",
+      "scaffold"
+     ],
+     "t1": 0.7848,
+     "t2": 0.9221,
+     "seeds": [
+      0,
+      2
+     ],
+     "at_t1": [
+      [
+       6,
+       13
+      ],
+      [
+       8,
+       10
+      ]
+     ],
+     "at_t2": [
+      [
+       28,
+       20
+      ],
+      [
+       49,
+       46
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "feddyn",
+      "scaffold"
+     ],
+     "t1": 0.8044,
+     "t2": 0.9221,
+     "seeds": [
+      0,
+      2
+     ],
+     "at_t1": [
+      [
+       7,
+       14
+      ],
+      [
+       8,
+       10
+      ]
+     ],
+     "at_t2": [
+      [
+       28,
+       20
+      ],
+      [
+       49,
+       46
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "feddyn",
+      "scaffold"
+     ],
+     "t1": 0.8437,
+     "t2": 0.9221,
+     "seeds": [
+      0,
+      2
+     ],
+     "at_t1": [
+      [
+       7,
+       14
+      ],
+      [
+       9,
+       11
+      ]
+     ],
+     "at_t2": [
+      [
+       28,
+       20
+      ],
+      [
+       49,
+       46
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "fedavgm"
+     ],
+     "t1": 0.5101,
+     "t2": 0.7063,
+     "seeds": [
+      2,
+      3
+     ],
+     "at_t1": [
+      [
+       2,
+       4
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "at_t2": [
+      [
+       9,
+       7
+      ],
+      [
+       8,
+       6
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "fedavgm"
+     ],
+     "t1": 0.5101,
+     "t2": 0.7259,
+     "seeds": [
+      2,
+      3
+     ],
+     "at_t1": [
+      [
+       2,
+       4
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "at_t2": [
+      [
+       9,
+       7
+      ],
+      [
+       10,
+       7
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "fedavgm"
+     ],
+     "t1": 0.5101,
+     "t2": 0.7456,
+     "seeds": [
+      2,
+      3
+     ],
+     "at_t1": [
+      [
+       2,
+       4
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "at_t2": [
+      [
+       10,
+       7
+      ],
+      [
+       11,
+       8
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "fedavgm"
+     ],
+     "t1": 0.5101,
+     "t2": 0.7652,
+     "seeds": [
+      2,
+      3
+     ],
+     "at_t1": [
+      [
+       2,
+       4
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "at_t2": [
+      [
+       11,
+       7
+      ],
+      [
+       14,
+       8
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "fedavgm"
+     ],
+     "t1": 0.5101,
+     "t2": 0.7848,
+     "seeds": [
+      2,
+      3
+     ],
+     "at_t1": [
+      [
+       2,
+       4
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "at_t2": [
+      [
+       13,
+       8
+      ],
+      [
+       20,
+       9
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "fedavgm"
+     ],
+     "t1": 0.5101,
+     "t2": 0.8044,
+     "seeds": [
+      2,
+      3
+     ],
+     "at_t1": [
+      [
+       2,
+       4
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "at_t2": [
+      [
+       15,
+       8
+      ],
+      [
+       30,
+       9
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "fedavgm"
+     ],
+     "t1": 0.5101,
+     "t2": 0.824,
+     "seeds": [
+      2,
+      3
+     ],
+     "at_t1": [
+      [
+       2,
+       4
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "at_t2": [
+      [
+       18,
+       8
+      ],
+      [
+       41,
+       9
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavg",
+      "fedavgm"
+     ],
+     "t1": 0.5101,
+     "t2": 0.8437,
+     "seeds": [
+      2,
+      3
+     ],
+     "at_t1": [
+      [
+       2,
+       4
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "at_t2": [
+      [
+       24,
+       8
+      ],
+      [
+       49,
+       10
+      ]
+     ]
+    }
+   ],
+   "kendall_tau_first_vs_last": {
+    "0": 0.5238095238095238,
+    "1": 0.6190476190476191,
+    "2": 0.047619047619047616,
+    "3": 0.14285714285714285,
+    "4": 0.23809523809523808,
+    "5": 0.6190476190476191
+   }
+  },
+  "mnist|a0.1": {
+   "n_seeds": 6,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "unstable_runs": {
+    "0": [
+     "feddyn"
+    ],
+    "1": [
+     "feddyn"
+    ],
+    "4": [
+     "feddyn"
+    ],
+    "5": [
+     "feddyn"
+    ]
+   },
+   "n_inversions_all": 250,
+   "n_inversions_robust_R1": 25,
+   "n_pairs_with_any_inversion": 9,
+   "n_pairs_robust_R1": 4,
+   "R2_pass": true,
+   "n_inversions_robust_R5": 19,
+   "n_pairs_robust_R5": 3,
+   "robust_pairs_R5": [
+    [
+     "fedavg",
+     "feddyn"
+    ],
+    [
+     "fedavg",
+     "scaffold"
+    ],
+    [
+     "fedproxw",
+     "scaffold"
+    ]
+   ],
+   "crossing_points_R5": {
+    "fedavg|feddyn": [
+     0.8437,
+     0.8633,
+     0.8829
+    ],
+    "fedavg|scaffold": [
+     0.8829,
+     0.9025
+    ],
+    "fedproxw|scaffold": [
+     0.8437,
+     0.8829
+    ]
+   },
+   "robust_pairs": [
+    [
+     "fedavg",
+     "feddyn"
+    ],
+    [
+     "fedavg",
+     "scaffold"
+    ],
+    [
+     "fedavgm",
+     "feddyn"
+    ],
+    [
+     "fedproxw",
+     "scaffold"
+    ]
+   ],
+   "crossing_points": {
+    "fedavg|feddyn": [
+     0.8437,
+     0.8633,
+     0.8829
+    ],
+    "fedavg|scaffold": [
+     0.8829,
+     0.9025
+    ],
+    "fedavgm|feddyn": [
+     0.9418
+    ],
+    "fedproxw|scaffold": [
+     0.8437,
+     0.8829
+    ]
+   },
+   "examples": [
+    {
+     "pair": [
+      "fedavg",
+      "scaffold"
+     ],
+     "t1": 0.824,
+     "t2": 0.9025,
+     "seeds": [
+      1,
+      4
+     ],
+     "at_t1": [
+      [
+       8,
+       12
+      ],
+      [
+       8,
+       11
+      ]
+     ],
+     "at_t2": [
+      [
+       33,
+       24
+      ],
+      [
+       31,
+       14
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavgm",
+      "feddyn"
+     ],
+     "t1": 0.824,
+     "t2": 0.9418,
+     "seeds": [
+      1,
+      2
+     ],
+     "at_t1": [
+      [
+       5,
+       8
+      ],
+      [
+       6,
+       8
+      ]
+     ],
+     "at_t2": [
+      [
+       37,
+       29
+      ],
+      [
+       49,
+       21
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavgm",
+      "feddyn"
+     ],
+     "t1": 0.8437,
+     "t2": 0.9418,
+     "seeds": [
+      1,
+      2
+     ],
+     "at_t1": [
+      [
+       5,
+       8
+      ],
+      [
+       7,
+       9
+      ]
+     ],
+     "at_t2": [
+      [
+       37,
+       29
+      ],
+      [
+       49,
+       21
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavgm",
+      "feddyn"
+     ],
+     "t1": 0.8633,
+     "t2": 0.9418,
+     "seeds": [
+      1,
+      2
+     ],
+     "at_t1": [
+      [
+       6,
+       8
+      ],
+      [
+       7,
+       9
+      ]
+     ],
+     "at_t2": [
+      [
+       37,
+       29
+      ],
+      [
+       49,
+       21
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavgm",
+      "feddyn"
+     ],
+     "t1": 0.8829,
+     "t2": 0.9418,
+     "seeds": [
+      1,
+      2
+     ],
+     "at_t1": [
+      [
+       9,
+       12
+      ],
+      [
+       9,
+       12
+      ]
+     ],
+     "at_t2": [
+      [
+       37,
+       29
+      ],
+      [
+       49,
+       21
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavgm",
+      "feddyn"
+     ],
+     "t1": 0.9025,
+     "t2": 0.9418,
+     "seeds": [
+      1,
+      2
+     ],
+     "at_t1": [
+      [
+       12,
+       14
+      ],
+      [
+       12,
+       17
+      ]
+     ],
+     "at_t2": [
+      [
+       37,
+       29
+      ],
+      [
+       49,
+       21
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedavgm",
+      "feddyn"
+     ],
+     "t1": 0.9221,
+     "t2": 0.9418,
+     "seeds": [
+      1,
+      2
+     ],
+     "at_t1": [
+      [
+       17,
+       19
+      ],
+      [
+       17,
+       21
+      ]
+     ],
+     "at_t2": [
+      [
+       37,
+       29
+      ],
+      [
+       49,
+       21
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedproxw",
+      "scaffold"
+     ],
+     "t1": 0.569,
+     "t2": 0.8829,
+     "seeds": [
+      1,
+      3
+     ],
+     "at_t1": [
+      [
+       3,
+       5
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "at_t2": [
+      [
+       22,
+       15
+      ],
+      [
+       27,
+       16
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedproxw",
+      "scaffold"
+     ],
+     "t1": 0.5886,
+     "t2": 0.8829,
+     "seeds": [
+      1,
+      3
+     ],
+     "at_t1": [
+      [
+       3,
+       5
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     "at_t2": [
+      [
+       22,
+       15
+      ],
+      [
+       27,
+       16
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedproxw",
+      "scaffold"
+     ],
+     "t1": 0.7063,
+     "t2": 0.8829,
+     "seeds": [
+      1,
+      3
+     ],
+     "at_t1": [
+      [
+       6,
+       8
+      ],
+      [
+       4,
+       7
+      ]
+     ],
+     "at_t2": [
+      [
+       22,
+       15
+      ],
+      [
+       27,
+       16
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedproxw",
+      "scaffold"
+     ],
+     "t1": 0.7259,
+     "t2": 0.8829,
+     "seeds": [
+      1,
+      3
+     ],
+     "at_t1": [
+      [
+       6,
+       8
+      ],
+      [
+       4,
+       7
+      ]
+     ],
+     "at_t2": [
+      [
+       22,
+       15
+      ],
+      [
+       27,
+       16
+      ]
+     ]
+    },
+    {
+     "pair": [
+      "fedproxw",
+      "scaffold"
+     ],
+     "t1": 0.7456,
+     "t2": 0.8829,
+     "seeds": [
+      1,
+      3
+     ],
+     "at_t1": [
+      [
+       6,
+       8
+      ],
+      [
+       5,
+       7
+      ]
+     ],
+     "at_t2": [
+      [
+       22,
+       15
+      ],
+      [
+       27,
+       16
+      ]
+     ]
+    }
+   ],
+   "kendall_tau_first_vs_last": {
+    "0": 0.3333333333333333,
+    "1": 0.14285714285714285,
+    "2": 0.3333333333333333,
+    "3": -0.42857142857142855,
+    "4": 0.14285714285714285,
+    "5": 0.23809523809523808
+   }
+  },
+  "mnist|a0.3": {
+   "n_seeds": 6,
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "unstable_runs": {},
+   "n_inversions_all": 25,
+   "n_inversions_robust_R1": 1,
+   "n_pairs_with_any_inversion": 5,
+   "n_pairs_robust_R1": 1,
+   "R2_pass": false,
+   "n_inversions_robust_R5": 1,
+   "n_pairs_robust_R5": 1,
+   "robust_pairs_R5": [
+    [
+     "fedavg",
+     "feddyn"
+    ]
+   ],
+   "crossing_points_R5": {
+    "fedavg|feddyn": [
+     0.9221
+    ]
+   },
+   "robust_pairs": [
+    [
+     "fedavg",
+     "feddyn"
+    ]
+   ],
+   "crossing_points": {
+    "fedavg|feddyn": [
+     0.9221
+    ]
+   },
+   "examples": [
+    {
+     "pair": [
+      "fedavg",
+      "feddyn"
+     ],
+     "t1": 0.8437,
+     "t2": 0.9221,
+     "seeds": [
+      0,
+      2
+     ],
+     "at_t1": [
+      [
+       5,
+       8
+      ],
+      [
+       5,
+       8
+      ]
+     ],
+     "at_t2": [
+      [
+       15,
+       12
+      ],
+      [
+       15,
+       12
+      ]
+     ]
+    }
+   ],
+   "kendall_tau_first_vs_last": {
+    "0": 0.5238095238095238,
+    "1": 0.42857142857142855,
+    "2": 0.7142857142857143,
+    "3": 0.7142857142857143,
+    "4": -0.047619047619047616,
+    "5": 0.14285714285714285
+   }
+  },
+  "_cross_dataset": {
+   "n_cells_compared": 7,
+   "n_distinct_datasets": 3,
+   "n_pairs_robust_anywhere": 4,
+   "n_pairs_replicated_R4": 4,
+   "R4_pass": true,
+   "replicated_pairs": {
+    "fedavg|fedavgm": {
+     "datasets": [
+      "fashion|a0.05",
+      "fashion|a0.3",
+      "mnist|a0.05"
+     ],
+     "detail": {
+      "fashion|a0.05": {
+       "robust_inversions": 4,
+       "crossing_targets": [
+        0.6972,
+        0.7146,
+        0.7321,
+        0.7495
+       ]
+      },
+      "fashion|a0.3": {
+       "robust_inversions": 5,
+       "crossing_targets": [
+        0.7495,
+        0.7669
+       ]
+      },
+      "mnist|a0.05": {
+       "robust_inversions": 16,
+       "crossing_targets": [
+        0.7063,
+        0.7259,
+        0.7456,
+        0.7652,
+        0.7848,
+        0.8044,
+        0.824,
+        0.8437
+       ]
+      }
+     }
+    },
+    "fedavg|feddyn": {
+     "datasets": [
+      "mnist|a0.1",
+      "mnist|a0.3"
+     ],
+     "detail": {
+      "mnist|a0.1": {
+       "robust_inversions": 3,
+       "crossing_targets": [
+        0.8437,
+        0.8633,
+        0.8829
+       ]
+      },
+      "mnist|a0.3": {
+       "robust_inversions": 1,
+       "crossing_targets": [
+        0.9221
+       ]
+      }
+     }
+    },
+    "fedavg|scaffold": {
+     "datasets": [
+      "fashion|a0.05",
+      "fashion|a0.3",
+      "mnist|a0.05",
+      "mnist|a0.1"
+     ],
+     "detail": {
+      "fashion|a0.05": {
+       "robust_inversions": 20,
+       "crossing_targets": [
+        0.6798,
+        0.6972,
+        0.7321
+       ]
+      },
+      "fashion|a0.3": {
+       "robust_inversions": 2,
+       "crossing_targets": [
+        0.7321,
+        0.7495
+       ]
+      },
+      "mnist|a0.05": {
+       "robust_inversions": 32,
+       "crossing_targets": [
+        0.7848,
+        0.8044,
+        0.824,
+        0.8437
+       ]
+      },
+      "mnist|a0.1": {
+       "robust_inversions": 3,
+       "crossing_targets": [
+        0.8829,
+        0.9025
+       ]
+      }
+     }
+    },
+    "fedproxw|scaffold": {
+     "datasets": [
+      "fashion|a0.05",
+      "mnist|a0.05",
+      "mnist|a0.1"
+     ],
+     "detail": {
+      "fashion|a0.05": {
+       "robust_inversions": 12,
+       "crossing_targets": [
+        0.7146,
+        0.7321
+       ]
+      },
+      "mnist|a0.05": {
+       "robust_inversions": 28,
+       "crossing_targets": [
+        0.7848,
+        0.8044,
+        0.824,
+        0.8437
+       ]
+      },
+      "mnist|a0.1": {
+       "robust_inversions": 13,
+       "crossing_targets": [
+        0.8437,
+        0.8829
+       ]
+      }
+     }
+    }
+   },
+   "per_pair_dataset_coverage": {
+    "fedavg|fedavgm": [
+     "fashion|a0.05",
+     "fashion|a0.3",
+     "mnist|a0.05"
+    ],
+    "fedavg|feddyn": [
+     "mnist|a0.1",
+     "mnist|a0.3"
+    ],
+    "fedavg|scaffold": [
+     "fashion|a0.05",
+     "fashion|a0.3",
+     "mnist|a0.05",
+     "mnist|a0.1"
+    ],
+    "fedproxw|scaffold": [
+     "fashion|a0.05",
+     "mnist|a0.05",
+     "mnist|a0.1"
+    ]
+   }
+  }
+ }
+}

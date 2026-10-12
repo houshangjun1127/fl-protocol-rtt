@@ -1,0 +1,48 @@
+# Environment actually used to produce every artefact shipped in this repository.
+#
+#   python        3.13.14  (CPython 64-bit, Windows; venv created with `python -m venv .venv`)
+#   torch         2.14.1+cpu
+#   torchvision   0.29.1+cpu
+#   numpy         2.5.3
+#
+# Generated with `python -m pip freeze` inside the project virtualenv, then
+# copied verbatim (no version loosening), so a fresh install resolves the same
+# wheels that produced the traces in results/rank_inv/.
+#
+# Install:
+#     python -m venv .venv
+#     .venv/Scripts/python -m pip install -r requirements.txt        (Windows)
+#     .venv/bin/python     -m pip install -r requirements.txt        (Linux/macOS)
+#
+# torch's "+cpu" local-version wheels are NOT on PyPI -- they only exist on the
+# PyTorch CPU index, which is why the line below is part of this file rather
+# than an afterthought. Without it, `pip install -r requirements.txt` fails with
+# "No matching distribution found for torch==2.14.1+cpu".
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# NOTE ON REPRODUCIBILITY: `torch.set_num_threads` is pinned to 2 by the runner
+# (src/rank_inv_runner.py, FL_THREADS default). Raising it changes the
+# floating-point reduction order and the per-round accuracy traces stop matching
+# the ones stored here.
+contourpy==1.4.0
+cycler==0.12.1
+filelock==4.0.12
+fonttools==4.66.1
+fsspec==2026.9.0
+Jinja2==3.1.6
+kiwisolver==1.5.1
+MarkupSafe==3.0.4
+matplotlib==3.11.2
+mpmath==1.3.0
+networkx==3.7
+numpy==2.5.3
+packaging==26.3
+pillow==12.3.0
+pyparsing==3.3.3
+python-dateutil==2.9.0.post0
+setuptools==84.0.0
+six==1.17.0
+sympy==1.14.0
+torch==2.14.1+cpu
+torchvision==0.29.1+cpu
+typing_extensions==4.16.0
