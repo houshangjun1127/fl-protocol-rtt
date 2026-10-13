@@ -13,7 +13,8 @@ data/
 
 # ---- generated artefacts (rebuild with the commands in README.md)
 results/figures/
-results/table_knob.md
+# make_table_knob.py was removed (it rendered a superseded 3-seed table)
+results/rtt_stat_compare.txt
 results/bootstrap_ci.md
 results/PHASE5_LEDGER.md
 results/_*.log

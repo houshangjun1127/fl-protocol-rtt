@@ -1,0 +1,3470 @@
+{
+ "tau_rounds": 2.0,
+ "tgrid": [
+  0.3,
+  0.9,
+  0.01
+ ],
+ "stats": [
+  "first",
+  "ma5",
+  "ma10"
+ ],
+ "n_traces_used": 294,
+ "missing": [],
+ "per_cell": {
+  "mnist|a0.05": {
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "methods": {
+    "fedavg": {
+     "first": {
+      "mean_rtt": 17,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       21,
+       13,
+       null,
+       null,
+       null,
+       null
+      ],
+      "mean_rank": 4.83
+     },
+     "ma5": {
+      "mean_rtt": 20,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       24,
+       16,
+       null,
+       null,
+       null,
+       null
+      ],
+      "mean_rank": 4.67
+     },
+     "ma10": {
+      "mean_rtt": 23,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       27,
+       19,
+       null,
+       null,
+       null,
+       null
+      ],
+      "mean_rank": 4.5
+     }
+    },
+    "fedavgm": {
+     "first": {
+      "mean_rtt": 13.5,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       10,
+       9,
+       15,
+       15,
+       13,
+       19
+      ],
+      "mean_rank": 2
+     },
+     "ma5": {
+      "mean_rtt": 17,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       14,
+       11,
+       19,
+       18,
+       14,
+       26
+      ],
+      "mean_rank": 2
+     },
+     "ma10": {
+      "mean_rtt": 19.83,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       17,
+       14,
+       21,
+       22,
+       17,
+       28
+      ],
+      "mean_rank": 2
+     }
+    },
+    "feddyn": {
+     "first": {
+      "mean_rtt": 19.17,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       16,
+       10,
+       21,
+       15,
+       14,
+       39
+      ],
+      "mean_rank": 3.33
+     },
+     "ma5": {
+      "mean_rtt": 25.33,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       24,
+       12,
+       40,
+       19,
+       15,
+       42
+      ],
+      "mean_rank": 3.67
+     },
+     "ma10": {
+      "mean_rtt": 30.2,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       28,
+       15,
+       44,
+       42,
+       22,
+       null
+      ],
+      "mean_rank": 4.33
+     }
+    },
+    "scaffold": {
+     "first": {
+      "mean_rtt": 17.83,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       16,
+       14,
+       16,
+       23,
+       16,
+       22
+      ],
+      "mean_rank": 3.83
+     },
+     "ma5": {
+      "mean_rtt": 22.33,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       22,
+       21,
+       20,
+       26,
+       18,
+       27
+      ],
+      "mean_rank": 3.83
+     },
+     "ma10": {
+      "mean_rtt": 25.83,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       25,
+       26,
+       24,
+       30,
+       21,
+       29
+      ],
+      "mean_rank": 3.5
+     }
+    },
+    "fedproxw": {
+     "first": {
+      "mean_rtt": 18,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       21,
+       15,
+       null,
+       null,
+       null,
+       null
+      ],
+      "mean_rank": 6
+     },
+     "ma5": {
+      "mean_rtt": 21,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       25,
+       17,
+       null,
+       null,
+       null,
+       null
+      ],
+      "mean_rank": 5.83
+     },
+     "ma10": {
+      "mean_rtt": 23.5,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       27,
+       20,
+       null,
+       null,
+       null,
+       null
+      ],
+      "mean_rank": 5.67
+     }
+    },
+    "fedadam": {
+     "first": {
+      "mean_rtt": 10.5,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       9,
+       8,
+       11,
+       12,
+       9,
+       14
+      ],
+      "mean_rank": 1
+     },
+     "ma5": {
+      "mean_rtt": 12.83,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       10,
+       10,
+       13,
+       14,
+       12,
+       18
+      ],
+      "mean_rank": 1
+     },
+     "ma10": {
+      "mean_rtt": 16,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       14,
+       13,
+       16,
+       18,
+       15,
+       20
+      ],
+      "mean_rank": 1
+     }
+    },
+    "uniform": {
+     "first": {
+      "mean_rtt": 39.5,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       35,
+       44,
+       null,
+       null,
+       null,
+       null
+      ],
+      "mean_rank": 7
+     },
+     "ma5": {
+      "mean_rtt": 41.5,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       37,
+       46,
+       null,
+       null,
+       null,
+       null
+      ],
+      "mean_rank": 7
+     },
+     "ma10": {
+      "mean_rtt": 44,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       39,
+       49,
+       null,
+       null,
+       null,
+       null
+      ],
+      "mean_rank": 7
+     }
+    }
+   },
+   "t_ref": 0.89,
+   "reach_fraction": {
+    "0.30": 1.0,
+    "0.35": 1.0,
+    "0.40": 1.0,
+    "0.45": 1.0,
+    "0.50": 1.0,
+    "0.55": 1.0,
+    "0.60": 1.0,
+    "0.65": 1.0,
+    "0.70": 1.0,
+    "0.75": 1.0,
+    "0.80": 1.0,
+    "0.85": 0.929,
+    "0.90": 0.69
+   },
+   "winner_first_per_seed": {
+    "0": "fedadam",
+    "1": "fedadam",
+    "2": "fedadam",
+    "3": "fedadam",
+    "4": "fedadam",
+    "5": "fedadam"
+   },
+   "winner_first": {
+    "fedadam": 6
+   },
+   "winner_ma5_per_seed": {
+    "0": "fedadam",
+    "1": "fedadam",
+    "2": "fedadam",
+    "3": "fedadam",
+    "4": "fedadam",
+    "5": "fedadam"
+   },
+   "winner_ma5": {
+    "fedadam": 6
+   },
+   "winner_ma10_per_seed": {
+    "0": "fedadam",
+    "1": "fedadam",
+    "2": "fedadam",
+    "3": "fedadam",
+    "4": "fedadam",
+    "5": "fedadam"
+   },
+   "winner_ma10": {
+    "fedadam": 6
+   }
+  },
+  "mnist|a0.1": {
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "methods": {
+    "fedavg": {
+     "first": {
+      "mean_rtt": 27.6,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       13,
+       26,
+       32,
+       null,
+       31,
+       36
+      ],
+      "mean_rank": 5.17
+     },
+     "ma5": {
+      "mean_rtt": 30.4,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       15,
+       33,
+       34,
+       null,
+       31,
+       39
+      ],
+      "mean_rank": 5.17
+     },
+     "ma10": {
+      "mean_rtt": 32.8,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       18,
+       34,
+       37,
+       null,
+       34,
+       41
+      ],
+      "mean_rank": 5.17
+     }
+    },
+    "fedavgm": {
+     "first": {
+      "mean_rtt": 11.33,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       8,
+       11,
+       11,
+       13,
+       11,
+       14
+      ],
+      "mean_rank": 1.33
+     },
+     "ma5": {
+      "mean_rtt": 14,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       10,
+       14,
+       14,
+       17,
+       13,
+       16
+      ],
+      "mean_rank": 1.17
+     },
+     "ma10": {
+      "mean_rtt": 17.17,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       14,
+       17,
+       16,
+       20,
+       17,
+       19
+      ],
+      "mean_rank": 1.17
+     }
+    },
+    "feddyn": {
+     "first": {
+      "mean_rtt": 12.17,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       8,
+       14,
+       13,
+       14,
+       11,
+       13
+      ],
+      "mean_rank": 2
+     },
+     "ma5": {
+      "mean_rtt": 18.5,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       12,
+       16,
+       21,
+       17,
+       14,
+       31
+      ],
+      "mean_rank": 2.67
+     },
+     "ma10": {
+      "mean_rtt": 22.33,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       16,
+       20,
+       24,
+       22,
+       17,
+       35
+      ],
+      "mean_rank": 2.83
+     }
+    },
+    "scaffold": {
+     "first": {
+      "mean_rtt": 15,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       11,
+       20,
+       17,
+       18,
+       14,
+       10
+      ],
+      "mean_rank": 3.17
+     },
+     "ma5": {
+      "mean_rtt": 17.83,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       13,
+       24,
+       17,
+       21,
+       18,
+       14
+      ],
+      "mean_rank": 3
+     },
+     "ma10": {
+      "mean_rtt": 21.17,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       16,
+       28,
+       20,
+       25,
+       21,
+       17
+      ],
+      "mean_rank": 3.33
+     }
+    },
+    "fedproxw": {
+     "first": {
+      "mean_rtt": 30,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       14,
+       34,
+       36,
+       null,
+       33,
+       33
+      ],
+      "mean_rank": 5.83
+     },
+     "ma5": {
+      "mean_rtt": 32,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       15,
+       37,
+       38,
+       null,
+       35,
+       35
+      ],
+      "mean_rank": 5.83
+     },
+     "ma10": {
+      "mean_rtt": 35,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       18,
+       41,
+       40,
+       null,
+       38,
+       38
+      ],
+      "mean_rank": 5.83
+     }
+    },
+    "fedadam": {
+     "first": {
+      "mean_rtt": 15.83,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       12,
+       17,
+       17,
+       20,
+       13,
+       16
+      ],
+      "mean_rank": 3.5
+     },
+     "ma5": {
+      "mean_rtt": 17.5,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       13,
+       19,
+       18,
+       22,
+       15,
+       18
+      ],
+      "mean_rank": 3.17
+     },
+     "ma10": {
+      "mean_rtt": 20.5,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       16,
+       22,
+       20,
+       25,
+       18,
+       22
+      ],
+      "mean_rank": 2.67
+     }
+    },
+    "uniform": {
+     "first": {
+      "mean_rtt": 37,
+      "n_reach": 3,
+      "n_seeds": 6,
+      "per_seed": [
+       15,
+       null,
+       null,
+       null,
+       56,
+       40
+      ],
+      "mean_rank": 7
+     },
+     "ma5": {
+      "mean_rtt": 40,
+      "n_reach": 3,
+      "n_seeds": 6,
+      "per_seed": [
+       18,
+       null,
+       null,
+       null,
+       60,
+       42
+      ],
+      "mean_rank": 7
+     },
+     "ma10": {
+      "mean_rtt": 33,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       21,
+       null,
+       null,
+       null,
+       null,
+       45
+      ],
+      "mean_rank": 7
+     }
+    }
+   },
+   "t_ref": 0.9,
+   "reach_fraction": {
+    "0.30": 1.0,
+    "0.35": 1.0,
+    "0.40": 1.0,
+    "0.45": 1.0,
+    "0.50": 1.0,
+    "0.55": 1.0,
+    "0.60": 1.0,
+    "0.65": 1.0,
+    "0.70": 1.0,
+    "0.75": 1.0,
+    "0.80": 1.0,
+    "0.85": 1.0,
+    "0.90": 0.881
+   },
+   "winner_first_per_seed": {
+    "0": "fedavgm",
+    "1": "fedavgm",
+    "2": "fedavgm",
+    "3": "fedavgm",
+    "4": "fedavgm",
+    "5": "scaffold"
+   },
+   "winner_first": {
+    "fedavgm": 5,
+    "scaffold": 1
+   },
+   "winner_ma5_per_seed": {
+    "0": "fedavgm",
+    "1": "fedavgm",
+    "2": "fedavgm",
+    "3": "fedavgm",
+    "4": "fedavgm",
+    "5": "scaffold"
+   },
+   "winner_ma5": {
+    "fedavgm": 5,
+    "scaffold": 1
+   },
+   "winner_ma10_per_seed": {
+    "0": "fedavgm",
+    "1": "fedavgm",
+    "2": "fedavgm",
+    "3": "fedavgm",
+    "4": "fedavgm",
+    "5": "scaffold"
+   },
+   "winner_ma10": {
+    "fedavgm": 5,
+    "scaffold": 1
+   }
+  },
+  "mnist|a0.3": {
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "methods": {
+    "fedavg": {
+     "first": {
+      "mean_rtt": 12.83,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       9,
+       13,
+       9,
+       21,
+       8,
+       17
+      ],
+      "mean_rank": 4.33
+     },
+     "ma5": {
+      "mean_rtt": 15.83,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       12,
+       16,
+       12,
+       24,
+       11,
+       20
+      ],
+      "mean_rank": 4.17
+     },
+     "ma10": {
+      "mean_rtt": 19.17,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       16,
+       20,
+       15,
+       27,
+       14,
+       23
+      ],
+      "mean_rank": 4.17
+     }
+    },
+    "fedavgm": {
+     "first": {
+      "mean_rtt": 9.17,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       8,
+       10,
+       8,
+       10,
+       8,
+       11
+      ],
+      "mean_rank": 2.5
+     },
+     "ma5": {
+      "mean_rtt": 11.67,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       11,
+       12,
+       11,
+       13,
+       10,
+       13
+      ],
+      "mean_rank": 2.17
+     },
+     "ma10": {
+      "mean_rtt": 14.83,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       14,
+       15,
+       15,
+       16,
+       13,
+       16
+      ],
+      "mean_rank": 2.17
+     }
+    },
+    "feddyn": {
+     "first": {
+      "mean_rtt": 10.67,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       11,
+       12,
+       9,
+       12,
+       8,
+       12
+      ],
+      "mean_rank": 4.5
+     },
+     "ma5": {
+      "mean_rtt": 13.17,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       12,
+       14,
+       12,
+       16,
+       11,
+       14
+      ],
+      "mean_rank": 4
+     },
+     "ma10": {
+      "mean_rtt": 16.17,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       16,
+       16,
+       16,
+       18,
+       14,
+       17
+      ],
+      "mean_rank": 3.83
+     }
+    },
+    "scaffold": {
+     "first": {
+      "mean_rtt": 9.5,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       8,
+       9,
+       8,
+       12,
+       10,
+       10
+      ],
+      "mean_rank": 3.33
+     },
+     "ma5": {
+      "mean_rtt": 13.5,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       11,
+       14,
+       13,
+       15,
+       16,
+       12
+      ],
+      "mean_rank": 4
+     },
+     "ma10": {
+      "mean_rtt": 16.5,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       14,
+       17,
+       16,
+       18,
+       18,
+       16
+      ],
+      "mean_rank": 4.33
+     }
+    },
+    "fedproxw": {
+     "first": {
+      "mean_rtt": 13.17,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       9,
+       14,
+       13,
+       18,
+       8,
+       17
+      ],
+      "mean_rank": 5.5
+     },
+     "ma5": {
+      "mean_rtt": 16.83,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       12,
+       17,
+       16,
+       25,
+       11,
+       20
+      ],
+      "mean_rank": 6
+     },
+     "ma10": {
+      "mean_rtt": 19.83,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       16,
+       20,
+       19,
+       26,
+       15,
+       23
+      ],
+      "mean_rank": 5.67
+     }
+    },
+    "fedadam": {
+     "first": {
+      "mean_rtt": 6.33,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       5,
+       7,
+       7,
+       8,
+       5,
+       6
+      ],
+      "mean_rank": 1
+     },
+     "ma5": {
+      "mean_rtt": 8.83,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       8,
+       10,
+       8,
+       11,
+       8,
+       8
+      ],
+      "mean_rank": 1
+     },
+     "ma10": {
+      "mean_rtt": 12.5,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       12,
+       13,
+       12,
+       14,
+       12,
+       12
+      ],
+      "mean_rank": 1
+     }
+    },
+    "uniform": {
+     "first": {
+      "mean_rtt": 16.5,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       9,
+       16,
+       25,
+       21,
+       11,
+       17
+      ],
+      "mean_rank": 6.83
+     },
+     "ma5": {
+      "mean_rtt": 19.33,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       12,
+       20,
+       27,
+       24,
+       13,
+       20
+      ],
+      "mean_rank": 6.67
+     },
+     "ma10": {
+      "mean_rtt": 22.5,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       16,
+       23,
+       30,
+       27,
+       16,
+       23
+      ],
+      "mean_rank": 6.83
+     }
+    }
+   },
+   "t_ref": 0.9,
+   "reach_fraction": {
+    "0.30": 1.0,
+    "0.35": 1.0,
+    "0.40": 1.0,
+    "0.45": 1.0,
+    "0.50": 1.0,
+    "0.55": 1.0,
+    "0.60": 1.0,
+    "0.65": 1.0,
+    "0.70": 1.0,
+    "0.75": 1.0,
+    "0.80": 1.0,
+    "0.85": 1.0,
+    "0.90": 1.0
+   },
+   "winner_first_per_seed": {
+    "0": "fedadam",
+    "1": "fedadam",
+    "2": "fedadam",
+    "3": "fedadam",
+    "4": "fedadam",
+    "5": "fedadam"
+   },
+   "winner_first": {
+    "fedadam": 6
+   },
+   "winner_ma5_per_seed": {
+    "0": "fedadam",
+    "1": "fedadam",
+    "2": "fedadam",
+    "3": "fedadam",
+    "4": "fedadam",
+    "5": "fedadam"
+   },
+   "winner_ma5": {
+    "fedadam": 6
+   },
+   "winner_ma10_per_seed": {
+    "0": "fedadam",
+    "1": "fedadam",
+    "2": "fedadam",
+    "3": "fedadam",
+    "4": "fedadam",
+    "5": "fedadam"
+   },
+   "winner_ma10": {
+    "fedadam": 6
+   }
+  },
+  "fashion|a0.05": {
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "methods": {
+    "fedavg": {
+     "first": {
+      "mean_rtt": 30.75,
+      "n_reach": 4,
+      "n_seeds": 6,
+      "per_seed": [
+       19,
+       null,
+       24,
+       null,
+       33,
+       47
+      ],
+      "mean_rank": 4.33
+     },
+     "ma5": {
+      "mean_rtt": 35.5,
+      "n_reach": 4,
+      "n_seeds": 6,
+      "per_seed": [
+       25,
+       null,
+       33,
+       null,
+       35,
+       49
+      ],
+      "mean_rank": 3.83
+     },
+     "ma10": {
+      "mean_rtt": 37.75,
+      "n_reach": 4,
+      "n_seeds": 6,
+      "per_seed": [
+       27,
+       null,
+       33,
+       null,
+       39,
+       52
+      ],
+      "mean_rank": 3.83
+     }
+    },
+    "fedavgm": {
+     "first": {
+      "mean_rtt": 16,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       18,
+       15,
+       10,
+       22,
+       14,
+       17
+      ],
+      "mean_rank": 1.83
+     },
+     "ma5": {
+      "mean_rtt": 20.33,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       20,
+       23,
+       13,
+       29,
+       15,
+       22
+      ],
+      "mean_rank": 2
+     },
+     "ma10": {
+      "mean_rtt": 23.83,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       23,
+       27,
+       19,
+       30,
+       20,
+       24
+      ],
+      "mean_rank": 2
+     }
+    },
+    "feddyn": {
+     "first": {
+      "mean_rtt": 15.5,
+      "n_reach": 4,
+      "n_seeds": 6,
+      "per_seed": [
+       23,
+       15,
+       10,
+       null,
+       14,
+       null
+      ],
+      "mean_rank": 4
+     },
+     "ma5": {
+      "mean_rtt": 38.75,
+      "n_reach": 4,
+      "n_seeds": 6,
+      "per_seed": [
+       50,
+       30,
+       40,
+       null,
+       35,
+       null
+      ],
+      "mean_rank": 5.17
+     },
+     "ma10": {
+      "mean_rtt": 45.67,
+      "n_reach": 3,
+      "n_seeds": 6,
+      "per_seed": [
+       55,
+       null,
+       44,
+       null,
+       38,
+       null
+      ],
+      "mean_rank": 5
+     }
+    },
+    "scaffold": {
+     "first": {
+      "mean_rtt": 28.33,
+      "n_reach": 3,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       null,
+       null,
+       27,
+       29,
+       29
+      ],
+      "mean_rank": 5
+     },
+     "ma5": {
+      "mean_rtt": 32,
+      "n_reach": 3,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       null,
+       null,
+       30,
+       33,
+       33
+      ],
+      "mean_rank": 4.83
+     },
+     "ma10": {
+      "mean_rtt": 36,
+      "n_reach": 3,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       null,
+       null,
+       33,
+       38,
+       37
+      ],
+      "mean_rank": 5
+     }
+    },
+    "fedproxw": {
+     "first": {
+      "mean_rtt": 35.2,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       28,
+       39,
+       25,
+       null,
+       38,
+       46
+      ],
+      "mean_rank": 5
+     },
+     "ma5": {
+      "mean_rtt": 37.75,
+      "n_reach": 4,
+      "n_seeds": 6,
+      "per_seed": [
+       30,
+       null,
+       34,
+       null,
+       39,
+       48
+      ],
+      "mean_rank": 4.83
+     },
+     "ma10": {
+      "mean_rtt": 40.5,
+      "n_reach": 4,
+      "n_seeds": 6,
+      "per_seed": [
+       32,
+       null,
+       37,
+       null,
+       42,
+       51
+      ],
+      "mean_rank": 4.83
+     }
+    },
+    "fedadam": {
+     "first": {
+      "mean_rtt": 13.33,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       16,
+       17,
+       8,
+       18,
+       12,
+       9
+      ],
+      "mean_rank": 1.33
+     },
+     "ma5": {
+      "mean_rtt": 16.17,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       18,
+       18,
+       12,
+       19,
+       13,
+       17
+      ],
+      "mean_rank": 1
+     },
+     "ma10": {
+      "mean_rtt": 19,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       18,
+       21,
+       16,
+       21,
+       16,
+       22
+      ],
+      "mean_rank": 1
+     }
+    },
+    "uniform": {
+     "first": {
+      "mean_rtt": 48.5,
+      "n_reach": 4,
+      "n_seeds": 6,
+      "per_seed": [
+       37,
+       null,
+       47,
+       null,
+       56,
+       54
+      ],
+      "mean_rank": 6.5
+     },
+     "ma5": {
+      "mean_rtt": 51,
+      "n_reach": 4,
+      "n_seeds": 6,
+      "per_seed": [
+       40,
+       null,
+       49,
+       null,
+       58,
+       57
+      ],
+      "mean_rank": 6.33
+     },
+     "ma10": {
+      "mean_rtt": 51.33,
+      "n_reach": 3,
+      "n_seeds": 6,
+      "per_seed": [
+       43,
+       null,
+       52,
+       null,
+       null,
+       59
+      ],
+      "mean_rank": 6.33
+     }
+    }
+   },
+   "t_ref": 0.73,
+   "reach_fraction": {
+    "0.30": 1.0,
+    "0.35": 1.0,
+    "0.40": 1.0,
+    "0.45": 1.0,
+    "0.50": 1.0,
+    "0.55": 1.0,
+    "0.60": 1.0,
+    "0.65": 1.0,
+    "0.70": 1.0,
+    "0.75": 0.548,
+    "0.80": 0.286,
+    "0.85": 0.0,
+    "0.90": 0.0
+   },
+   "winner_first_per_seed": {
+    "0": "fedadam",
+    "1": "fedavgm",
+    "2": "fedadam",
+    "3": "fedadam",
+    "4": "fedadam",
+    "5": "fedadam"
+   },
+   "winner_first": {
+    "fedadam": 5,
+    "fedavgm": 1
+   },
+   "winner_ma5_per_seed": {
+    "0": "fedadam",
+    "1": "fedadam",
+    "2": "fedadam",
+    "3": "fedadam",
+    "4": "fedadam",
+    "5": "fedadam"
+   },
+   "winner_ma5": {
+    "fedadam": 6
+   },
+   "winner_ma10_per_seed": {
+    "0": "fedadam",
+    "1": "fedadam",
+    "2": "fedadam",
+    "3": "fedadam",
+    "4": "fedadam",
+    "5": "fedadam"
+   },
+   "winner_ma10": {
+    "fedadam": 6
+   }
+  },
+  "fashion|a0.1": {
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "methods": {
+    "fedavg": {
+     "first": {
+      "mean_rtt": 37.33,
+      "n_reach": 3,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       null,
+       56,
+       null,
+       25,
+       31
+      ],
+      "mean_rank": 4.83
+     },
+     "ma5": {
+      "mean_rtt": 30,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       null,
+       null,
+       null,
+       27,
+       33
+      ],
+      "mean_rank": 4.17
+     },
+     "ma10": {
+      "mean_rtt": 32.5,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       null,
+       null,
+       null,
+       29,
+       36
+      ],
+      "mean_rank": 4
+     }
+    },
+    "fedavgm": {
+     "first": {
+      "mean_rtt": 13.5,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       15,
+       17,
+       11,
+       17,
+       10,
+       11
+      ],
+      "mean_rank": 1.83
+     },
+     "ma5": {
+      "mean_rtt": 16.83,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       17,
+       21,
+       17,
+       20,
+       13,
+       13
+      ],
+      "mean_rank": 1.83
+     },
+     "ma10": {
+      "mean_rtt": 20,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       20,
+       24,
+       19,
+       24,
+       17,
+       16
+      ],
+      "mean_rank": 1.83
+     }
+    },
+    "feddyn": {
+     "first": {
+      "mean_rtt": 21.8,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       30,
+       20,
+       27,
+       null,
+       16,
+       16
+      ],
+      "mean_rank": 3.67
+     },
+     "ma5": {
+      "mean_rtt": 29.33,
+      "n_reach": 3,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       41,
+       null,
+       null,
+       27,
+       20
+      ],
+      "mean_rank": 4.5
+     },
+     "ma10": {
+      "mean_rtt": 23,
+      "n_reach": 1,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       null,
+       null,
+       null,
+       null,
+       23
+      ],
+      "mean_rank": 5
+     }
+    },
+    "scaffold": {
+     "first": {
+      "mean_rtt": 21.2,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       27,
+       29,
+       18,
+       20,
+       12
+      ],
+      "mean_rank": 4
+     },
+     "ma5": {
+      "mean_rtt": 24.2,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       33,
+       30,
+       21,
+       22,
+       15
+      ],
+      "mean_rank": 3.5
+     },
+     "ma10": {
+      "mean_rtt": 27,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       36,
+       32,
+       23,
+       25,
+       19
+      ],
+      "mean_rank": 3.33
+     }
+    },
+    "fedproxw": {
+     "first": {
+      "mean_rtt": 29,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       null,
+       null,
+       null,
+       27,
+       31
+      ],
+      "mean_rank": 6
+     },
+     "ma5": {
+      "mean_rtt": 31.5,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       null,
+       null,
+       null,
+       29,
+       34
+      ],
+      "mean_rank": 5.83
+     },
+     "ma10": {
+      "mean_rtt": 34,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       null,
+       null,
+       null,
+       32,
+       36
+      ],
+      "mean_rank": 5.67
+     }
+    },
+    "fedadam": {
+     "first": {
+      "mean_rtt": 12,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       16,
+       14,
+       8,
+       14,
+       9,
+       11
+      ],
+      "mean_rank": 1.17
+     },
+     "ma5": {
+      "mean_rtt": 15.83,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       19,
+       17,
+       16,
+       18,
+       12,
+       13
+      ],
+      "mean_rank": 1.17
+     },
+     "ma10": {
+      "mean_rtt": 18.33,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       21,
+       19,
+       17,
+       21,
+       15,
+       17
+      ],
+      "mean_rank": 1.33
+     }
+    },
+    "uniform": {
+     "first": {
+      "mean_rtt": 47,
+      "n_reach": 3,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       null,
+       null,
+       59,
+       43,
+       39
+      ],
+      "mean_rank": 6.5
+     },
+     "ma5": {
+      "mean_rtt": 43,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       null,
+       null,
+       null,
+       45,
+       41
+      ],
+      "mean_rank": 7
+     },
+     "ma10": {
+      "mean_rtt": 45.5,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       null,
+       null,
+       null,
+       48,
+       43
+      ],
+      "mean_rank": 6.83
+     }
+    }
+   },
+   "t_ref": 0.74,
+   "reach_fraction": {
+    "0.30": 1.0,
+    "0.35": 1.0,
+    "0.40": 1.0,
+    "0.45": 1.0,
+    "0.50": 1.0,
+    "0.55": 1.0,
+    "0.60": 1.0,
+    "0.65": 1.0,
+    "0.70": 1.0,
+    "0.75": 0.667,
+    "0.80": 0.238,
+    "0.85": 0.071,
+    "0.90": 0.0
+   },
+   "winner_first_per_seed": {
+    "0": "fedavgm",
+    "1": "fedadam",
+    "2": "fedadam",
+    "3": "fedadam",
+    "4": "fedadam",
+    "5": "fedadam"
+   },
+   "winner_first": {
+    "fedavgm": 1,
+    "fedadam": 5
+   },
+   "winner_ma5_per_seed": {
+    "0": "fedavgm",
+    "1": "fedadam",
+    "2": "fedadam",
+    "3": "fedadam",
+    "4": "fedadam",
+    "5": "fedadam"
+   },
+   "winner_ma5": {
+    "fedavgm": 1,
+    "fedadam": 5
+   },
+   "winner_ma10_per_seed": {
+    "0": "fedavgm",
+    "1": "fedadam",
+    "2": "fedadam",
+    "3": "fedadam",
+    "4": "fedadam",
+    "5": "fedavgm"
+   },
+   "winner_ma10": {
+    "fedavgm": 2,
+    "fedadam": 4
+   }
+  },
+  "fashion|a0.3": {
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "methods": {
+    "fedavg": {
+     "first": {
+      "mean_rtt": 27.5,
+      "n_reach": 4,
+      "n_seeds": 6,
+      "per_seed": [
+       33,
+       null,
+       30,
+       null,
+       23,
+       24
+      ],
+      "mean_rank": 5.17
+     },
+     "ma5": {
+      "mean_rtt": 29.33,
+      "n_reach": 3,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       null,
+       34,
+       null,
+       27,
+       27
+      ],
+      "mean_rank": 5.17
+     },
+     "ma10": {
+      "mean_rtt": 32.67,
+      "n_reach": 3,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       null,
+       39,
+       null,
+       29,
+       30
+      ],
+      "mean_rank": 5
+     }
+    },
+    "fedavgm": {
+     "first": {
+      "mean_rtt": 15.83,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       17,
+       21,
+       14,
+       16,
+       12,
+       15
+      ],
+      "mean_rank": 2
+     },
+     "ma5": {
+      "mean_rtt": 18.5,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       20,
+       23,
+       18,
+       19,
+       15,
+       16
+      ],
+      "mean_rank": 2
+     },
+     "ma10": {
+      "mean_rtt": 21.67,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       23,
+       27,
+       22,
+       21,
+       18,
+       19
+      ],
+      "mean_rank": 2
+     }
+    },
+    "feddyn": {
+     "first": {
+      "mean_rtt": 21.83,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       21,
+       28,
+       20,
+       23,
+       21,
+       18
+      ],
+      "mean_rank": 3.83
+     },
+     "ma5": {
+      "mean_rtt": 25.8,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       23,
+       38,
+       22,
+       null,
+       24,
+       22
+      ],
+      "mean_rank": 4
+     },
+     "ma10": {
+      "mean_rtt": 26.5,
+      "n_reach": 4,
+      "n_seeds": 6,
+      "per_seed": [
+       28,
+       null,
+       27,
+       null,
+       27,
+       24
+      ],
+      "mean_rank": 4.17
+     }
+    },
+    "scaffold": {
+     "first": {
+      "mean_rtt": 16.2,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       17,
+       null,
+       17,
+       16,
+       16,
+       15
+      ],
+      "mean_rank": 3.5
+     },
+     "ma5": {
+      "mean_rtt": 22,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       27,
+       null,
+       27,
+       19,
+       18,
+       19
+      ],
+      "mean_rank": 3.83
+     },
+     "ma10": {
+      "mean_rtt": 24.6,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       29,
+       null,
+       29,
+       21,
+       22,
+       22
+      ],
+      "mean_rank": 3.83
+     }
+    },
+    "fedproxw": {
+     "first": {
+      "mean_rtt": 30.8,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       37,
+       null,
+       35,
+       27,
+       28,
+       27
+      ],
+      "mean_rank": 5.67
+     },
+     "ma5": {
+      "mean_rtt": 38.8,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       45,
+       null,
+       56,
+       31,
+       31,
+       31
+      ],
+      "mean_rank": 5.5
+     },
+     "ma10": {
+      "mean_rtt": 40.8,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       46,
+       null,
+       57,
+       35,
+       33,
+       33
+      ],
+      "mean_rank": 5.33
+     }
+    },
+    "fedadam": {
+     "first": {
+      "mean_rtt": 10.67,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       13,
+       13,
+       9,
+       10,
+       10,
+       9
+      ],
+      "mean_rank": 1
+     },
+     "ma5": {
+      "mean_rtt": 13.5,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       15,
+       16,
+       13,
+       12,
+       13,
+       12
+      ],
+      "mean_rank": 1
+     },
+     "ma10": {
+      "mean_rtt": 16,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       17,
+       19,
+       15,
+       15,
+       15,
+       15
+      ],
+      "mean_rank": 1
+     }
+    },
+    "uniform": {
+     "first": {
+      "mean_rtt": 38.25,
+      "n_reach": 4,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       null,
+       48,
+       35,
+       37,
+       33
+      ],
+      "mean_rank": 6.83
+     },
+     "ma5": {
+      "mean_rtt": 43.5,
+      "n_reach": 4,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       null,
+       54,
+       39,
+       42,
+       39
+      ],
+      "mean_rank": 6.5
+     },
+     "ma10": {
+      "mean_rtt": 43,
+      "n_reach": 3,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       null,
+       null,
+       42,
+       45,
+       42
+      ],
+      "mean_rank": 6.67
+     }
+    }
+   },
+   "t_ref": 0.77,
+   "reach_fraction": {
+    "0.30": 1.0,
+    "0.35": 1.0,
+    "0.40": 1.0,
+    "0.45": 1.0,
+    "0.50": 1.0,
+    "0.55": 1.0,
+    "0.60": 1.0,
+    "0.65": 1.0,
+    "0.70": 1.0,
+    "0.75": 0.976,
+    "0.80": 0.357,
+    "0.85": 0.19,
+    "0.90": 0.0
+   },
+   "winner_first_per_seed": {
+    "0": "fedadam",
+    "1": "fedadam",
+    "2": "fedadam",
+    "3": "fedadam",
+    "4": "fedadam",
+    "5": "fedadam"
+   },
+   "winner_first": {
+    "fedadam": 6
+   },
+   "winner_ma5_per_seed": {
+    "0": "fedadam",
+    "1": "fedadam",
+    "2": "fedadam",
+    "3": "fedadam",
+    "4": "fedadam",
+    "5": "fedadam"
+   },
+   "winner_ma5": {
+    "fedadam": 6
+   },
+   "winner_ma10_per_seed": {
+    "0": "fedadam",
+    "1": "fedadam",
+    "2": "fedadam",
+    "3": "fedadam",
+    "4": "fedadam",
+    "5": "fedadam"
+   },
+   "winner_ma10": {
+    "fedadam": 6
+   }
+  },
+  "cifar10|a0.1": {
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "methods": {
+    "fedavg": {
+     "first": {
+      "mean_rtt": 34.6,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       33,
+       15,
+       57,
+       null,
+       43,
+       25
+      ],
+      "mean_rank": 4.5
+     },
+     "ma5": {
+      "mean_rtt": 38.2,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       35,
+       19,
+       60,
+       null,
+       46,
+       31
+      ],
+      "mean_rank": 4
+     },
+     "ma10": {
+      "mean_rtt": 35.25,
+      "n_reach": 4,
+      "n_seeds": 6,
+      "per_seed": [
+       38,
+       22,
+       null,
+       null,
+       48,
+       33
+      ],
+      "mean_rank": 4
+     }
+    },
+    "fedavgm": {
+     "first": {
+      "mean_rtt": 10.67,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       10,
+       8,
+       14,
+       11,
+       11,
+       10
+      ],
+      "mean_rank": 1.5
+     },
+     "ma5": {
+      "mean_rtt": 14,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       13,
+       11,
+       17,
+       14,
+       17,
+       12
+      ],
+      "mean_rank": 1.67
+     },
+     "ma10": {
+      "mean_rtt": 16.83,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       15,
+       15,
+       20,
+       17,
+       18,
+       16
+      ],
+      "mean_rank": 1.5
+     }
+    },
+    "feddyn": {
+     "first": {
+      "mean_rtt": 17.2,
+      "n_reach": 5,
+      "n_seeds": 6,
+      "per_seed": [
+       17,
+       10,
+       15,
+       18,
+       null,
+       26
+      ],
+      "mean_rank": 3.67
+     },
+     "ma5": {
+      "mean_rtt": 18.5,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       20,
+       17,
+       null,
+       null,
+       null,
+       null
+      ],
+      "mean_rank": 4.83
+     },
+     "ma10": {
+      "mean_rtt": 23.5,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       28,
+       19,
+       null,
+       null,
+       null,
+       null
+      ],
+      "mean_rank": 4.83
+     }
+    },
+    "scaffold": {
+     "first": {
+      "mean_rtt": 25.5,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       19,
+       32,
+       null,
+       null,
+       null
+      ],
+      "mean_rank": 5.83
+     },
+     "ma5": {
+      "mean_rtt": 29.5,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       23,
+       36,
+       null,
+       null,
+       null
+      ],
+      "mean_rank": 5.67
+     },
+     "ma10": {
+      "mean_rtt": 32.5,
+      "n_reach": 2,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       26,
+       39,
+       null,
+       null,
+       null
+      ],
+      "mean_rank": 5.67
+     }
+    },
+    "fedproxw": {
+     "first": {
+      "mean_rtt": 34,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       32,
+       15,
+       43,
+       45,
+       44,
+       25
+      ],
+      "mean_rank": 4.33
+     },
+     "ma5": {
+      "mean_rtt": 39.67,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       35,
+       19,
+       53,
+       48,
+       47,
+       36
+      ],
+      "mean_rank": 4.33
+     },
+     "ma10": {
+      "mean_rtt": 42.83,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       38,
+       23,
+       54,
+       53,
+       51,
+       38
+      ],
+      "mean_rank": 4.17
+     }
+    },
+    "fedadam": {
+     "first": {
+      "mean_rtt": 11.33,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       12,
+       7,
+       15,
+       9,
+       17,
+       8
+      ],
+      "mean_rank": 1.5
+     },
+     "ma5": {
+      "mean_rtt": 14.33,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       15,
+       11,
+       17,
+       13,
+       20,
+       10
+      ],
+      "mean_rank": 1.33
+     },
+     "ma10": {
+      "mean_rtt": 17.5,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       18,
+       14,
+       21,
+       16,
+       22,
+       14
+      ],
+      "mean_rank": 1.5
+     }
+    },
+    "uniform": {
+     "first": {
+      "mean_rtt": 41.67,
+      "n_reach": 3,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       22,
+       50,
+       null,
+       null,
+       53
+      ],
+      "mean_rank": 6.67
+     },
+     "ma5": {
+      "mean_rtt": 43.67,
+      "n_reach": 3,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       25,
+       52,
+       null,
+       null,
+       54
+      ],
+      "mean_rank": 6.17
+     },
+     "ma10": {
+      "mean_rtt": 46.33,
+      "n_reach": 3,
+      "n_seeds": 6,
+      "per_seed": [
+       null,
+       27,
+       55,
+       null,
+       null,
+       57
+      ],
+      "mean_rank": 6.33
+     }
+    }
+   },
+   "t_ref": 0.36,
+   "reach_fraction": {
+    "0.30": 1.0,
+    "0.35": 0.929,
+    "0.40": 0.405,
+    "0.45": 0.262,
+    "0.50": 0.119,
+    "0.55": 0.0,
+    "0.60": 0.0,
+    "0.65": 0.0,
+    "0.70": 0.0,
+    "0.75": 0.0,
+    "0.80": 0.0,
+    "0.85": 0.0,
+    "0.90": 0.0
+   },
+   "winner_first_per_seed": {
+    "0": "fedavgm",
+    "1": "fedadam",
+    "2": "fedavgm",
+    "3": "fedadam",
+    "4": "fedavgm",
+    "5": "fedadam"
+   },
+   "winner_first": {
+    "fedavgm": 3,
+    "fedadam": 3
+   },
+   "winner_ma5_per_seed": {
+    "0": "fedavgm",
+    "1": "fedadam",
+    "2": "fedadam",
+    "3": "fedadam",
+    "4": "fedavgm",
+    "5": "fedadam"
+   },
+   "winner_ma5": {
+    "fedavgm": 2,
+    "fedadam": 4
+   },
+   "winner_ma10_per_seed": {
+    "0": "fedavgm",
+    "1": "fedadam",
+    "2": "fedavgm",
+    "3": "fedadam",
+    "4": "fedavgm",
+    "5": "fedadam"
+   },
+   "winner_ma10": {
+    "fedavgm": 3,
+    "fedadam": 3
+   }
+  }
+ },
+ "statistic_flips": {
+  "first_vs_ma5": {
+   "per_cell": {
+    "mnist|a0.05": {
+     "units": 366,
+     "winner_flips": 26,
+     "pairs": 2848,
+     "pair_flips": 27
+    },
+    "mnist|a0.1": {
+     "units": 366,
+     "winner_flips": 170,
+     "pairs": 1321,
+     "pair_flips": 14
+    },
+    "mnist|a0.3": {
+     "units": 366,
+     "winner_flips": 15,
+     "pairs": 543,
+     "pair_flips": 0
+    },
+    "fashion|a0.05": {
+     "units": 319,
+     "winner_flips": 53,
+     "pairs": 2350,
+     "pair_flips": 65
+    },
+    "fashion|a0.1": {
+     "units": 303,
+     "winner_flips": 45,
+     "pairs": 1576,
+     "pair_flips": 78
+    },
+    "fashion|a0.3": {
+     "units": 333,
+     "winner_flips": 40,
+     "pairs": 1014,
+     "pair_flips": 16
+    },
+    "cifar10|a0.1": {
+     "units": 106,
+     "winner_flips": 17,
+     "pairs": 754,
+     "pair_flips": 14
+    }
+   },
+   "units": 2159,
+   "winner_flips": 366,
+   "winner_flip_rate": 0.1695,
+   "pairs": 10406,
+   "pair_flips": 214,
+   "pair_flip_rate": 0.0206
+  },
+  "first_vs_ma10": {
+   "per_cell": {
+    "mnist|a0.05": {
+     "units": 366,
+     "winner_flips": 26,
+     "pairs": 2380,
+     "pair_flips": 22
+    },
+    "mnist|a0.1": {
+     "units": 366,
+     "winner_flips": 221,
+     "pairs": 1162,
+     "pair_flips": 9
+    },
+    "mnist|a0.3": {
+     "units": 366,
+     "winner_flips": 15,
+     "pairs": 423,
+     "pair_flips": 0
+    },
+    "fashion|a0.05": {
+     "units": 317,
+     "winner_flips": 58,
+     "pairs": 2018,
+     "pair_flips": 71
+    },
+    "fashion|a0.1": {
+     "units": 303,
+     "winner_flips": 41,
+     "pairs": 1322,
+     "pair_flips": 68
+    },
+    "fashion|a0.3": {
+     "units": 330,
+     "winner_flips": 40,
+     "pairs": 880,
+     "pair_flips": 14
+    },
+    "cifar10|a0.1": {
+     "units": 105,
+     "winner_flips": 22,
+     "pairs": 720,
+     "pair_flips": 16
+    }
+   },
+   "units": 2153,
+   "winner_flips": 423,
+   "winner_flip_rate": 0.1965,
+   "pairs": 8905,
+   "pair_flips": 200,
+   "pair_flip_rate": 0.0225
+  },
+  "ma5_vs_ma10": {
+   "per_cell": {
+    "mnist|a0.05": {
+     "units": 366,
+     "winner_flips": 0,
+     "pairs": 2614,
+     "pair_flips": 3
+    },
+    "mnist|a0.1": {
+     "units": 366,
+     "winner_flips": 129,
+     "pairs": 1159,
+     "pair_flips": 0
+    },
+    "mnist|a0.3": {
+     "units": 366,
+     "winner_flips": 0,
+     "pairs": 448,
+     "pair_flips": 0
+    },
+    "fashion|a0.05": {
+     "units": 317,
+     "winner_flips": 34,
+     "pairs": 2251,
+     "pair_flips": 11
+    },
+    "fashion|a0.1": {
+     "units": 303,
+     "winner_flips": 23,
+     "pairs": 1393,
+     "pair_flips": 10
+    },
+    "fashion|a0.3": {
+     "units": 330,
+     "winner_flips": 4,
+     "pairs": 1000,
+     "pair_flips": 0
+    },
+    "cifar10|a0.1": {
+     "units": 105,
+     "winner_flips": 13,
+     "pairs": 761,
+     "pair_flips": 6
+    }
+   },
+   "units": 2153,
+   "winner_flips": 203,
+   "winner_flip_rate": 0.0943,
+   "pairs": 9626,
+   "pair_flips": 30,
+   "pair_flip_rate": 0.0031
+  }
+ },
+ "spike_premium": {
+  "mnist|a0.05": {
+   "fedavg": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 2.66,
+     "max": 6,
+     "n": 348
+    },
+    "ma10_minus_first": {
+     "median": 6.0,
+     "mean": 6.41,
+     "max": 9,
+     "n": 348
+    }
+   },
+   "fedavgm": {
+    "ma5_minus_first": {
+     "median": 2.0,
+     "mean": 2.57,
+     "max": 7,
+     "n": 366
+    },
+    "ma10_minus_first": {
+     "median": 6.0,
+     "mean": 6.5,
+     "max": 9,
+     "n": 366
+    }
+   },
+   "feddyn": {
+    "ma5_minus_first": {
+     "median": 2.0,
+     "mean": 2.94,
+     "max": 21,
+     "n": 366
+    },
+    "ma10_minus_first": {
+     "median": 6,
+     "mean": 6.95,
+     "max": 27,
+     "n": 363
+    }
+   },
+   "scaffold": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 3.23,
+     "max": 11,
+     "n": 366
+    },
+    "ma10_minus_first": {
+     "median": 6.0,
+     "mean": 6.67,
+     "max": 13,
+     "n": 366
+    }
+   },
+   "fedproxw": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 2.62,
+     "max": 5,
+     "n": 348
+    },
+    "ma10_minus_first": {
+     "median": 6.0,
+     "mean": 6.36,
+     "max": 9,
+     "n": 348
+    }
+   },
+   "fedadam": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 2.66,
+     "max": 4,
+     "n": 366
+    },
+    "ma10_minus_first": {
+     "median": 7.0,
+     "mean": 6.84,
+     "max": 9,
+     "n": 366
+    }
+   },
+   "uniform": {
+    "ma5_minus_first": {
+     "median": 2,
+     "mean": 2.28,
+     "max": 10,
+     "n": 345
+    },
+    "ma10_minus_first": {
+     "median": 6,
+     "mean": 5.69,
+     "max": 13,
+     "n": 343
+    }
+   }
+  },
+  "mnist|a0.1": {
+   "fedavg": {
+    "ma5_minus_first": {
+     "median": 3,
+     "mean": 2.64,
+     "max": 7,
+     "n": 365
+    },
+    "ma10_minus_first": {
+     "median": 7,
+     "mean": 6.77,
+     "max": 9,
+     "n": 365
+    }
+   },
+   "fedavgm": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 2.6,
+     "max": 4,
+     "n": 366
+    },
+    "ma10_minus_first": {
+     "median": 7.0,
+     "mean": 6.93,
+     "max": 9,
+     "n": 366
+    }
+   },
+   "feddyn": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 2.67,
+     "max": 18,
+     "n": 366
+    },
+    "ma10_minus_first": {
+     "median": 7.0,
+     "mean": 6.86,
+     "max": 22,
+     "n": 366
+    }
+   },
+   "scaffold": {
+    "ma5_minus_first": {
+     "median": 2.0,
+     "mean": 2.54,
+     "max": 8,
+     "n": 366
+    },
+    "ma10_minus_first": {
+     "median": 6.5,
+     "mean": 6.55,
+     "max": 9,
+     "n": 366
+    }
+   },
+   "fedproxw": {
+    "ma5_minus_first": {
+     "median": 3,
+     "mean": 2.62,
+     "max": 6,
+     "n": 365
+    },
+    "ma10_minus_first": {
+     "median": 7,
+     "mean": 6.73,
+     "max": 9,
+     "n": 365
+    }
+   },
+   "fedadam": {
+    "ma5_minus_first": {
+     "median": 2.0,
+     "mean": 2.37,
+     "max": 7,
+     "n": 366
+    },
+    "ma10_minus_first": {
+     "median": 6.0,
+     "mean": 6.34,
+     "max": 9,
+     "n": 366
+    }
+   },
+   "uniform": {
+    "ma5_minus_first": {
+     "median": 2,
+     "mean": 2.42,
+     "max": 10,
+     "n": 363
+    },
+    "ma10_minus_first": {
+     "median": 6.0,
+     "mean": 6.3,
+     "max": 12,
+     "n": 362
+    }
+   }
+  },
+  "mnist|a0.3": {
+   "fedavg": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 2.88,
+     "max": 4,
+     "n": 366
+    },
+    "ma10_minus_first": {
+     "median": 7.0,
+     "mean": 7.34,
+     "max": 9,
+     "n": 366
+    }
+   },
+   "fedavgm": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 2.75,
+     "max": 4,
+     "n": 366
+    },
+    "ma10_minus_first": {
+     "median": 7.0,
+     "mean": 7.13,
+     "max": 9,
+     "n": 366
+    }
+   },
+   "feddyn": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 2.69,
+     "max": 4,
+     "n": 366
+    },
+    "ma10_minus_first": {
+     "median": 7.0,
+     "mean": 6.98,
+     "max": 9,
+     "n": 366
+    }
+   },
+   "scaffold": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 2.92,
+     "max": 6,
+     "n": 366
+    },
+    "ma10_minus_first": {
+     "median": 8.0,
+     "mean": 7.42,
+     "max": 9,
+     "n": 366
+    }
+   },
+   "fedproxw": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 2.89,
+     "max": 7,
+     "n": 366
+    },
+    "ma10_minus_first": {
+     "median": 7.0,
+     "mean": 7.34,
+     "max": 9,
+     "n": 366
+    }
+   },
+   "fedadam": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 2.98,
+     "max": 4,
+     "n": 366
+    },
+    "ma10_minus_first": {
+     "median": 8.0,
+     "mean": 7.64,
+     "max": 9,
+     "n": 366
+    }
+   },
+   "uniform": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 2.76,
+     "max": 4,
+     "n": 366
+    },
+    "ma10_minus_first": {
+     "median": 7.0,
+     "mean": 7.15,
+     "max": 9,
+     "n": 366
+    }
+   }
+  },
+  "fashion|a0.05": {
+   "fedavg": {
+    "ma5_minus_first": {
+     "median": 3,
+     "mean": 2.75,
+     "max": 9,
+     "n": 267
+    },
+    "ma10_minus_first": {
+     "median": 6.0,
+     "mean": 6.42,
+     "max": 10,
+     "n": 266
+    }
+   },
+   "fedavgm": {
+    "ma5_minus_first": {
+     "median": 3,
+     "mean": 3.47,
+     "max": 16,
+     "n": 319
+    },
+    "ma10_minus_first": {
+     "median": 7,
+     "mean": 7.09,
+     "max": 21,
+     "n": 317
+    }
+   },
+   "feddyn": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 4.54,
+     "max": 42,
+     "n": 258
+    },
+    "ma10_minus_first": {
+     "median": 7.0,
+     "mean": 8.29,
+     "max": 48,
+     "n": 250
+    }
+   },
+   "scaffold": {
+    "ma5_minus_first": {
+     "median": 4.0,
+     "mean": 4.32,
+     "max": 16,
+     "n": 264
+    },
+    "ma10_minus_first": {
+     "median": 7.0,
+     "mean": 7.58,
+     "max": 18,
+     "n": 264
+    }
+   },
+   "fedproxw": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 2.69,
+     "max": 9,
+     "n": 268
+    },
+    "ma10_minus_first": {
+     "median": 6,
+     "mean": 6.37,
+     "max": 12,
+     "n": 267
+    }
+   },
+   "fedadam": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 3.35,
+     "max": 17,
+     "n": 322
+    },
+    "ma10_minus_first": {
+     "median": 7,
+     "mean": 7.22,
+     "max": 20,
+     "n": 321
+    }
+   },
+   "uniform": {
+    "ma5_minus_first": {
+     "median": 2.0,
+     "mean": 2.42,
+     "max": 6,
+     "n": 262
+    },
+    "ma10_minus_first": {
+     "median": 6.0,
+     "mean": 5.83,
+     "max": 9,
+     "n": 260
+    }
+   }
+  },
+  "fashion|a0.1": {
+   "fedavg": {
+    "ma5_minus_first": {
+     "median": 2,
+     "mean": 2.48,
+     "max": 8,
+     "n": 267
+    },
+    "ma10_minus_first": {
+     "median": 6,
+     "mean": 6.35,
+     "max": 10,
+     "n": 265
+    }
+   },
+   "fedavgm": {
+    "ma5_minus_first": {
+     "median": 2,
+     "mean": 2.48,
+     "max": 7,
+     "n": 303
+    },
+    "ma10_minus_first": {
+     "median": 6,
+     "mean": 6.27,
+     "max": 9,
+     "n": 303
+    }
+   },
+   "feddyn": {
+    "ma5_minus_first": {
+     "median": 3,
+     "mean": 3.8,
+     "max": 32,
+     "n": 263
+    },
+    "ma10_minus_first": {
+     "median": 7,
+     "mean": 7.24,
+     "max": 34,
+     "n": 255
+    }
+   },
+   "scaffold": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 2.95,
+     "max": 13,
+     "n": 282
+    },
+    "ma10_minus_first": {
+     "median": 7.0,
+     "mean": 6.95,
+     "max": 15,
+     "n": 282
+    }
+   },
+   "fedproxw": {
+    "ma5_minus_first": {
+     "median": 2,
+     "mean": 2.43,
+     "max": 7,
+     "n": 269
+    },
+    "ma10_minus_first": {
+     "median": 6.0,
+     "mean": 6.33,
+     "max": 10,
+     "n": 268
+    }
+   },
+   "fedadam": {
+    "ma5_minus_first": {
+     "median": 3,
+     "mean": 3.18,
+     "max": 16,
+     "n": 327
+    },
+    "ma10_minus_first": {
+     "median": 7,
+     "mean": 7.05,
+     "max": 18,
+     "n": 325
+    }
+   },
+   "uniform": {
+    "ma5_minus_first": {
+     "median": 2.0,
+     "mean": 2.48,
+     "max": 8,
+     "n": 266
+    },
+    "ma10_minus_first": {
+     "median": 6.0,
+     "mean": 6.11,
+     "max": 11,
+     "n": 266
+    }
+   }
+  },
+  "fashion|a0.3": {
+   "fedavg": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 2.94,
+     "max": 9,
+     "n": 286
+    },
+    "ma10_minus_first": {
+     "median": 7.0,
+     "mean": 7.27,
+     "max": 12,
+     "n": 286
+    }
+   },
+   "fedavgm": {
+    "ma5_minus_first": {
+     "median": 3,
+     "mean": 2.98,
+     "max": 18,
+     "n": 333
+    },
+    "ma10_minus_first": {
+     "median": 7.0,
+     "mean": 6.91,
+     "max": 18,
+     "n": 330
+    }
+   },
+   "feddyn": {
+    "ma5_minus_first": {
+     "median": 3,
+     "mean": 3.36,
+     "max": 31,
+     "n": 293
+    },
+    "ma10_minus_first": {
+     "median": 7.0,
+     "mean": 7.29,
+     "max": 15,
+     "n": 288
+    }
+   },
+   "scaffold": {
+    "ma5_minus_first": {
+     "median": 3,
+     "mean": 3.08,
+     "max": 10,
+     "n": 295
+    },
+    "ma10_minus_first": {
+     "median": 8.0,
+     "mean": 7.38,
+     "max": 13,
+     "n": 294
+    }
+   },
+   "fedproxw": {
+    "ma5_minus_first": {
+     "median": 3,
+     "mean": 2.97,
+     "max": 21,
+     "n": 287
+    },
+    "ma10_minus_first": {
+     "median": 7,
+     "mean": 7.2,
+     "max": 22,
+     "n": 287
+    }
+   },
+   "fedadam": {
+    "ma5_minus_first": {
+     "median": 3,
+     "mean": 2.98,
+     "max": 12,
+     "n": 341
+    },
+    "ma10_minus_first": {
+     "median": 7,
+     "mean": 7.16,
+     "max": 15,
+     "n": 341
+    }
+   },
+   "uniform": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 2.72,
+     "max": 8,
+     "n": 284
+    },
+    "ma10_minus_first": {
+     "median": 7,
+     "mean": 6.82,
+     "max": 9,
+     "n": 283
+    }
+   }
+  },
+  "cifar10|a0.1": {
+   "fedavg": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 3.27,
+     "max": 9,
+     "n": 52
+    },
+    "ma10_minus_first": {
+     "median": 6,
+     "mean": 5.96,
+     "max": 11,
+     "n": 51
+    }
+   },
+   "fedavgm": {
+    "ma5_minus_first": {
+     "median": 3.0,
+     "mean": 3.21,
+     "max": 14,
+     "n": 106
+    },
+    "ma10_minus_first": {
+     "median": 6,
+     "mean": 6.1,
+     "max": 14,
+     "n": 105
+    }
+   },
+   "feddyn": {
+    "ma5_minus_first": {
+     "median": 3.5,
+     "mean": 6.68,
+     "max": 42,
+     "n": 38
+    },
+    "ma10_minus_first": {
+     "median": 7.0,
+     "mean": 9.44,
+     "max": 32,
+     "n": 34
+    }
+   },
+   "scaffold": {
+    "ma5_minus_first": {
+     "median": 4,
+     "mean": 5.84,
+     "max": 19,
+     "n": 37
+    },
+    "ma10_minus_first": {
+     "median": 8,
+     "mean": 8.51,
+     "max": 23,
+     "n": 37
+    }
+   },
+   "fedproxw": {
+    "ma5_minus_first": {
+     "median": 3,
+     "mean": 3.28,
+     "max": 11,
+     "n": 53
+    },
+    "ma10_minus_first": {
+     "median": 6.0,
+     "mean": 6.21,
+     "max": 13,
+     "n": 52
+    }
+   },
+   "fedadam": {
+    "ma5_minus_first": {
+     "median": 4,
+     "mean": 5.37,
+     "max": 23,
+     "n": 121
+    },
+    "ma10_minus_first": {
+     "median": 7.0,
+     "mean": 8.38,
+     "max": 25,
+     "n": 118
+    }
+   },
+   "uniform": {
+    "ma5_minus_first": {
+     "median": 2,
+     "mean": 2.7,
+     "max": 6,
+     "n": 43
+    },
+    "ma10_minus_first": {
+     "median": 5,
+     "mean": 5.34,
+     "max": 8,
+     "n": 41
+    }
+   }
+  }
+ }
+}
