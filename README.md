@@ -141,17 +141,22 @@ Queue script: `src/run_decay_seeds.sh`.
 | artefact | command |
 |---|---|
 | **Figure 1** (RTT vs. target, per-seed winner, headroom) | `python src/make_fig1.py` → `results/figures/fig1_protocol_dependence.{png,pdf}` + `fig1_data.json` |
-| **Table 2** (lr-decay knob, FedAvg vs. SCAFFOLD) | `python src/make_table_knob.py` → stdout + `results/table_knob.md` |
-| **Table 1** (rank inversions, absolute target grid) | `python src/analyze_rank_inv.py --dir results/rank_inv --target-lo 0.30 --target-hi 0.95 --target-step 0.01 --tau 2 --vol-max 0.01 --drop-max 5.0 --r4-basis R5 --out results/rank_inv/rank_inv_report_alpha_sweep.json` |
-| **Table 1** (relative, ceiling-fraction target grid) | `python src/analyze_rank_inv.py --dir results/rank_inv --target-mode relative --rho-lo 0.50 --rho-hi 0.98 --n-rel-targets 25 --tau 2 --vol-max 0.01 --drop-max 5.0 --out results/rank_inv/rank_inv_report_alpha_sweep_rel.json` |
+| **Table 2** (rank inversions, absolute target grid) | `python src/analyze_rank_inv.py --dir results/rank_inv --target-lo 0.30 --target-hi 0.95 --target-step 0.01 --tau 2 --vol-max 0.01 --drop-max 5.0 --r4-basis R5 --out results/rank_inv/rank_inv_report_alpha_sweep.json` |
+| **Table 2** (relative, ceiling-fraction target grid) | `python src/analyze_rank_inv.py --dir results/rank_inv --target-mode relative --rho-lo 0.50 --rho-hi 0.98 --n-rel-targets 25 --tau 2 --vol-max 0.01 --drop-max 5.0 --out results/rank_inv/rank_inv_report_alpha_sweep_rel.json` |
+| **Table 3** (CIFAR-10 gap matrix + bootstrap CIs) | produced by `make_ci.py` below — see the `decay_probe.cifar` block of `results/rank_inv/bootstrap_ci.json` |
+| **Table 4** (MNIST late accuracy + swing) | `python src/make_table_decay.py --dir results/rank_inv --tag mnist` |
+| CIFAR-10 swing (quoted in §3.2 prose) | `python src/make_table_decay.py --dir results/rank_inv --tag cifar` |
 | ρ_lo sensitivity (four extra grids) | same as above with `--rho-lo 0.40 \| 0.50 \| 0.60 \| 0.70` and `--out results/rank_inv/rank_inv_report_rel_rholo0.40.json` (…`0.50`, `0.60`, `0.70`) |
 | R4 built on R1 instead of R5 | `python src/analyze_rank_inv.py --dir results/rank_inv --r4-basis R1 --out results/rank_inv/rank_inv_report_R1basis.json` |
 | **Bootstrap CIs + full distribution** | `python src/make_ci.py --dir results/rank_inv --out results/rank_inv/bootstrap_ci.json --md results/bootstrap_ci.md --n-boot 10000 --seed 20261012` |
 | **Exact sign test over seeds** | `python src/sign_test_seeds.py --dir results/rank_inv --out results/rank_inv/sign_test_seeds.json --tau 2 --target-lo 0.30 --target-hi 0.95 --target-step 0.01 --vol-max 0.01 --drop-max 5.0` |
+| **Table 5** (first-passage vs. 5-round vs. 10-round mean) | `python src/rtt_statistic_compare.py` → stdout + `results/rtt_stat_compare.json` |
+| **Section 4** (HEM rule sensitivity at 80%) | `python src/check_hem_applicability.py` |
+| **Table 6** (survey disclosure rates) | no training artefacts: see `survey/survey_summary.md`, backed by `survey/survey_extraction.csv` |
 
-`make_fig1.py` and `make_table_knob.py` take no arguments (their configuration is
-at the top of each file). All paths inside them are resolved relative to the
-script location, so they work from any working directory.
+`make_fig1.py` takes no arguments (its configuration is at the top of the file).
+All paths inside the scripts are resolved relative to the script location, so
+they work from any working directory.
 
 The shipped `results/rank_inv/rank_inv_report*.json`, `bootstrap_ci.json` and
 `sign_test_seeds.json` are the exact outputs of the commands above on the shipped
@@ -203,20 +208,23 @@ against the shipped trace.
 
 These are stated rather than hidden; see `REPRODUCTION_LOG.md` for detail.
 
-* **TODO — `survey/`**: the systematic reporting-practice survey (protocol,
-  screening log, per-paper extraction table, BibTeX) is not in this release. It
-  will be added in a later tag once extraction is complete.
-* **TODO — `src/rtt_statistic_compare.py`** (window-average vs. first-passage
-  comparison) does not exist yet; the first-passage / window-average contrast is
-  therefore not reproducible from this tag.
-* **TODO — seed count in two figure/table scripts**: `make_fig1.py` and
-  `make_table_knob.py` hard-code `SEEDS = [0,1,2,3]` and `[0,1,2]`
-  respectively, i.e. they render a 4-seed / 3-seed subset of the 6-seed data.
-  They are shipped verbatim so this tag reproduces exactly what was measured;
-  widening them is a follow-up.
-* **TODO — `rank_inv_runner.py --seeds` default** is still `0,1,2,3`; pass
+* **Resolved — `survey/`** is now shipped: protocol, screening log, the
+  55-column extraction table for all 73 included studies, the summary
+  statistics behind Table 6, the BibTeX, and a per-reference verification log.
+* **Resolved — `src/rtt_statistic_compare.py`** (first passage vs. 5-round vs.
+  10-round mean) is shipped and reproduces Table 5.
+* **Resolved — seed counts.** `make_fig1.py` uses `SEEDS = [0,1,2,3,4,5]`.
+  The old `make_table_knob.py` used three seeds and `final` accuracy; it has
+  been **removed**, because the published Table 3 is late-ten-round accuracy
+  over six seeds (produced by `make_ci.py`) and shipping a script that renders
+  a different quantity would let a reader "reproduce" a table that is no longer
+  in the paper.
+* **Open — `rank_inv_runner.py --seeds` default** is still `0,1,2,3`; pass
   `--seeds 0,1,2,3,4,5` explicitly (as all commands above do).
-* **TODO — Citation DOI**: to be filled in after acceptance (see below).
+* **Open — Citation DOI**: to be filled in after archiving (see below).
+* **Open — one-configuration reproduction only.** The smoke check re-ran 1 of
+  the 294 Stage B runs, not the whole grid, and reproduction across PyTorch
+  versions has not been tested. See `REPRODUCTION_LOG.md`.
 
 ---
 

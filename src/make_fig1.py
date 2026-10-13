@@ -45,8 +45,8 @@ os.makedirs(OUT, exist_ok=True)
 
 METHODS = ["fedavg", "feddyn", "scaffold"]
 LABEL = {"fedavg": "FedAvg", "feddyn": "FedDyn", "scaffold": "SCAFFOLD"}
-COLOR = {"fedavg": "#1f77b4", "feddyn": "#d62728", "scaffold": "#2ca02c"}
-SEEDS = [0, 1, 2, 3]
+COLOR = {"fedavg": "#0072B2", "feddyn": "#E69F00", "scaffold": "#009E73"}
+SEEDS = [0, 1, 2, 3, 4, 5]
 HEM_TARGET = 0.80
 
 
@@ -183,7 +183,11 @@ def panel_ab(ax_a, ax_b):
         uniq = set(w for w in winners if w is not None)
         hemt = abs(t - HEM_TARGET) < 1e-9
         if hemt:
-            tag = ("HEM's line: SPLIT (2/1/1) -> no winner" if len(uniq) > 1
+            from collections import Counter as _C
+            _c = _C(w for w in winners if w is not None)
+            tag = ("HEM's line: SPLIT  " + "  ".join(
+                       "%s x%d" % (SHORT[k], v) for k, v in _c.most_common())
+                   if len(uniq) > 1
                    else "%s UNANIMOUS" % LABEL[list(uniq)[0]])
         elif len(uniq) == 1:
             tag = "%s  UNANIMOUS" % LABEL[list(uniq)[0]]
@@ -207,7 +211,7 @@ def panel_ab(ax_a, ax_b):
     ax_b.set_xticks(range(len(SEEDS)))
     ax_b.set_xticklabels(["seed %d" % s for s in SEEDS], fontsize=8)
     ax_b.set_title("(b)  Same data, same budget: the winner flips with $t$ "
-                   "(MNIST, 4 seeds)", fontsize=11, loc="left")
+                   "(MNIST, 6 seeds)", fontsize=11, loc="left")
     ax_b.text(-0.52, len(rows) - 0.62, "$t$", ha="right", va="bottom",
               fontsize=10, style="italic")
     ax_b.axis("off")
@@ -300,20 +304,26 @@ def panel_d(ax):
 
 
 def main():
-    fig = plt.figure(figsize=(12.6, 8.4))
-    gs = fig.add_gridspec(2, 2, hspace=0.34, wspace=0.30,
-                          left=0.075, right=0.975, top=0.895, bottom=0.085)
+    fig = plt.figure(figsize=(12.6, 7.9))
+    gs = fig.add_gridspec(2, 2, hspace=0.42, wspace=0.30,
+                          left=0.075, right=0.975, top=0.900, bottom=0.095)
     panel_ab(fig.add_subplot(gs[0, 0]), fig.add_subplot(gs[0, 1]))
-    panel_c(fig.add_subplot(gs[1, 0]))
-    panel_d(fig.add_subplot(gs[1, 1]))
+    panel_c(fig.add_subplot(gs[1, :]))
 
     fig.suptitle("Figure 1.  \"Which federated algorithm converges fastest?\" "
                  "is decided by protocol choices nobody reports.",
                  fontsize=13.5, fontweight="bold", y=0.965)
+    fig.text(0.008, 0.928,
+             "Rounds-to-target in all panels is a FIRST-PASSAGE time: the "
+             "first round at which test accuracy reaches $t$; a method that "
+             "never reaches $t$ within the budget is censored, not ranked. "
+             "See Section 3.3 for the same traces read with window-mean "
+             "decision statistics.",
+             fontsize=8.2, style="italic", ha="left", va="top")
 
     png = os.path.join(OUT, "fig1_protocol_dependence.png")
     pdf = os.path.join(OUT, "fig1_protocol_dependence.pdf")
-    fig.savefig(png, dpi=160)
+    fig.savefig(png, dpi=300)
     fig.savefig(pdf)
     print("wrote", png)
     print("wrote", pdf)

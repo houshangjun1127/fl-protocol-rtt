@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, please cite it as below. A version-specific DOI
+  is issued by Zenodo when the GitHub repository is archived; add the
+  "doi" field and the "Concept DOI" here once that DOI exists.
+title: >-
+  Protocol Choices Can Reverse Rounds-to-Target Rankings in Federated
+  Learning -- code and data
+abstract: >-
+  A measurement study of the protocol used to produce rounds-to-target (RTT)
+  rankings in federated learning. On one fixed set of 294 training traces
+  (7 methods x 7 dataset/heterogeneity cells x 6 seeds), the identity of the
+  fastest algorithm changes with the target accuracy, the global
+  learning-rate decay moves inter-method gaps by roughly an order of
+  magnitude, and the statistic used to decide "reached" is biased toward
+  unstable methods. The repository ships the traces, a systematic
+  reporting-practice survey of 58 studies, and one command per table and
+  figure.
+type: software
+version: v0.1-submission
+date-released: "2026-10-13"
+license: MIT
+repository-code: "https://github.com/<account>/fl-protocol-rtt"
+# ---------------------------------------------------------------------------
+# REPLACE THE PLACEHOLDER BELOW with the real author list before archiving.
+# Zenodo uses this block for the DOI record; the names appear in the citation,
+# so an entry left as "Placeholder" will be archived verbatim.
+# ---------------------------------------------------------------------------
+authors:
+  - family-names: "<FamilyName>"
+    given-names: "<GivenName>"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+keywords:
+  - federated learning
+  - rounds-to-target
+  - evaluation protocol
+  - reproducibility
+  - rank inversion
+  - non-IID
+preferred-citation:
+  type: article
+  title: >-
+    Protocol Choices Can Reverse Rounds-to-Target Rankings in Federated
+    Learning
+  year: 2026
+  # journal and DOI to be filled in on acceptance
