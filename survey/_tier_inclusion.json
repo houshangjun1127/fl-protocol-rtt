@@ -1,0 +1,113 @@
+{
+ "method": "normalised-title prefix (25, fallback 20 chars) + year join of adjudicated records to _prescreen.csv tiers",
+ "adjudicated": {
+  "included": 73,
+  "excluded": 163
+ },
+ "matched": 219,
+ "unmatched_n": 17,
+ "tier_inclusion": {
+  "T1": "8/20",
+  "T2": "12/34",
+  "T3": "15/40",
+  "T0": "32/125"
+ },
+ "unmatched": [
+  {
+   "kind": "included",
+   "title": "Flashback: Understanding and Mitigating Forgetting in Federated Learning",
+   "year": "2025"
+  },
+  {
+   "kind": "included",
+   "title": "Distributionally Robust Federated Learning With Client Drift Minimization",
+   "year": "2026"
+  },
+  {
+   "kind": "included",
+   "title": "Fed-BAC: Federated Bandit-Guided Additive Clustering in Hierarchical Federated Learning",
+   "year": "2026"
+  },
+  {
+   "kind": "included",
+   "title": "Achieving consistency in FedSAM using local adaptive distillation on sports image classification",
+   "year": "2025"
+  },
+  {
+   "kind": "included",
+   "title": "Beyond Fixed Rounds: Data-Free Early Stopping for Practical Federated Learning",
+   "year": "2026"
+  },
+  {
+   "kind": "included",
+   "title": "Dataset-centric evaluation of federated intrusion detection models in IoT networks",
+   "year": "2026"
+  },
+  {
+   "kind": "excluded",
+   "code": "E3(c)",
+   "title": "Communication-Efficient Design for Quantized Decentralized F",
+   "year": "2024"
+  },
+  {
+   "kind": "excluded",
+   "code": "E2",
+   "title": "Adaptive and Fault-Tolerant Scheduling Framework for Scalabl",
+   "year": "2026"
+  },
+  {
+   "kind": "excluded",
+   "code": "E2",
+   "title": "Personalized multi-agent reinforcement learning framework fo",
+   "year": "2026"
+  },
+  {
+   "kind": "excluded",
+   "code": "E2",
+   "title": "Fed-XLM-R: a privacy-preserving federated framework with ada",
+   "year": "2026"
+  },
+  {
+   "kind": "excluded",
+   "code": "E2",
+   "title": "Particle Swarm Optimization for Hyperparameter Tuning in Fed",
+   "year": "2026"
+  },
+  {
+   "kind": "excluded",
+   "code": "E3(d)",
+   "title": "Fair Decentralized Learning",
+   "year": "2025"
+  },
+  {
+   "kind": "excluded",
+   "code": "E3(d)",
+   "title": "Caesar: A Low-deviation Compression Approach for Efficient F",
+   "year": "2024"
+  },
+  {
+   "kind": "excluded",
+   "code": "E3(d)",
+   "title": "SemiSFL: Split Federated Learning on Unlabeled and Non-IID D",
+   "year": "2023"
+  },
+  {
+   "kind": "excluded",
+   "code": "E3(d)",
+   "title": "Computation-aware Energy-harvesting Federated Learning with",
+   "year": "2025"
+  },
+  {
+   "kind": "excluded",
+   "code": "E3(d)",
+   "title": "Green Federated Learning Over Cloud-RAN with Limited Fronthu",
+   "year": "2023"
+  },
+  {
+   "kind": "excluded",
+   "code": "E3(b)",
+   "title": "Federated Learning Architectures for Distributed Engineering",
+   "year": "2022"
+  }
+ ]
+}
