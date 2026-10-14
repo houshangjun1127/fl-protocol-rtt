@@ -119,22 +119,63 @@ def rank_at(accs_by_method, target, tau=None):
     return tab, achieving + failing
 
 
-def kendall_tau(order_a, order_b):
-    """tau between two orderings of the same item set."""
+def kendall_tau(order_a, order_b, rtt_a=None, rtt_b=None):
+    """Kendall tau-b between two orderings of the same item set.
+
+    WHY TAU-B, NOT TAU-A.  First-passage times are integers on a 60-round grid,
+    so at a low target several methods routinely reach the target on the SAME
+    round.  rank_at() breaks such ties by insertion order (Python's sort is
+    stable), which means tau-a -- denominator C(n,2), no tie term -- scores those
+    pairs as concordant or discordant according to the order in which the trace
+    files happened to be read.  The reported tau was then a function of the file
+    iteration order, not of the data: src/check_tau_variant.py shows tau-a for
+    one (cell, seed) spanning -0.52 .. +0.33 over 200 random load orders, a
+    spread of 0.86 that includes a sign flip.  tau-b discounts pairs that are
+    tied on either side and is invariant to that order (verified: a single
+    value over the same 200 permutations).
+
+    `rtt_a` / `rtt_b` map method -> first-passage round at each target (None if
+    the method never reaches it).  Two methods are tied at a target iff they
+    have equal non-None RTT.
+
+    Returns None when every comparable pair is tied on at least one side, i.e.
+    when tau-b is undefined -- which happens when all methods reach the low
+    target on the same round.
+    """
     common = [m for m in order_a if m in order_b]
     ia = {m: i for i, m in enumerate(order_a)}
     ib = {m: i for i, m in enumerate(order_b)}
     n = len(common)
     if n < 2:
         return None
-    conc = disc = 0
+
+    def tied(m, other, rtts):
+        if not rtts:
+            return False
+        u, v = rtts.get(m), rtts.get(other)
+        return u is not None and u == v
+
+    n0 = n * (n - 1) // 2
+    conc = disc = ta = tb = 0
     for x, y in itertools.combinations(common, 2):
-        s = np.sign(ia[x] - ia[y]) * np.sign(ib[x] - ib[y])
-        if s > 0:
+        sx = 0 if tied(x, y, rtt_a) else np.sign(ia[x] - ia[y])
+        sy = 0 if tied(x, y, rtt_b) else np.sign(ib[x] - ib[y])
+        if sx == 0 and sy == 0:
+            continue
+        if sx == 0:
+            ta += 1
+            continue
+        if sy == 0:
+            tb += 1
+            continue
+        if sx * sy > 0:
             conc += 1
-        elif s < 0:
+        else:
             disc += 1
-    return (conc - disc) / (conc + disc)
+    denom = np.sqrt(float(n0 - ta) * float(n0 - tb))
+    if denom == 0:
+        return None
+    return (conc - disc) / denom
 
 
 def late_volatility(accs, tail=10):
@@ -194,7 +235,7 @@ def _jsonable(o):
     """Recursively stringify keys and values that json cannot represent.
 
     Keys must be str/int/float/bool/None. Several report sections are keyed by
-    (pair, t1, t2) tuples in memory, which json rejects; we render them as
+    (pair, t1, t2) tuples internally, which json rejects; we render them as
     readable strings rather than dropping the section.
     """
     if isinstance(o, dict):
@@ -328,6 +369,12 @@ def main():
             node["inversions"].append({"seed": sd, **iv})
             node["pair_seed_support"][(iv["pair"], iv["t1"], iv["t2"])].add(sd)
         node["ranking"][sd] = {str(t): orders[t][1] for t in targets}
+        # First-passage round per method per target, needed to identify TIES for
+        # Kendall tau-b (see kendall_tau). Kept next to the ranking so the two
+        # can never disagree.
+        node.setdefault("rtt_by_target", {})[sd] = {
+            str(t): {m: orders[t][0][m][0] for m in orders[t][0]}
+            for t in targets}
         # R5 inputs: has each run actually settled by the end of its trajectory?
         node.setdefault("volatility", {})[sd] = {
             m: late_volatility(a) for m, a in accs.items()}
@@ -416,8 +463,27 @@ def main():
             ],
             "kendall_tau_first_vs_last": {
                 str(sd): kendall_tau(node["ranking"][sd][str(t0)],
-                                     node["ranking"][sd][str(tN)])
+                                     node["ranking"][sd][str(tN)],
+                                     node["rtt_by_target"][sd][str(t0)],
+                                     node["rtt_by_target"][sd][str(tN)])
                 for sd in sorted(node["seeds"])},
+            # How many of the C(7,2) pairs are TIED at each endpoint? Reported
+            # because tau-b is undefined when every pair is tied on one side.
+            "tied_pairs_first_last": {
+                str(sd): {
+                    "low": sum(
+                        1 for x, y in itertools.combinations(
+                            [m for m in node["ranking"][sd][str(t0)]], 2)
+                        if (node["rtt_by_target"][sd][str(t0)].get(x) is not None
+                            and node["rtt_by_target"][sd][str(t0)][x]
+                            == node["rtt_by_target"][sd][str(t0)].get(y))),
+                    "high": sum(
+                        1 for x, y in itertools.combinations(
+                            [m for m in node["ranking"][sd][str(tN)]], 2)
+                        if (node["rtt_by_target"][sd][str(tN)].get(x) is not None
+                            and node["rtt_by_target"][sd][str(tN)][x]
+                            == node["rtt_by_target"][sd][str(tN)].get(y))),
+                } for sd in sorted(node["seeds"])},
         }
 
     # ---------------------------------------------------------------- R4
@@ -459,7 +525,7 @@ def main():
     target_range = {ck: (tgrid[cell_ds[ck]][0], tgrid[cell_ds[ck]][-1])
                     for ck in per_ds}
     report = {k: v for k, v in summary.items()}
-    for ds, node in report.items():          # drop helper carriers only
+    for ds, node in report.items():          # drop internal carriers only
         if isinstance(node, dict):
             node.pop("_robust5_keys", None)
     with open(out, "w", encoding="utf-8") as f:

@@ -141,6 +141,8 @@ Queue script: `src/run_decay_seeds.sh`.
 | artefact | command |
 |---|---|
 | **Figure 1** (RTT vs. target, per-seed winner, headroom) | `python src/make_fig1.py` → `results/figures/fig1_protocol_dependence.{png,pdf}` + `fig1_data.json` |
+| **Figures 2–4** (decay probe; three decision statistics; survey targets & disclosure) | `python src/make_fig2_4.py` → `results/figures/fig2_decay_probe.png`, `fig3_statistic.png`, `fig4_survey_targets.png` + `fig{2,3,4}_data.json` (no training; reads released traces, `rtt_stat_compare.json` and `survey_extraction.csv`). Figure 4 asserts its numbers against Table 6. |
+| **Kendall τ variant check** (why τ-b, not τ-a) | `python src/check_tau_variant.py` → `results/rank_inv/_tau_variant_check.json` |
 | **Table 2** (rank inversions, absolute target grid) | `python src/analyze_rank_inv.py --dir results/rank_inv --target-lo 0.30 --target-hi 0.95 --target-step 0.01 --tau 2 --vol-max 0.01 --drop-max 5.0 --r4-basis R5 --out results/rank_inv/rank_inv_report_alpha_sweep.json` |
 | **Table 2** (relative, ceiling-fraction target grid) | `python src/analyze_rank_inv.py --dir results/rank_inv --target-mode relative --rho-lo 0.50 --rho-hi 0.98 --n-rel-targets 25 --tau 2 --vol-max 0.01 --drop-max 5.0 --out results/rank_inv/rank_inv_report_alpha_sweep_rel.json` |
 | **Table 3** (CIFAR-10 gap matrix + bootstrap CIs) | produced by `make_ci.py` below — see the `decay_probe.cifar` block of `results/rank_inv/bootstrap_ci.json` |
