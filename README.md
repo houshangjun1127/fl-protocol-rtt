@@ -148,6 +148,7 @@ Queue script: `src/run_decay_seeds.sh`.
 | CIFAR-10 swing (quoted in §3.2 prose) | `python src/make_table_decay.py --dir results/rank_inv --tag cifar` |
 | ρ_lo sensitivity (four extra grids) | same as above with `--rho-lo 0.40 \| 0.50 \| 0.60 \| 0.70` and `--out results/rank_inv/rank_inv_report_rel_rholo0.40.json` (…`0.50`, `0.60`, `0.70`) |
 | R4 built on R1 instead of R5 | `python src/analyze_rank_inv.py --dir results/rank_inv --r4-basis R1 --out results/rank_inv/rank_inv_report_R1basis.json` |
+| **Table 7** (threshold sensitivity, Appendix D) | `python src/threshold_sensitivity.py --outdir results/rank_inv` → `results/rank_inv/threshold_sensitivity.json` (sweeps τ ∈ {1,2,3}, `--vol-max` ∈ {0.005, 0.01, 0.02}, `--drop-max` ∈ {3, 5, 10}) |
 | **Bootstrap CIs + full distribution** | `python src/make_ci.py --dir results/rank_inv --out results/rank_inv/bootstrap_ci.json --md results/bootstrap_ci.md --n-boot 10000 --seed 20261012` |
 | **Exact sign test over seeds** | `python src/sign_test_seeds.py --dir results/rank_inv --out results/rank_inv/sign_test_seeds.json --tau 2 --target-lo 0.30 --target-hi 0.95 --target-step 0.01 --vol-max 0.01 --drop-max 5.0` |
 | **Table 5** (first-passage vs. 5-round vs. 10-round mean) | `python src/rtt_statistic_compare.py` → stdout + `results/rtt_stat_compare.json` |

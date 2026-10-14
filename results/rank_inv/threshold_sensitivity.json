@@ -1,0 +1,511 @@
+{
+  "configs": [
+    "tau=1",
+    "tau=2 (baseline)",
+    "tau=3",
+    "vol_max=0.005",
+    "vol_max=0.01 (baseline)",
+    "vol_max=0.02",
+    "drop_max=3",
+    "drop_max=5 (baseline)",
+    "drop_max=10"
+  ],
+  "baseline": "tau=2 (baseline)",
+  "results": {
+    "tau=1": {
+      "cells": {
+        "mnist|a0.05": {
+          "n_inversions_robust_R1": 1836,
+          "n_pairs_robust_R1": 9,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 1310,
+          "n_pairs_robust_R5": 6
+        },
+        "mnist|a0.1": {
+          "n_inversions_robust_R1": 2961,
+          "n_pairs_robust_R1": 15,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 1880,
+          "n_pairs_robust_R5": 11
+        },
+        "mnist|a0.3": {
+          "n_inversions_robust_R1": 535,
+          "n_pairs_robust_R1": 7,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 535,
+          "n_pairs_robust_R5": 7
+        },
+        "fashion|a0.05": {
+          "n_inversions_robust_R1": 1228,
+          "n_pairs_robust_R1": 14,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 803,
+          "n_pairs_robust_R5": 10
+        },
+        "fashion|a0.1": {
+          "n_inversions_robust_R1": 675,
+          "n_pairs_robust_R1": 11,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 495,
+          "n_pairs_robust_R5": 8
+        },
+        "fashion|a0.3": {
+          "n_inversions_robust_R1": 473,
+          "n_pairs_robust_R1": 13,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 300,
+          "n_pairs_robust_R5": 10
+        },
+        "cifar10|a0.1": {
+          "n_inversions_robust_R1": 15,
+          "n_pairs_robust_R1": 3,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 15,
+          "n_pairs_robust_R5": 3
+        }
+      },
+      "cells_with_R1": 7,
+      "r4_pairs": null
+    },
+    "tau=2 (baseline)": {
+      "cells": {
+        "mnist|a0.05": {
+          "n_inversions_robust_R1": 495,
+          "n_pairs_robust_R1": 5,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 368,
+          "n_pairs_robust_R5": 3
+        },
+        "mnist|a0.1": {
+          "n_inversions_robust_R1": 76,
+          "n_pairs_robust_R1": 4,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 66,
+          "n_pairs_robust_R5": 3
+        },
+        "mnist|a0.3": {
+          "n_inversions_robust_R1": 4,
+          "n_pairs_robust_R1": 1,
+          "R2_pass": false,
+          "n_inversions_robust_R5": 4,
+          "n_pairs_robust_R5": 1
+        },
+        "fashion|a0.05": {
+          "n_inversions_robust_R1": 228,
+          "n_pairs_robust_R1": 8,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 160,
+          "n_pairs_robust_R5": 5
+        },
+        "fashion|a0.1": {
+          "n_inversions_robust_R1": 20,
+          "n_pairs_robust_R1": 2,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 1,
+          "n_pairs_robust_R5": 1
+        },
+        "fashion|a0.3": {
+          "n_inversions_robust_R1": 48,
+          "n_pairs_robust_R1": 2,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 19,
+          "n_pairs_robust_R5": 1
+        },
+        "cifar10|a0.1": {
+          "n_inversions_robust_R1": 0,
+          "n_pairs_robust_R1": 0,
+          "R2_pass": false,
+          "n_inversions_robust_R5": 0,
+          "n_pairs_robust_R5": 0
+        }
+      },
+      "cells_with_R1": 6,
+      "r4_pairs": null
+    },
+    "tau=3": {
+      "cells": {
+        "mnist|a0.05": {
+          "n_inversions_robust_R1": 45,
+          "n_pairs_robust_R1": 3,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 30,
+          "n_pairs_robust_R5": 2
+        },
+        "mnist|a0.1": {
+          "n_inversions_robust_R1": 8,
+          "n_pairs_robust_R1": 2,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 7,
+          "n_pairs_robust_R5": 1
+        },
+        "mnist|a0.3": {
+          "n_inversions_robust_R1": 4,
+          "n_pairs_robust_R1": 1,
+          "R2_pass": false,
+          "n_inversions_robust_R5": 4,
+          "n_pairs_robust_R5": 1
+        },
+        "fashion|a0.05": {
+          "n_inversions_robust_R1": 95,
+          "n_pairs_robust_R1": 4,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 77,
+          "n_pairs_robust_R5": 2
+        },
+        "fashion|a0.1": {
+          "n_inversions_robust_R1": 11,
+          "n_pairs_robust_R1": 1,
+          "R2_pass": false,
+          "n_inversions_robust_R5": 0,
+          "n_pairs_robust_R5": 0
+        },
+        "fashion|a0.3": {
+          "n_inversions_robust_R1": 21,
+          "n_pairs_robust_R1": 2,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 3,
+          "n_pairs_robust_R5": 1
+        },
+        "cifar10|a0.1": {
+          "n_inversions_robust_R1": 0,
+          "n_pairs_robust_R1": 0,
+          "R2_pass": false,
+          "n_inversions_robust_R5": 0,
+          "n_pairs_robust_R5": 0
+        }
+      },
+      "cells_with_R1": 6,
+      "r4_pairs": null
+    },
+    "vol_max=0.005": {
+      "cells": {
+        "mnist|a0.05": {
+          "n_inversions_robust_R1": 495,
+          "n_pairs_robust_R1": 5,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 368,
+          "n_pairs_robust_R5": 3
+        },
+        "mnist|a0.1": {
+          "n_inversions_robust_R1": 76,
+          "n_pairs_robust_R1": 4,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 56,
+          "n_pairs_robust_R5": 2
+        },
+        "mnist|a0.3": {
+          "n_inversions_robust_R1": 4,
+          "n_pairs_robust_R1": 1,
+          "R2_pass": false,
+          "n_inversions_robust_R5": 0,
+          "n_pairs_robust_R5": 0
+        },
+        "fashion|a0.05": {
+          "n_inversions_robust_R1": 228,
+          "n_pairs_robust_R1": 8,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 151,
+          "n_pairs_robust_R5": 3
+        },
+        "fashion|a0.1": {
+          "n_inversions_robust_R1": 20,
+          "n_pairs_robust_R1": 2,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 1,
+          "n_pairs_robust_R5": 1
+        },
+        "fashion|a0.3": {
+          "n_inversions_robust_R1": 48,
+          "n_pairs_robust_R1": 2,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 19,
+          "n_pairs_robust_R5": 1
+        },
+        "cifar10|a0.1": {
+          "n_inversions_robust_R1": 0,
+          "n_pairs_robust_R1": 0,
+          "R2_pass": false,
+          "n_inversions_robust_R5": 0,
+          "n_pairs_robust_R5": 0
+        }
+      },
+      "cells_with_R1": 6,
+      "r4_pairs": null
+    },
+    "vol_max=0.01 (baseline)": {
+      "cells": {
+        "mnist|a0.05": {
+          "n_inversions_robust_R1": 495,
+          "n_pairs_robust_R1": 5,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 368,
+          "n_pairs_robust_R5": 3
+        },
+        "mnist|a0.1": {
+          "n_inversions_robust_R1": 76,
+          "n_pairs_robust_R1": 4,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 66,
+          "n_pairs_robust_R5": 3
+        },
+        "mnist|a0.3": {
+          "n_inversions_robust_R1": 4,
+          "n_pairs_robust_R1": 1,
+          "R2_pass": false,
+          "n_inversions_robust_R5": 4,
+          "n_pairs_robust_R5": 1
+        },
+        "fashion|a0.05": {
+          "n_inversions_robust_R1": 228,
+          "n_pairs_robust_R1": 8,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 160,
+          "n_pairs_robust_R5": 5
+        },
+        "fashion|a0.1": {
+          "n_inversions_robust_R1": 20,
+          "n_pairs_robust_R1": 2,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 1,
+          "n_pairs_robust_R5": 1
+        },
+        "fashion|a0.3": {
+          "n_inversions_robust_R1": 48,
+          "n_pairs_robust_R1": 2,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 19,
+          "n_pairs_robust_R5": 1
+        },
+        "cifar10|a0.1": {
+          "n_inversions_robust_R1": 0,
+          "n_pairs_robust_R1": 0,
+          "R2_pass": false,
+          "n_inversions_robust_R5": 0,
+          "n_pairs_robust_R5": 0
+        }
+      },
+      "cells_with_R1": 6,
+      "r4_pairs": null
+    },
+    "vol_max=0.02": {
+      "cells": {
+        "mnist|a0.05": {
+          "n_inversions_robust_R1": 495,
+          "n_pairs_robust_R1": 5,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 382,
+          "n_pairs_robust_R5": 4
+        },
+        "mnist|a0.1": {
+          "n_inversions_robust_R1": 76,
+          "n_pairs_robust_R1": 4,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 76,
+          "n_pairs_robust_R5": 4
+        },
+        "mnist|a0.3": {
+          "n_inversions_robust_R1": 4,
+          "n_pairs_robust_R1": 1,
+          "R2_pass": false,
+          "n_inversions_robust_R5": 4,
+          "n_pairs_robust_R5": 1
+        },
+        "fashion|a0.05": {
+          "n_inversions_robust_R1": 228,
+          "n_pairs_robust_R1": 8,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 160,
+          "n_pairs_robust_R5": 5
+        },
+        "fashion|a0.1": {
+          "n_inversions_robust_R1": 20,
+          "n_pairs_robust_R1": 2,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 1,
+          "n_pairs_robust_R5": 1
+        },
+        "fashion|a0.3": {
+          "n_inversions_robust_R1": 48,
+          "n_pairs_robust_R1": 2,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 19,
+          "n_pairs_robust_R5": 1
+        },
+        "cifar10|a0.1": {
+          "n_inversions_robust_R1": 0,
+          "n_pairs_robust_R1": 0,
+          "R2_pass": false,
+          "n_inversions_robust_R5": 0,
+          "n_pairs_robust_R5": 0
+        }
+      },
+      "cells_with_R1": 6,
+      "r4_pairs": null
+    },
+    "drop_max=3": {
+      "cells": {
+        "mnist|a0.05": {
+          "n_inversions_robust_R1": 495,
+          "n_pairs_robust_R1": 5,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 368,
+          "n_pairs_robust_R5": 3
+        },
+        "mnist|a0.1": {
+          "n_inversions_robust_R1": 76,
+          "n_pairs_robust_R1": 4,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 56,
+          "n_pairs_robust_R5": 2
+        },
+        "mnist|a0.3": {
+          "n_inversions_robust_R1": 4,
+          "n_pairs_robust_R1": 1,
+          "R2_pass": false,
+          "n_inversions_robust_R5": 0,
+          "n_pairs_robust_R5": 0
+        },
+        "fashion|a0.05": {
+          "n_inversions_robust_R1": 228,
+          "n_pairs_robust_R1": 8,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 160,
+          "n_pairs_robust_R5": 5
+        },
+        "fashion|a0.1": {
+          "n_inversions_robust_R1": 20,
+          "n_pairs_robust_R1": 2,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 1,
+          "n_pairs_robust_R5": 1
+        },
+        "fashion|a0.3": {
+          "n_inversions_robust_R1": 48,
+          "n_pairs_robust_R1": 2,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 19,
+          "n_pairs_robust_R5": 1
+        },
+        "cifar10|a0.1": {
+          "n_inversions_robust_R1": 0,
+          "n_pairs_robust_R1": 0,
+          "R2_pass": false,
+          "n_inversions_robust_R5": 0,
+          "n_pairs_robust_R5": 0
+        }
+      },
+      "cells_with_R1": 6,
+      "r4_pairs": null
+    },
+    "drop_max=5 (baseline)": {
+      "cells": {
+        "mnist|a0.05": {
+          "n_inversions_robust_R1": 495,
+          "n_pairs_robust_R1": 5,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 368,
+          "n_pairs_robust_R5": 3
+        },
+        "mnist|a0.1": {
+          "n_inversions_robust_R1": 76,
+          "n_pairs_robust_R1": 4,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 66,
+          "n_pairs_robust_R5": 3
+        },
+        "mnist|a0.3": {
+          "n_inversions_robust_R1": 4,
+          "n_pairs_robust_R1": 1,
+          "R2_pass": false,
+          "n_inversions_robust_R5": 4,
+          "n_pairs_robust_R5": 1
+        },
+        "fashion|a0.05": {
+          "n_inversions_robust_R1": 228,
+          "n_pairs_robust_R1": 8,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 160,
+          "n_pairs_robust_R5": 5
+        },
+        "fashion|a0.1": {
+          "n_inversions_robust_R1": 20,
+          "n_pairs_robust_R1": 2,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 1,
+          "n_pairs_robust_R5": 1
+        },
+        "fashion|a0.3": {
+          "n_inversions_robust_R1": 48,
+          "n_pairs_robust_R1": 2,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 19,
+          "n_pairs_robust_R5": 1
+        },
+        "cifar10|a0.1": {
+          "n_inversions_robust_R1": 0,
+          "n_pairs_robust_R1": 0,
+          "R2_pass": false,
+          "n_inversions_robust_R5": 0,
+          "n_pairs_robust_R5": 0
+        }
+      },
+      "cells_with_R1": 6,
+      "r4_pairs": null
+    },
+    "drop_max=10": {
+      "cells": {
+        "mnist|a0.05": {
+          "n_inversions_robust_R1": 495,
+          "n_pairs_robust_R1": 5,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 368,
+          "n_pairs_robust_R5": 3
+        },
+        "mnist|a0.1": {
+          "n_inversions_robust_R1": 76,
+          "n_pairs_robust_R1": 4,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 66,
+          "n_pairs_robust_R5": 3
+        },
+        "mnist|a0.3": {
+          "n_inversions_robust_R1": 4,
+          "n_pairs_robust_R1": 1,
+          "R2_pass": false,
+          "n_inversions_robust_R5": 4,
+          "n_pairs_robust_R5": 1
+        },
+        "fashion|a0.05": {
+          "n_inversions_robust_R1": 228,
+          "n_pairs_robust_R1": 8,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 160,
+          "n_pairs_robust_R5": 5
+        },
+        "fashion|a0.1": {
+          "n_inversions_robust_R1": 20,
+          "n_pairs_robust_R1": 2,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 1,
+          "n_pairs_robust_R5": 1
+        },
+        "fashion|a0.3": {
+          "n_inversions_robust_R1": 48,
+          "n_pairs_robust_R1": 2,
+          "R2_pass": true,
+          "n_inversions_robust_R5": 19,
+          "n_pairs_robust_R5": 1
+        },
+        "cifar10|a0.1": {
+          "n_inversions_robust_R1": 0,
+          "n_pairs_robust_R1": 0,
+          "R2_pass": false,
+          "n_inversions_robust_R5": 0,
+          "n_pairs_robust_R5": 0
+        }
+      },
+      "cells_with_R1": 6,
+      "r4_pairs": null
+    }
+  }
+}
