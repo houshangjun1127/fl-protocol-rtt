@@ -236,11 +236,15 @@ Placeholder — the DOI / venue will be added here after acceptance.
 ```bibtex
 @misc{fl_protocol_rtt_2026,
   title  = {Protocol Choices Can Reverse Rounds-to-Target Rankings in Federated Learning},
-  author = {[authors]},
+  author = {Hou, Shangjun},
   year   = {2026},
   note   = {Code and data: \url{https://github.com/<owner>/<repo>}, tag v0.1-submission}
 }
 ```
+
+Machine-readable metadata lives in `CITATION.cff`; Zenodo reads it when the
+repository is archived, so the author name and key there are the ones that end up
+in the DOI record.
 
 If you use the traces or the analysis code before publication, please cite this
 repository by its tag `v0.1-submission`.

@@ -21,15 +21,13 @@ version: v0.1-submission
 date-released: "2026-10-13"
 license: MIT
 repository-code: "https://github.com/<account>/fl-protocol-rtt"
-# ---------------------------------------------------------------------------
-# REPLACE THE PLACEHOLDER BELOW with the real author list before archiving.
-# Zenodo uses this block for the DOI record; the names appear in the citation,
-# so an entry left as "Placeholder" will be archived verbatim.
-# ---------------------------------------------------------------------------
 authors:
-  - family-names: "<FamilyName>"
-    given-names: "<GivenName>"
-    orcid: "https://orcid.org/0000-0000-0000-0000"
+  - family-names: "Hou"
+    given-names: "Shangjun"
+    # Optional, but recommended: add your ORCID and affiliation before archiving.
+    # Missing both is fine; a wrong ORCID is worse than none.
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+    # affiliation: "Dalian University of Science and Technology"
 keywords:
   - federated learning
   - rounds-to-target
@@ -42,5 +40,10 @@ preferred-citation:
   title: >-
     Protocol Choices Can Reverse Rounds-to-Target Rankings in Federated
     Learning
+  authors:
+    - family-names: "Hou"
+      given-names: "Shangjun"
   year: 2026
   # journal and DOI to be filled in on acceptance
+  # journal: "Tsinghua Science and Technology"
+  # doi: "10.xxxx/xxxxx"
