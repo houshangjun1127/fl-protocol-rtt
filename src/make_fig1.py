@@ -348,7 +348,7 @@ def main():
     panel_c(fig.add_subplot(gs[1, :]))
 
     fig.suptitle("Figure 1.  \"Which federated algorithm converges fastest?\" "
-                 "is decided by protocol choices nobody reports.",
+                 "is answered by protocol choices nobody reports.",
                  fontsize=13.5, fontweight="bold", y=0.972)
     fig.text(0.075, 0.052,
              "Reading note. Rounds-to-target in all panels is a FIRST-PASSAGE "
