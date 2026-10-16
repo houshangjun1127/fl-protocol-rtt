@@ -5,13 +5,20 @@ Context: analyze_rank_inv.py::rank_at sorts achieving methods by RTT and failing
 methods by -final accuracy, using Python's stable sort. Two methods with the
 SAME first-passage round therefore receive DIFFERENT ranks (order = dict load
 order), i.e. ties are broken arbitrarily rather than handled as ties.
-kendall_tau() then computes (conc-disc)/(conc+disc), which is tau-a.
+kendall_tau() then computes the tie-corrected tau-b.
 
 This script recomputes, for every cell/seed:
   - n_tied_pairs at the low target and the high target (equal RTT among
-    achieving methods)
-  - tau-a as currently implemented (arbitrary tie-breaking)
-  - tau-b on the *proper* tied ranking (ties shared rank, tau-b denominator)
+    achieving methods; counted as pairs C(n_g, 2) per tie group of size n_g,
+    matching the report's `tied_pairs_first_last` caliber)
+  - tau-a under arbitrary (load-order) tie-breaking, and tau-b on the proper
+    tied ranking
+  - an EXHAUSTIVE enumeration of all 7! = 5040 load orders per (cell, seed),
+    giving the complete set of values tau-a can take on the same data.  The
+    load-order sensitivity of tau-a is thus a property of the data, not of a
+    random sample of orders: e.g. mnist|a0.1 seed 0 yields 11 distinct values
+    spanning -0.524 .. +0.429 (spread 0.952, sign flip included), while tau-b
+    returns a single value under every one of the 5040 orders.
 
 Usage:  python src/check_tau_variant.py
 """
@@ -107,6 +114,26 @@ def tau_b(order_a, order_b):
     return tau_from_rankvecs(ranks(order_a), ranks(order_b), common, {})
 
 
+def tau_a_exhaustive(accs, t0, t1):
+    """Enumerate ALL len(accs)! load orders; return the sorted set of distinct
+    tau-a values the *same data* can produce.  Deterministic (no RNG).
+
+    tau-a is order-sensitive only through the stable-sort tie-breaking in
+    ranking(); enumerating every permutation of the method load order therefore
+    gives the complete value set.  7 methods -> 5040 orders, ~seconds.
+    """
+    methods = sorted(accs)
+    vals = set()
+    for perm in itertools.permutations(methods):
+        d = {m: accs[m] for m in perm}
+        oa, _ = ranking(d, t0)
+        ob, _ = ranking(d, t1)
+        v = tau_a(oa, ob)
+        if v is not None:
+            vals.add(round(float(v), 4))
+    return sorted(vals)
+
+
 def tau_from_rankvecs(ra, rb, common, tie_map):
     """Generic Kendall with tie correction.
 
@@ -170,12 +197,25 @@ def main() -> int:
             common = [m for m in oa if m in ob]
             a = tau_a(oa, ob)
             b = tau_from_rankvecs(ra, rb, common, tm)
+            # exhaustive: every load order, deterministic
+            ex = tau_a_exhaustive(accs, T0, T1GRID)
             rows.append({
                 "cell": cell, "seed": sd,
-                "ties_low": sum(len(g) - 1 for g in ga),
-                "ties_high": sum(len(g) - 1 for g in gb),
+                # tied PAIRS, C(n_g, 2) per tie group -- matches the report's
+                # tied_pairs_first_last caliber (group-size-minus-one would
+                # undercount: a group of 4 holds 6 tied pairs, not 3)
+                "ties_low": sum(len(g) * (len(g) - 1) // 2 for g in ga),
+                "ties_high": sum(len(g) * (len(g) - 1) // 2 for g in gb),
                 "tau_a": None if a is None else round(float(a), 3),
                 "tau_b": None if b is None else round(float(b), 3),
+                "tau_a_exhaustive": {
+                    "n_orders": 1,
+                    "n_values": len(ex),
+                    "min": ex[0] if ex else None,
+                    "max": ex[-1] if ex else None,
+                    "spread": round(ex[-1] - ex[0], 4) if ex else None,
+                    "values": ex,
+                } if ex else None,
             })
 
     print(f"{'cell':<14}{'seed':<5}{'ties@0.30':>10}{'ties@0.95':>10}"
@@ -192,6 +232,16 @@ def main() -> int:
     print(f"max |tau_a - tau_b| = {max(abs(x-y) for x,y in zip(a_vals,b_vals)):.3f}")
     print(f"total tied pairs @0.30 = {sum(r['ties_low'] for r in rows)}, "
           f"@0.95 = {sum(r['ties_high'] for r in rows)}")
+
+    sens = [(r["tau_a_exhaustive"]["spread"], r["cell"], r["seed"],
+             r["tau_a_exhaustive"]["n_values"]) for r in rows
+            if r.get("tau_a_exhaustive")]
+    sens.sort(reverse=True)
+    n_sensitive = sum(1 for s in sens if s[0] > 0)
+    print(f"\ntau-a load-order sensitivity (exhaustive over 7! = 5040 orders/run):")
+    print(f"  order-sensitive (n_values > 1): {n_sensitive} of {len(rows)} runs")
+    for spread, cell, sd, nv in sens[:5]:
+        print(f"  worst: {cell} seed {sd}: {nv} distinct values, spread {spread:.3f}")
 
     out = ROOT / "results" / "rank_inv" / "_tau_variant_check.json"
     out.write_text(json.dumps(rows, indent=1), encoding="utf-8")

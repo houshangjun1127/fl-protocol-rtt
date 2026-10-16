@@ -128,11 +128,11 @@ def kendall_tau(order_a, order_b, rtt_a=None, rtt_b=None):
     stable), which means tau-a -- denominator C(n,2), no tie term -- scores those
     pairs as concordant or discordant according to the order in which the trace
     files happened to be read.  The reported tau was then a function of the file
-    iteration order, not of the data: src/check_tau_variant.py shows tau-a for
-    one (cell, seed) spanning -0.52 .. +0.33 over 200 random load orders, a
-    spread of 0.86 that includes a sign flip.  tau-b discounts pairs that are
-    tied on either side and is invariant to that order (verified: a single
-    value over the same 200 permutations).
+    iteration order, not of the data: src/check_tau_variant.py enumerates all
+    7! = 5040 load orders and shows tau-a for one (cell, seed) taking 11
+    distinct values spanning -0.52 .. +0.43, a spread of 0.95 that includes a
+    sign flip.  tau-b discounts pairs that are tied on either side and is
+    invariant to that order (a single value under every one of the 5040 orders).
 
     `rtt_a` / `rtt_b` map method -> first-passage round at each target (None if
     the method never reaches it).  Two methods are tied at a target iff they
