@@ -271,7 +271,7 @@ def fig4():
         ("per-seed results\nreported", n_yes("per_seed_results_reported"), 11),
         ("censoring\nconvention", n_yes("censoring_reported"), 14),
         ("heterogeneity\nparameter", n_specified("noniid_parameter"), 15),
-        ("stability\nmeasure", n_yes("stability_measure_reported"), 0),
+        ("final-window\ndispersion", n_yes("stability_measure_reported"), 1),
     ]
     for lab, got, want in items:
         assert got == want, "Figure 4 disagrees with Table 6 on %r: %d vs %d" % (

@@ -96,8 +96,12 @@ def settle_flags(accs, vol_max=0.01, drop_max=5.0):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--dir", default="../results/rank_inv")
-    ap.add_argument("--out", default="../results/rank_inv/sign_test_seeds.json")
+    # Anchored to this file rather than the working directory; see make_ci.py.
+    _root = os.path.normpath(os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), ".."))
+    ap.add_argument("--dir", default=os.path.join(_root, "results", "rank_inv"))
+    ap.add_argument("--out", default=os.path.join(
+        _root, "results", "rank_inv", "sign_test_seeds.json"))
     ap.add_argument("--tau", type=int, default=2)
     ap.add_argument("--target-lo", type=float, default=0.30)
     ap.add_argument("--target-hi", type=float, default=0.95)

@@ -84,6 +84,62 @@ def load_dataset(name, n_train=10000, n_test=2000, seed=0):
             channels, img_size)
 
 
+def load_dataset_with_val(name, n_train=10000, n_test=2000, n_val=1000, seed=0):
+    """`load_dataset` plus a disjoint validation split for Stage A selection.
+
+    Added for the second-round review response (task R10). The original Stage A
+    selected hyperparameters on the *test* split, which the reviewer flagged as
+    the test set participating in tuning. To measure how much that matters we
+    need a split that is NOT the test split, while leaving everything else in
+    the published runs bit-identical.
+
+    Two invariants are load-bearing and are asserted, not assumed:
+      1. `train` and `test` subsamples are IDENTICAL to `load_dataset`'s. This
+         holds because the RandomState is consumed in the same order -- first
+         `permutation(len(xtr))`, then `permutation(len(xte))` -- before any
+         validation index is drawn.
+      2. The validation split is carved from the training POOL, disjoint from
+         the training subsample, and never from the test pool. So it is held
+         out from optimisation but comes from the same marginal distribution.
+
+    Returns (train_ds, val_ds, test_ds, channels, img_size).
+    """
+    from torchvision import datasets
+
+    torch_cls, img_size, channels, n_classes = DATASETS[name]
+    os.makedirs(DATA_ROOT, exist_ok=True)
+    ds = getattr(datasets, torch_cls)(root=DATA_ROOT, train=True, download=True)
+    te = getattr(datasets, torch_cls)(root=DATA_ROOT, train=False, download=True)
+
+    xtr, ytr = _to_tensors(ds, img_size, channels)
+    xte, yte = _to_tensors(te, img_size, channels)
+
+    rng = np.random.RandomState(seed)
+    tr_idx = rng.permutation(len(xtr))[: min(n_train, len(xtr))]
+    te_idx = rng.permutation(len(xte))[: min(n_test, len(xte))]
+
+    # Validation: from the training pool, disjoint from tr_idx. Drawn AFTER the
+    # two draws above so the train/test subsamples match load_dataset exactly.
+    pool = np.setdiff1d(np.arange(len(xtr)), tr_idx)
+    pool = rng.permutation(pool)
+    val_idx = pool[: min(n_val, len(pool))]
+
+    xv, yv = xtr[val_idx], ytr[val_idx]
+    xtr, ytr = xtr[tr_idx], ytr[tr_idx]
+    xte, yte = xte[te_idx], yte[te_idx]
+
+    mean = xtr.mean(axis=(0, 2, 3), keepdims=True)
+    std = xtr.std(axis=(0, 2, 3), keepdims=True) + 1e-7
+    xtr = (xtr - mean) / std
+    xte = (xte - mean) / std
+    xv = (xv - mean) / std
+
+    return (TensorDataset(torch.from_numpy(xtr), torch.from_numpy(ytr)),
+            TensorDataset(torch.from_numpy(xv), torch.from_numpy(yv)),
+            TensorDataset(torch.from_numpy(xte), torch.from_numpy(yte)),
+            channels, img_size)
+
+
 def dirichlet_partition(labels, n_clients, alpha, seed=0, min_size=32):
     """Label-skew partition. Returns list of index arrays into `labels`."""
     rng = np.random.RandomState(seed)

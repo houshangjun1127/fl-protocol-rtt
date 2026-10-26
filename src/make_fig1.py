@@ -18,10 +18,12 @@ Panel map
 (b) per-seed winner at each t. HEM's own value (0.80) sits in the region where
     the six seeds disagree, so HEM's chosen number does not even give a stable
     answer on data where 80% is reachable.
-(c) how much headroom the SAME nominal target (80%) leaves above each setup's
-    reachable ceiling. HEM's published numbers leave FedAvg 4 points; our
-    CIFAR-10 setup sits 25.05 points *below* the target, i.e. the metric is
-    undefined there.
+(c) how much headroom the SAME nominal target (80%) leaves below the attainable
+    maximum of each of our three α = 0.1 cells. On CIFAR-10 the setup sits 25.05
+    points *below* the target, i.e. the metric is undefined there. (HEM's own
+    setup is deliberately not drawn: its Table III reports *client* accuracy, a
+    different metric from the one defining the bars here, so a headroom bar for
+    it could not be computed from the paper.)
 
 The target values used across the literature are reported as a survey result in
 Section 3.4 (N = 58 studies, spanning 30%-99.98%) rather than as a panel here:
@@ -324,8 +326,8 @@ def panel_c(ax):
     ax.set_xticklabels([g[0] for g in groups], fontsize=8.5)
     ax.set_ylabel("best reachable accuracy")
     ax.set_ylim(0, 1.18)
-    ax.set_title("(c)  One nominal target, four meanings: headroom above the "
-                 "reachable ceiling", fontsize=10.5, loc="left")
+    ax.set_title("(c)  One nominal target, three meanings: headroom below the "
+                 "attainable maximum", fontsize=10.5, loc="left")
     ax.grid(axis="y", alpha=0.25, ls=":")
 
 

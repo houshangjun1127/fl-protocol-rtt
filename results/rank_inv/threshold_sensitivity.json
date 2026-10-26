@@ -22,11 +22,11 @@
           "n_pairs_robust_R5": 6
         },
         "mnist|a0.1": {
-          "n_inversions_robust_R1": 2961,
-          "n_pairs_robust_R1": 15,
+          "n_inversions_robust_R1": 2581,
+          "n_pairs_robust_R1": 9,
           "R2_pass": true,
-          "n_inversions_robust_R5": 1880,
-          "n_pairs_robust_R5": 11
+          "n_inversions_robust_R5": 1872,
+          "n_pairs_robust_R5": 6
         },
         "mnist|a0.3": {
           "n_inversions_robust_R1": 535,
@@ -77,10 +77,10 @@
           "n_pairs_robust_R5": 3
         },
         "mnist|a0.1": {
-          "n_inversions_robust_R1": 76,
+          "n_inversions_robust_R1": 66,
           "n_pairs_robust_R1": 4,
           "R2_pass": true,
-          "n_inversions_robust_R5": 66,
+          "n_inversions_robust_R5": 54,
           "n_pairs_robust_R5": 3
         },
         "mnist|a0.3": {
@@ -132,11 +132,11 @@
           "n_pairs_robust_R5": 2
         },
         "mnist|a0.1": {
-          "n_inversions_robust_R1": 8,
+          "n_inversions_robust_R1": 13,
           "n_pairs_robust_R1": 2,
           "R2_pass": true,
-          "n_inversions_robust_R5": 7,
-          "n_pairs_robust_R5": 1
+          "n_inversions_robust_R5": 13,
+          "n_pairs_robust_R5": 2
         },
         "mnist|a0.3": {
           "n_inversions_robust_R1": 4,
@@ -187,10 +187,10 @@
           "n_pairs_robust_R5": 3
         },
         "mnist|a0.1": {
-          "n_inversions_robust_R1": 76,
+          "n_inversions_robust_R1": 66,
           "n_pairs_robust_R1": 4,
           "R2_pass": true,
-          "n_inversions_robust_R5": 56,
+          "n_inversions_robust_R5": 44,
           "n_pairs_robust_R5": 2
         },
         "mnist|a0.3": {
@@ -242,10 +242,10 @@
           "n_pairs_robust_R5": 3
         },
         "mnist|a0.1": {
-          "n_inversions_robust_R1": 76,
+          "n_inversions_robust_R1": 66,
           "n_pairs_robust_R1": 4,
           "R2_pass": true,
-          "n_inversions_robust_R5": 66,
+          "n_inversions_robust_R5": 54,
           "n_pairs_robust_R5": 3
         },
         "mnist|a0.3": {
@@ -297,10 +297,10 @@
           "n_pairs_robust_R5": 4
         },
         "mnist|a0.1": {
-          "n_inversions_robust_R1": 76,
+          "n_inversions_robust_R1": 66,
           "n_pairs_robust_R1": 4,
           "R2_pass": true,
-          "n_inversions_robust_R5": 76,
+          "n_inversions_robust_R5": 66,
           "n_pairs_robust_R5": 4
         },
         "mnist|a0.3": {
@@ -352,10 +352,10 @@
           "n_pairs_robust_R5": 3
         },
         "mnist|a0.1": {
-          "n_inversions_robust_R1": 76,
+          "n_inversions_robust_R1": 66,
           "n_pairs_robust_R1": 4,
           "R2_pass": true,
-          "n_inversions_robust_R5": 56,
+          "n_inversions_robust_R5": 44,
           "n_pairs_robust_R5": 2
         },
         "mnist|a0.3": {
@@ -407,10 +407,10 @@
           "n_pairs_robust_R5": 3
         },
         "mnist|a0.1": {
-          "n_inversions_robust_R1": 76,
+          "n_inversions_robust_R1": 66,
           "n_pairs_robust_R1": 4,
           "R2_pass": true,
-          "n_inversions_robust_R5": 66,
+          "n_inversions_robust_R5": 54,
           "n_pairs_robust_R5": 3
         },
         "mnist|a0.3": {
@@ -462,10 +462,10 @@
           "n_pairs_robust_R5": 3
         },
         "mnist|a0.1": {
-          "n_inversions_robust_R1": 76,
+          "n_inversions_robust_R1": 66,
           "n_pairs_robust_R1": 4,
           "R2_pass": true,
-          "n_inversions_robust_R5": 66,
+          "n_inversions_robust_R5": 54,
           "n_pairs_robust_R5": 3
         },
         "mnist|a0.3": {

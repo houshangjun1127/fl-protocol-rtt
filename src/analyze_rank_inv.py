@@ -124,15 +124,35 @@ def kendall_tau(order_a, order_b, rtt_a=None, rtt_b=None):
 
     WHY TAU-B, NOT TAU-A.  First-passage times are integers on a 60-round grid,
     so at a low target several methods routinely reach the target on the SAME
-    round.  rank_at() breaks such ties by insertion order (Python's sort is
-    stable), which means tau-a -- denominator C(n,2), no tie term -- scores those
-    pairs as concordant or discordant according to the order in which the trace
-    files happened to be read.  The reported tau was then a function of the file
-    iteration order, not of the data: src/check_tau_variant.py enumerates all
-    7! = 5040 load orders and shows tau-a for one (cell, seed) taking 11
-    distinct values spanning -0.52 .. +0.43, a spread of 0.95 that includes a
-    sign flip.  tau-b discounts pairs that are tied on either side and is
-    invariant to that order (a single value under every one of the 5040 orders).
+    round.  The two variants disagree on how to score such a pair: tau-b
+    discounts it -- a tie is not evidence about ordering -- while tau-a keeps it
+    in the denominator while assigning it to neither the concordant nor the
+    discordant count.  Under EITHER definition the statistic is a function of
+    the data alone; neither is sensitive to the order in which trace files are
+    read.
+
+    The order sensitivity quantified in src/check_tau_variant.py is therefore
+    NOT a defect of tau-a, and earlier text in this paper that attributed it to
+    tau-a was wrong.  It arises one step earlier, in rank_at(): that function
+    stable-sorts on RTT, converting a tied, partially ordered measurement into
+    a strict ordinal ranking, so the relative position of two methods with
+    equal RTT is decided by insertion order.  tau-a applied to that ordinal
+    vector then inherits an arbitrary convention.  Applied instead to the raw
+    keys -- first-passage round if the target is reached, otherwise minus the
+    final accuracy -- tau-a returns one and the same value under all 7! = 5040
+    load orders, on every one of the 42 (cell, seed) runs (spread 0.000000).
+    We report tau-b because it discounts the pairs the 60-round grid cannot
+    resolve, and because it too is invariant once the tie map is supplied
+    explicitly from the RTT values rather than inferred from sort order.
+
+    CORRECTION (R1, 2026-10-18).  The denominator used the standard tau-b
+    identity sqrt((n0 - n1)(n0 - n2)), but the loop previously `continue`d
+    on pairs tied on BOTH sides before incrementing either counter, which
+    under-counts n1 and n2 and inflates the denominator (in the limit where
+    every pair is tied it returned a spurious 0.0 instead of None).  The two
+    counters are now incremented independently, per the standard identity.
+    No reported value changed: max |tau_b_before - tau_b_after| = 0.0035, i.e.
+    rounding at the third decimal only.
 
     `rtt_a` / `rtt_b` map method -> first-passage round at each target (None if
     the method never reaches it).  Two methods are tied at a target iff they
@@ -160,13 +180,16 @@ def kendall_tau(order_a, order_b, rtt_a=None, rtt_b=None):
     for x, y in itertools.combinations(common, 2):
         sx = 0 if tied(x, y, rtt_a) else np.sign(ia[x] - ia[y])
         sy = 0 if tied(x, y, rtt_b) else np.sign(ib[x] - ib[y])
-        if sx == 0 and sy == 0:
-            continue
+        # NOTE (R1): pairs tied on BOTH sides must increment both counters, per
+        # the standard identity n1 = sum_i C(t_i,2), n2 = sum_j C(u_j,2), each
+        # running over ALL pairs tied on that side.  The earlier
+        # `if sx == 0 and sy == 0: continue` skipped them, inflating the
+        # denominator and returning a spurious 0.0 in the all-tied limit.
         if sx == 0:
             ta += 1
-            continue
         if sy == 0:
             tb += 1
+        if sx == 0 or sy == 0:
             continue
         if sx * sy > 0:
             conc += 1
@@ -235,7 +258,7 @@ def _jsonable(o):
     """Recursively stringify keys and values that json cannot represent.
 
     Keys must be str/int/float/bool/None. Several report sections are keyed by
-    (pair, t1, t2) tuples internally, which json rejects; we render them as
+    (pair, t1, t2) tuples in memory, which json rejects; we render them as
     readable strings rather than dropping the section.
     """
     if isinstance(o, dict):
@@ -525,7 +548,7 @@ def main():
     target_range = {ck: (tgrid[cell_ds[ck]][0], tgrid[cell_ds[ck]][-1])
                     for ck in per_ds}
     report = {k: v for k, v in summary.items()}
-    for ds, node in report.items():          # drop internal carriers only
+    for ds, node in report.items():          # drop helper carriers only
         if isinstance(node, dict):
             node.pop("_robust5_keys", None)
     with open(out, "w", encoding="utf-8") as f:

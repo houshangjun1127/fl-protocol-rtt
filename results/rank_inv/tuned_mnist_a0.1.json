@@ -517,13 +517,13 @@
  },
  "mnist|0.1|fedavgm": {
   "best_hp": {
-   "beta": 0.5,
+   "beta": 0.7,
    "lr_s": 1.0
   },
-  "label": "beta=0.5,lr_s=1.0",
-  "late_acc": 0.9585,
-  "peak_acc": 0.9585,
-  "final_acc": 0.958,
+  "label": "beta=0.7,lr_s=1.0",
+  "late_acc": 0.966,
+  "peak_acc": 0.968,
+  "final_acc": 0.968,
   "settings": [
    {
     "hp": {
@@ -1537,12 +1537,12 @@
  },
  "mnist|0.1|fedproxw": {
   "best_hp": {
-   "rho": 0.5
+   "rho": 0.2
   },
-  "label": "rho=0.5",
-  "late_acc": 0.931,
-  "peak_acc": 0.933,
-  "final_acc": 0.933,
+  "label": "rho=0.2",
+  "late_acc": 0.9325,
+  "peak_acc": 0.934,
+  "final_acc": 0.9325,
   "settings": [
    {
     "hp": {
@@ -2301,13 +2301,13 @@
  },
  "mnist|0.1|fedadam": {
   "best_hp": {
-   "lr_s": 0.01,
+   "lr_s": 0.03,
    "tau": 0.001
   },
-  "label": "lr_s=0.01,tau=0.001",
-  "late_acc": 0.9605,
-  "peak_acc": 0.9645,
-  "final_acc": 0.9645,
+  "label": "lr_s=0.03,tau=0.001",
+  "late_acc": 0.9675,
+  "peak_acc": 0.97,
+  "final_acc": 0.97,
   "settings": [
    {
     "hp": {

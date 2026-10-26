@@ -114,9 +114,17 @@ def load_decay(d):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--dir", default="../results/rank_inv")
-    ap.add_argument("--out", default="../results/rank_inv/bootstrap_ci.json")
-    ap.add_argument("--md", default="../results/bootstrap_ci.md")
+    # Defaults are anchored to this file, not to the working directory, so the
+    # script behaves identically whether it is invoked as
+    #   (cd src && python make_ci.py)      or   python src/make_ci.py
+    # The paper's reproducibility block lists the latter form.
+    _root = os.path.normpath(os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), ".."))
+    ap.add_argument("--dir", default=os.path.join(_root, "results", "rank_inv"))
+    ap.add_argument("--out", default=os.path.join(
+        _root, "results", "rank_inv", "bootstrap_ci.json"))
+    ap.add_argument("--md", default=os.path.join(
+        _root, "results", "bootstrap_ci.md"))
     ap.add_argument("--n-boot", type=int, default=N_BOOT_DEFAULT)
     ap.add_argument("--seed", type=int, default=20261012)
     args = ap.parse_args()

@@ -52,8 +52,9 @@ import sys
 
 # ---------------------------------------------------------------------------
 # 1. sources under src/  -- every .py/.sh in the project, listed by name.
-#    (28 files; the four most recent ones are run_seeds45.sh, run_decay_seeds.sh,
-#     sign_test_seeds.py and make_ci.py.)
+#    (25 files after the 2026-10-26 sync; the four most recent additions are
+#     make_fig_prisma.py, threshold_sensitivity.py, check_tau_variant.py and
+#     recheck_stability.py.)
 # ---------------------------------------------------------------------------
 # Minimal set: what is needed to (a) run the experiments and (b) regenerate
 # every table and figure in the manuscript -- and nothing else.
@@ -89,6 +90,16 @@ SRC_FILES = [
     "run_seeds45.sh",               # batch: seed expansion
     "sign_test_seeds.py",           # exact sign test over seeds
     "tune_hp.py",                   # Stage A tuning -> tuned_*.json
+    # --- sync 2026-10-26: whitelist had drifted behind git ---
+    "make_fig2_4.py",               # Figures 2-4
+    "make_fig_prisma.py",           # Figure S1 (PRISMA-style survey flow)
+    "threshold_sensitivity.py",     # threshold sweep, Section 6
+    "check_tau_variant.py",         # exhaustive tau-a / tau-b enumeration
+    # --- sync 2026-10-26: cited by the manuscript but absent from the tree ---
+    "censoring_analysis.py",        # Table 8; supplementary Section S3
+    "make_table_knob.py",           # supplementary Section S5 command block
+    "make_table_s1.py",             # supplementary Section S5 command block
+    "recheck_stability.py",         # Section 3.4 (58-study stability recheck)
 ]
 
 # ---------------------------------------------------------------------------
@@ -307,36 +318,36 @@ STAGE_B_TRACES = [
     "mnist_a0.05_uniform_def_s3.json",
     "mnist_a0.05_uniform_def_s4.json",
     "mnist_a0.05_uniform_def_s5.json",
-    "mnist_a0.1_fedadam_lr_s=0.01,tau=0.001_s0.json",
-    "mnist_a0.1_fedadam_lr_s=0.01,tau=0.001_s1.json",
-    "mnist_a0.1_fedadam_lr_s=0.01,tau=0.001_s2.json",
-    "mnist_a0.1_fedadam_lr_s=0.01,tau=0.001_s3.json",
-    "mnist_a0.1_fedadam_lr_s=0.01,tau=0.001_s4.json",
-    "mnist_a0.1_fedadam_lr_s=0.01,tau=0.001_s5.json",
+    "mnist_a0.1_fedadam_lr_s=0.03,tau=0.001_s0.json",
+    "mnist_a0.1_fedadam_lr_s=0.03,tau=0.001_s1.json",
+    "mnist_a0.1_fedadam_lr_s=0.03,tau=0.001_s2.json",
+    "mnist_a0.1_fedadam_lr_s=0.03,tau=0.001_s3.json",
+    "mnist_a0.1_fedadam_lr_s=0.03,tau=0.001_s4.json",
+    "mnist_a0.1_fedadam_lr_s=0.03,tau=0.001_s5.json",
     "mnist_a0.1_fedavg_def_s0.json",
     "mnist_a0.1_fedavg_def_s1.json",
     "mnist_a0.1_fedavg_def_s2.json",
     "mnist_a0.1_fedavg_def_s3.json",
     "mnist_a0.1_fedavg_def_s4.json",
     "mnist_a0.1_fedavg_def_s5.json",
-    "mnist_a0.1_fedavgm_beta=0.5,lr_s=1.0_s0.json",
-    "mnist_a0.1_fedavgm_beta=0.5,lr_s=1.0_s1.json",
-    "mnist_a0.1_fedavgm_beta=0.5,lr_s=1.0_s2.json",
-    "mnist_a0.1_fedavgm_beta=0.5,lr_s=1.0_s3.json",
-    "mnist_a0.1_fedavgm_beta=0.5,lr_s=1.0_s4.json",
-    "mnist_a0.1_fedavgm_beta=0.5,lr_s=1.0_s5.json",
+    "mnist_a0.1_fedavgm_beta=0.7,lr_s=1.0_s0.json",
+    "mnist_a0.1_fedavgm_beta=0.7,lr_s=1.0_s1.json",
+    "mnist_a0.1_fedavgm_beta=0.7,lr_s=1.0_s2.json",
+    "mnist_a0.1_fedavgm_beta=0.7,lr_s=1.0_s3.json",
+    "mnist_a0.1_fedavgm_beta=0.7,lr_s=1.0_s4.json",
+    "mnist_a0.1_fedavgm_beta=0.7,lr_s=1.0_s5.json",
     "mnist_a0.1_feddyn_fdyn_alpha=0.3_s0.json",
     "mnist_a0.1_feddyn_fdyn_alpha=0.3_s1.json",
     "mnist_a0.1_feddyn_fdyn_alpha=0.3_s2.json",
     "mnist_a0.1_feddyn_fdyn_alpha=0.3_s3.json",
     "mnist_a0.1_feddyn_fdyn_alpha=0.3_s4.json",
     "mnist_a0.1_feddyn_fdyn_alpha=0.3_s5.json",
-    "mnist_a0.1_fedproxw_rho=0.5_s0.json",
-    "mnist_a0.1_fedproxw_rho=0.5_s1.json",
-    "mnist_a0.1_fedproxw_rho=0.5_s2.json",
-    "mnist_a0.1_fedproxw_rho=0.5_s3.json",
-    "mnist_a0.1_fedproxw_rho=0.5_s4.json",
-    "mnist_a0.1_fedproxw_rho=0.5_s5.json",
+    "mnist_a0.1_fedproxw_rho=0.2_s0.json",
+    "mnist_a0.1_fedproxw_rho=0.2_s1.json",
+    "mnist_a0.1_fedproxw_rho=0.2_s2.json",
+    "mnist_a0.1_fedproxw_rho=0.2_s3.json",
+    "mnist_a0.1_fedproxw_rho=0.2_s4.json",
+    "mnist_a0.1_fedproxw_rho=0.2_s5.json",
     "mnist_a0.1_scaffold_def_s0.json",
     "mnist_a0.1_scaffold_def_s1.json",
     "mnist_a0.1_scaffold_def_s2.json",
@@ -452,6 +463,10 @@ REPORT_FILES = [
     "tuned_fashion_a0.1.json",
     "tuned_fashion_a0.3.json",
     "tuned_cifar10_a0.1.json",
+    # --- sync 2026-10-26 ---
+    "threshold_sensitivity.json",   # threshold sweep output
+    "_tau_variant_check.json",      # tau-a / tau-b enumeration output
+    "_censoring.json",              # censoring sensitivity output (S3)
 ]
 
 # ---------------------------------------------------------------------------
@@ -472,6 +487,11 @@ SURVEY_DOCS = [
     # Per-reference record of how each cited work was verified (arXiv /
     # Crossref resolution, or full-text inspection for the screened pool).
     ("results/survey/_refs_verification.md", "survey/refs_verification.md"),
+    # --- sync 2026-10-26 ---
+    ("results/survey/_tier_inclusion.json", "survey/_tier_inclusion.json"),
+    ("results/survey/_tier_inclusion_join.py", "survey/_tier_inclusion_join.py"),
+    ("results/survey/_candidates.md", "survey/_candidates.md"),
+    ("results/survey_stability_recheck.md", "survey/survey_stability_recheck.md"),
 ]
 
 # ---------------------------------------------------------------------------

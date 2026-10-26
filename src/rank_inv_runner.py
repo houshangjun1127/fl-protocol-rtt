@@ -41,7 +41,8 @@ import numpy as np
 import torch
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from data import load_dataset, dirichlet_partition, loader
+from data import (load_dataset, load_dataset_with_val, dirichlet_partition,
+                  loader)
 from models import build_model
 from fedcore import evaluate
 import methods as MS
@@ -121,8 +122,21 @@ def run_one(cfg):
     torch.manual_seed(cfg["seed"])
     np.random.seed(cfg["seed"])
 
-    train_ds, test_ds, ch, size = load_dataset(
-        cfg["dataset"], cfg["n_train"], cfg["n_test"], seed=cfg["seed"])
+    # R10 (second-round review). When n_val > 0 we additionally build a
+    # validation split and evaluate on it every round, recording `val_acc`
+    # alongside `acc`. The train/test subsamples are bit-identical to the
+    # published runs (asserted in data.load_dataset_with_val), so existing
+    # numbers are untouched and the extra key is purely additive.
+    n_val = int(cfg.get("n_val", 0) or 0)
+    if n_val > 0:
+        train_ds, val_ds, test_ds, ch, size = load_dataset_with_val(
+            cfg["dataset"], cfg.get("n_train", 10000), cfg.get("n_test", 2000),
+            n_val, seed=cfg["seed"])
+    else:
+        val_ds = None
+        train_ds, test_ds, ch, size = load_dataset(
+            cfg["dataset"], cfg.get("n_train", 10000), cfg.get("n_test", 2000),
+            seed=cfg["seed"])
     labels = np.array(train_ds.tensors[1])
     n_classes = int(labels.max()) + 1
     parts = dirichlet_partition(labels, cfg["n_clients"], cfg["alpha"],
@@ -197,8 +211,12 @@ def run_one(cfg):
         gmodel.load_state_dict(sd)
 
         acc, tl = evaluate(gmodel, test_ds)
-        trace.append({"round": rnd + 1, "acc": acc, "loss": tl,
-                      "local_loss": float(np.mean(lls))})
+        rec = {"round": rnd + 1, "acc": acc, "loss": tl,
+               "local_loss": float(np.mean(lls))}
+        if val_ds is not None:
+            vacc, _v = evaluate(gmodel, val_ds)
+            rec["val_acc"] = vacc
+        trace.append(rec)
 
     return {"cfg": cfg, "trace": trace, "wall": time.time() - t0}
 
