@@ -20,7 +20,7 @@ type: software
 version: v0.1-submission
 date-released: "2026-10-13"
 license: MIT
-repository-code: "https://github.com/<account>/fl-protocol-rtt"
+repository-code: "https://github.com/houshangjun1127/fl-protocol-rtt"
 authors:
   - family-names: "Hou"
     given-names: "Shangjun"
