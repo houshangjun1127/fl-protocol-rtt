@@ -97,7 +97,6 @@ SRC_FILES = [
     "check_tau_variant.py",         # exhaustive tau-a / tau-b enumeration
     # --- sync 2026-10-26: cited by the manuscript but absent from the tree ---
     "censoring_analysis.py",        # Table 8; supplementary Section S3
-    "make_table_knob.py",           # supplementary Section S5 command block
     "make_table_s1.py",             # supplementary Section S5 command block
     "recheck_stability.py",         # Section 3.4 (58-study stability recheck)
 ]
