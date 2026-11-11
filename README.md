@@ -212,8 +212,13 @@ against the shipped trace.
 These are stated rather than hidden; see `REPRODUCTION_LOG.md` for detail.
 
 * **Resolved — `survey/`** is now shipped: protocol, screening log, the
-  55-column extraction table for all 73 included studies, the summary
-  statistics behind Table 6, the BibTeX, and a per-reference verification log.
+  55-column extraction table, the summary statistics behind Table 6, the BibTeX,
+  and a per-reference verification log. The table has 73 rows: 58 studies that
+  met all five inclusion criteria (`pool = main`, the N₃ of Section 3.4) and 15
+  neighbouring constructions registered in the secondary pool
+  (`pool = secondary`). Only the 58 main-pool rows enter the counts in the
+  paper; the 15 are shipped so the boundary case is inspectable rather than
+  asserted.
 * **Resolved — `src/rtt_statistic_compare.py`** (first passage vs. 5-round vs.
   10-round mean) is shipped and reproduces Table 5.
 * **Resolved — seed counts.** `make_fig1.py` uses `SEEDS = [0,1,2,3,4,5]`.
