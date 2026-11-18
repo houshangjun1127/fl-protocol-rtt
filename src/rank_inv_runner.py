@@ -2,8 +2,8 @@
 
 DESIGN
 ------
-The observation that triggered this study (results/negative_results.md 3.5):
-on FashionMNIST a0.1, beta=0.5 reached 75% in 13 rounds and beta=0.9 in 15;
+The motivating observation: on FashionMNIST a0.1, beta=0.5 reached 75% in 13
+rounds and beta=0.9 in 15;
 but at 80% the order flipped to 26 vs 21. A single data point. Before claiming
 a construction defect in the metric we must rule out the cheap explanations:
 
@@ -122,7 +122,7 @@ def run_one(cfg):
     torch.manual_seed(cfg["seed"])
     np.random.seed(cfg["seed"])
 
-    # R10 (second-round review). When n_val > 0 we additionally build a
+    # Validation-split control. When n_val > 0 we additionally build a
     # validation split and evaluate on it every round, recording `val_acc`
     # alongside `acc`. The train/test subsamples are bit-identical to the
     # published runs (asserted in data.load_dataset_with_val), so existing

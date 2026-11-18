@@ -1,0 +1,39 @@
+{
+ "fedavgm": {
+  "hp": {
+   "beta": 0.9,
+   "lr_s": 1.0
+  },
+  "label": "beta=0.9,lr_s=1.0",
+  "late_acc": 0.959,
+  "peak_acc": 0.965,
+  "final_acc": 0.964,
+  "last10sd": 0.0028000000000000026,
+  "post_peak_drop": 0.10000000000000009,
+  "stable": true
+ },
+ "fedproxw": {
+  "hp": {
+   "rho": 0.5
+  },
+  "label": "rho=0.5",
+  "late_acc": 0.913,
+  "peak_acc": 0.913,
+  "final_acc": 0.912,
+  "last10sd": 0.0006403124237432854,
+  "post_peak_drop": 0.10000000000000009,
+  "stable": true
+ },
+ "feddyn": {
+  "hp": {
+   "fdyn_alpha": 0.1
+  },
+  "label": "fdyn_alpha=0.1",
+  "late_acc": 0.932,
+  "peak_acc": 0.946,
+  "final_acc": 0.932,
+  "last10sd": 0.0042999999999999644,
+  "post_peak_drop": 1.9999999999999907,
+  "stable": true
+ }
+}

@@ -1,0 +1,15 @@
+first passage vs sustained-3: 127/2157 = 5.9%
+first passage vs sustained-5: 172/2153 = 8.0%
+first passage vs sustained-10: 179/2144 = 8.3%
+
+Single-target selection loss (strict all-method/all-seed set):
+mnist|a0.05      changes=0/2970 changed-loss median=None max=None >2 rounds=0
+mnist|a0.1       changes=0/3540 changed-loss median=None max=None >2 rounds=0
+mnist|a0.3       changes=348/3660 changed-loss median=0.1667 max=6.5 >2 rounds=24
+fashion|a0.05    changes=0/1640 changed-loss median=None max=None >2 rounds=0
+fashion|a0.1     changes=82/1722 changed-loss median=0.1667 max=5.3333 >2 rounds=9
+fashion|a0.3     changes=334/1980 changed-loss median=0.1667 max=9.3333 >2 rounds=16
+cifar10|a0.1     changes=0/12 changed-loss median=None max=None >2 rounds=0
+_pooled          changes=764/15524 changed-loss median=0.1667 max=9.3333 >2 rounds=49
+
+wrote D:\WorkBuddy\fl-fedpc\results\protocol_sensitivity_extended.json

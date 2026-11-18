@@ -438,46 +438,46 @@
     },
     "fedavgm": {
      "first": {
-      "mean_rtt": 11.33,
+      "mean_rtt": 10,
       "n_reach": 6,
       "n_seeds": 6,
       "per_seed": [
-       8,
-       11,
-       11,
+       7,
+       10,
+       10,
        13,
-       11,
-       14
+       9,
+       11
       ],
-      "mean_rank": 1.33
+      "mean_rank": 2.17
      },
      "ma5": {
-      "mean_rtt": 14,
+      "mean_rtt": 12.33,
       "n_reach": 6,
       "n_seeds": 6,
       "per_seed": [
        10,
-       14,
-       14,
-       17,
-       13,
-       16
+       12,
+       12,
+       15,
+       12,
+       13
       ],
-      "mean_rank": 1.17
+      "mean_rank": 2
      },
      "ma10": {
-      "mean_rtt": 17.17,
+      "mean_rtt": 15.5,
       "n_reach": 6,
       "n_seeds": 6,
       "per_seed": [
-       14,
-       17,
-       16,
-       20,
-       17,
-       19
+       13,
+       15,
+       15,
+       18,
+       15,
+       17
       ],
-      "mean_rank": 1.17
+      "mean_rank": 2
      }
     },
     "feddyn": {
@@ -493,7 +493,7 @@
        11,
        13
       ],
-      "mean_rank": 2
+      "mean_rank": 3.17
      },
      "ma5": {
       "mean_rtt": 18.5,
@@ -507,7 +507,7 @@
        14,
        31
       ],
-      "mean_rank": 2.67
+      "mean_rank": 3.33
      },
      "ma10": {
       "mean_rtt": 22.33,
@@ -521,7 +521,7 @@
        17,
        35
       ],
-      "mean_rank": 2.83
+      "mean_rank": 3.33
      }
     },
     "scaffold": {
@@ -537,7 +537,7 @@
        14,
        10
       ],
-      "mean_rank": 3.17
+      "mean_rank": 3.67
      },
      "ma5": {
       "mean_rtt": 17.83,
@@ -551,7 +551,7 @@
        18,
        14
       ],
-      "mean_rank": 3
+      "mean_rank": 3.67
      },
      "ma10": {
       "mean_rtt": 21.17,
@@ -565,95 +565,95 @@
        21,
        17
       ],
-      "mean_rank": 3.33
+      "mean_rank": 3.67
      }
     },
     "fedproxw": {
      "first": {
-      "mean_rtt": 30,
+      "mean_rtt": 28.2,
       "n_reach": 5,
       "n_seeds": 6,
       "per_seed": [
-       14,
-       34,
-       36,
+       13,
+       32,
+       32,
        null,
-       33,
+       31,
        33
       ],
       "mean_rank": 5.83
      },
      "ma5": {
-      "mean_rtt": 32,
+      "mean_rtt": 31.6,
       "n_reach": 5,
       "n_seeds": 6,
       "per_seed": [
        15,
-       37,
-       38,
+       36,
+       39,
        null,
-       35,
-       35
+       32,
+       36
       ],
       "mean_rank": 5.83
      },
      "ma10": {
-      "mean_rtt": 35,
+      "mean_rtt": 34.2,
       "n_reach": 5,
       "n_seeds": 6,
       "per_seed": [
        18,
-       41,
-       40,
-       null,
        38,
-       38
+       41,
+       null,
+       35,
+       39
       ],
       "mean_rank": 5.83
      }
     },
     "fedadam": {
      "first": {
-      "mean_rtt": 15.83,
+      "mean_rtt": 8.17,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       6,
+       9,
+       9,
+       10,
+       7,
+       8
+      ],
+      "mean_rank": 1
+     },
+     "ma5": {
+      "mean_rtt": 10.17,
+      "n_reach": 6,
+      "n_seeds": 6,
+      "per_seed": [
+       9,
+       11,
+       10,
+       11,
+       9,
+       11
+      ],
+      "mean_rank": 1
+     },
+     "ma10": {
+      "mean_rtt": 13.5,
       "n_reach": 6,
       "n_seeds": 6,
       "per_seed": [
        12,
-       17,
-       17,
-       20,
+       14,
+       14,
+       14,
        13,
-       16
+       14
       ],
-      "mean_rank": 3.5
-     },
-     "ma5": {
-      "mean_rtt": 17.5,
-      "n_reach": 6,
-      "n_seeds": 6,
-      "per_seed": [
-       13,
-       19,
-       18,
-       22,
-       15,
-       18
-      ],
-      "mean_rank": 3.17
-     },
-     "ma10": {
-      "mean_rtt": 20.5,
-      "n_reach": 6,
-      "n_seeds": 6,
-      "per_seed": [
-       16,
-       22,
-       20,
-       25,
-       18,
-       22
-      ],
-      "mean_rank": 2.67
+      "mean_rank": 1
      }
     },
     "uniform": {
@@ -718,40 +718,37 @@
     "0.90": 0.881
    },
    "winner_first_per_seed": {
-    "0": "fedavgm",
-    "1": "fedavgm",
-    "2": "fedavgm",
-    "3": "fedavgm",
-    "4": "fedavgm",
-    "5": "scaffold"
+    "0": "fedadam",
+    "1": "fedadam",
+    "2": "fedadam",
+    "3": "fedadam",
+    "4": "fedadam",
+    "5": "fedadam"
    },
    "winner_first": {
-    "fedavgm": 5,
-    "scaffold": 1
+    "fedadam": 6
    },
    "winner_ma5_per_seed": {
-    "0": "fedavgm",
-    "1": "fedavgm",
-    "2": "fedavgm",
-    "3": "fedavgm",
-    "4": "fedavgm",
-    "5": "scaffold"
+    "0": "fedadam",
+    "1": "fedadam",
+    "2": "fedadam",
+    "3": "fedadam",
+    "4": "fedadam",
+    "5": "fedadam"
    },
    "winner_ma5": {
-    "fedavgm": 5,
-    "scaffold": 1
+    "fedadam": 6
    },
    "winner_ma10_per_seed": {
-    "0": "fedavgm",
-    "1": "fedavgm",
-    "2": "fedavgm",
-    "3": "fedavgm",
-    "4": "fedavgm",
-    "5": "scaffold"
+    "0": "fedadam",
+    "1": "fedadam",
+    "2": "fedadam",
+    "3": "fedadam",
+    "4": "fedadam",
+    "5": "fedadam"
    },
    "winner_ma10": {
-    "fedavgm": 5,
-    "scaffold": 1
+    "fedadam": 6
    }
   },
   "mnist|a0.3": {
@@ -2618,9 +2615,9 @@
     },
     "mnist|a0.1": {
      "units": 366,
-     "winner_flips": 170,
-     "pairs": 1321,
-     "pair_flips": 14
+     "winner_flips": 14,
+     "pairs": 1688,
+     "pair_flips": 7
     },
     "mnist|a0.3": {
      "units": 366,
@@ -2654,11 +2651,11 @@
     }
    },
    "units": 2159,
-   "winner_flips": 366,
-   "winner_flip_rate": 0.1695,
-   "pairs": 10406,
-   "pair_flips": 214,
-   "pair_flip_rate": 0.0206
+   "winner_flips": 210,
+   "winner_flip_rate": 0.0973,
+   "pairs": 10773,
+   "pair_flips": 207,
+   "pair_flip_rate": 0.0192
   },
   "first_vs_ma10": {
    "per_cell": {
@@ -2670,9 +2667,9 @@
     },
     "mnist|a0.1": {
      "units": 366,
-     "winner_flips": 221,
-     "pairs": 1162,
-     "pair_flips": 9
+     "winner_flips": 14,
+     "pairs": 1421,
+     "pair_flips": 2
     },
     "mnist|a0.3": {
      "units": 366,
@@ -2706,11 +2703,11 @@
     }
    },
    "units": 2153,
-   "winner_flips": 423,
-   "winner_flip_rate": 0.1965,
-   "pairs": 8905,
-   "pair_flips": 200,
-   "pair_flip_rate": 0.0225
+   "winner_flips": 216,
+   "winner_flip_rate": 0.1003,
+   "pairs": 9164,
+   "pair_flips": 193,
+   "pair_flip_rate": 0.0211
   },
   "ma5_vs_ma10": {
    "per_cell": {
@@ -2722,8 +2719,8 @@
     },
     "mnist|a0.1": {
      "units": 366,
-     "winner_flips": 129,
-     "pairs": 1159,
+     "winner_flips": 0,
+     "pairs": 1435,
      "pair_flips": 0
     },
     "mnist|a0.3": {
@@ -2758,11 +2755,11 @@
     }
    },
    "units": 2153,
-   "winner_flips": 203,
-   "winner_flip_rate": 0.0943,
-   "pairs": 9626,
+   "winner_flips": 74,
+   "winner_flip_rate": 0.0344,
+   "pairs": 9902,
    "pair_flips": 30,
-   "pair_flip_rate": 0.0031
+   "pair_flip_rate": 0.003
   }
  },
  "spike_premium": {
@@ -2884,13 +2881,13 @@
    "fedavgm": {
     "ma5_minus_first": {
      "median": 3.0,
-     "mean": 2.6,
+     "mean": 2.57,
      "max": 4,
      "n": 366
     },
     "ma10_minus_first": {
      "median": 7.0,
-     "mean": 6.93,
+     "mean": 6.89,
      "max": 9,
      "n": 366
     }
@@ -2926,27 +2923,27 @@
    "fedproxw": {
     "ma5_minus_first": {
      "median": 3,
-     "mean": 2.62,
-     "max": 6,
+     "mean": 2.64,
+     "max": 7,
      "n": 365
     },
     "ma10_minus_first": {
      "median": 7,
-     "mean": 6.73,
+     "mean": 6.81,
      "max": 9,
      "n": 365
     }
    },
    "fedadam": {
     "ma5_minus_first": {
-     "median": 2.0,
-     "mean": 2.37,
-     "max": 7,
+     "median": 3.0,
+     "mean": 2.81,
+     "max": 4,
      "n": 366
     },
     "ma10_minus_first": {
-     "median": 6.0,
-     "mean": 6.34,
+     "median": 7.0,
+     "mean": 7.35,
      "max": 9,
      "n": 366
     }

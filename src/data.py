@@ -87,9 +87,9 @@ def load_dataset(name, n_train=10000, n_test=2000, seed=0):
 def load_dataset_with_val(name, n_train=10000, n_test=2000, n_val=1000, seed=0):
     """`load_dataset` plus a disjoint validation split for Stage A selection.
 
-    Added for the second-round review response (task R10). The original Stage A
-    selected hyperparameters on the *test* split, which the reviewer flagged as
-    the test set participating in tuning. To measure how much that matters we
+    Validation-split variant of the Stage A sweep. The original Stage A
+    selected hyperparameters on the *test* split, so the test set participates
+    in tuning. To measure how much that matters we
     need a split that is NOT the test split, while leaving everything else in
     the published runs bit-identical.
 

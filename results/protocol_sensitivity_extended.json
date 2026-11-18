@@ -1,0 +1,791 @@
+{
+ "source": "294 released Stage-B traces; no training",
+ "target_grid": [
+  0.3,
+  0.9,
+  0.01
+ ],
+ "near_tie_rounds": 2,
+ "sustained": {
+  "k3": {
+   "units": 2157,
+   "winner_flips": 127,
+   "rate": 0.0589,
+   "pairs": 13033,
+   "pair_flips": 283,
+   "pair_rate": 0.0217,
+   "per_cell": {
+    "mnist|a0.05": {
+     "units": 366,
+     "winner_flips": 13,
+     "rate": 0.0355,
+     "pairs": 3387,
+     "pair_flips": 35
+    },
+    "mnist|a0.1": {
+     "units": 366,
+     "winner_flips": 3,
+     "rate": 0.0082,
+     "pairs": 2265,
+     "pair_flips": 15
+    },
+    "mnist|a0.3": {
+     "units": 366,
+     "winner_flips": 2,
+     "rate": 0.0055,
+     "pairs": 829,
+     "pair_flips": 0
+    },
+    "fashion|a0.05": {
+     "units": 318,
+     "winner_flips": 40,
+     "rate": 0.1258,
+     "pairs": 2654,
+     "pair_flips": 110
+    },
+    "fashion|a0.1": {
+     "units": 303,
+     "winner_flips": 41,
+     "rate": 0.1353,
+     "pairs": 1897,
+     "pair_flips": 82
+    },
+    "fashion|a0.3": {
+     "units": 332,
+     "winner_flips": 6,
+     "rate": 0.0181,
+     "pairs": 1262,
+     "pair_flips": 21
+    },
+    "cifar10|a0.1": {
+     "units": 106,
+     "winner_flips": 22,
+     "rate": 0.2075,
+     "pairs": 739,
+     "pair_flips": 20
+    }
+   }
+  },
+  "k5": {
+   "units": 2153,
+   "winner_flips": 172,
+   "rate": 0.0799,
+   "pairs": 12762,
+   "pair_flips": 435,
+   "pair_rate": 0.0341,
+   "per_cell": {
+    "mnist|a0.05": {
+     "units": 366,
+     "winner_flips": 20,
+     "rate": 0.0546,
+     "pairs": 3372,
+     "pair_flips": 96
+    },
+    "mnist|a0.1": {
+     "units": 366,
+     "winner_flips": 3,
+     "rate": 0.0082,
+     "pairs": 2248,
+     "pair_flips": 23
+    },
+    "mnist|a0.3": {
+     "units": 366,
+     "winner_flips": 2,
+     "rate": 0.0055,
+     "pairs": 829,
+     "pair_flips": 1
+    },
+    "fashion|a0.05": {
+     "units": 317,
+     "winner_flips": 46,
+     "rate": 0.1451,
+     "pairs": 2570,
+     "pair_flips": 128
+    },
+    "fashion|a0.1": {
+     "units": 303,
+     "winner_flips": 58,
+     "rate": 0.1914,
+     "pairs": 1842,
+     "pair_flips": 133
+    },
+    "fashion|a0.3": {
+     "units": 330,
+     "winner_flips": 7,
+     "rate": 0.0212,
+     "pairs": 1234,
+     "pair_flips": 20
+    },
+    "cifar10|a0.1": {
+     "units": 105,
+     "winner_flips": 36,
+     "rate": 0.3429,
+     "pairs": 667,
+     "pair_flips": 34
+    }
+   }
+  },
+  "k10": {
+   "units": 2144,
+   "winner_flips": 179,
+   "rate": 0.0835,
+   "pairs": 12332,
+   "pair_flips": 497,
+   "pair_rate": 0.0403,
+   "per_cell": {
+    "mnist|a0.05": {
+     "units": 366,
+     "winner_flips": 20,
+     "rate": 0.0546,
+     "pairs": 3317,
+     "pair_flips": 130
+    },
+    "mnist|a0.1": {
+     "units": 366,
+     "winner_flips": 3,
+     "rate": 0.0082,
+     "pairs": 2236,
+     "pair_flips": 30
+    },
+    "mnist|a0.3": {
+     "units": 366,
+     "winner_flips": 2,
+     "rate": 0.0055,
+     "pairs": 829,
+     "pair_flips": 1
+    },
+    "fashion|a0.05": {
+     "units": 312,
+     "winner_flips": 50,
+     "rate": 0.1603,
+     "pairs": 2455,
+     "pair_flips": 159
+    },
+    "fashion|a0.1": {
+     "units": 302,
+     "winner_flips": 59,
+     "rate": 0.1954,
+     "pairs": 1733,
+     "pair_flips": 129
+    },
+    "fashion|a0.3": {
+     "units": 328,
+     "winner_flips": 7,
+     "rate": 0.0213,
+     "pairs": 1190,
+     "pair_flips": 24
+    },
+    "cifar10|a0.1": {
+     "units": 104,
+     "winner_flips": 38,
+     "rate": 0.3654,
+     "pairs": 572,
+     "pair_flips": 24
+    }
+   }
+  }
+ },
+ "selection_loss": {
+  "mnist|a0.05": {
+   "eligible_targets": [
+    0.3,
+    0.31,
+    0.32,
+    0.33,
+    0.34,
+    0.35,
+    0.36,
+    0.37,
+    0.38,
+    0.39,
+    0.4,
+    0.41,
+    0.42,
+    0.43,
+    0.44,
+    0.45,
+    0.46,
+    0.47,
+    0.48,
+    0.49,
+    0.5,
+    0.51,
+    0.52,
+    0.53,
+    0.54,
+    0.55,
+    0.56,
+    0.57,
+    0.58,
+    0.59,
+    0.6,
+    0.61,
+    0.62,
+    0.63,
+    0.64,
+    0.65,
+    0.66,
+    0.67,
+    0.68,
+    0.69,
+    0.7,
+    0.71,
+    0.72,
+    0.73,
+    0.74,
+    0.75,
+    0.76,
+    0.77,
+    0.78,
+    0.79,
+    0.8,
+    0.81,
+    0.82,
+    0.83,
+    0.84
+   ],
+   "n_ordered_target_pairs": 2970,
+   "n_selection_changes": 0,
+   "all_ordered_pairs": {
+    "n": 2970,
+    "median": 0.0,
+    "p95": 0.0,
+    "max": 0.0,
+    "mean": 0.0
+   },
+   "changed_selections": {
+    "n": 0,
+    "median": null,
+    "p95": null,
+    "max": null
+   },
+   "changes_with_loss_gt_2": 0,
+   "largest_examples": []
+  },
+  "mnist|a0.1": {
+   "eligible_targets": [
+    0.3,
+    0.31,
+    0.32,
+    0.33,
+    0.34,
+    0.35,
+    0.36,
+    0.37,
+    0.38,
+    0.39,
+    0.4,
+    0.41,
+    0.42,
+    0.43,
+    0.44,
+    0.45,
+    0.46,
+    0.47,
+    0.48,
+    0.49,
+    0.5,
+    0.51,
+    0.52,
+    0.53,
+    0.54,
+    0.55,
+    0.56,
+    0.57,
+    0.58,
+    0.59,
+    0.6,
+    0.61,
+    0.62,
+    0.63,
+    0.64,
+    0.65,
+    0.66,
+    0.67,
+    0.68,
+    0.69,
+    0.7,
+    0.71,
+    0.72,
+    0.73,
+    0.74,
+    0.75,
+    0.76,
+    0.77,
+    0.78,
+    0.79,
+    0.8,
+    0.81,
+    0.82,
+    0.83,
+    0.84,
+    0.85,
+    0.86,
+    0.87,
+    0.88,
+    0.89
+   ],
+   "n_ordered_target_pairs": 3540,
+   "n_selection_changes": 0,
+   "all_ordered_pairs": {
+    "n": 3540,
+    "median": 0.0,
+    "p95": 0.0,
+    "max": 0.0,
+    "mean": 0.0
+   },
+   "changed_selections": {
+    "n": 0,
+    "median": null,
+    "p95": null,
+    "max": null
+   },
+   "changes_with_loss_gt_2": 0,
+   "largest_examples": []
+  },
+  "mnist|a0.3": {
+   "eligible_targets": [
+    0.3,
+    0.31,
+    0.32,
+    0.33,
+    0.34,
+    0.35,
+    0.36,
+    0.37,
+    0.38,
+    0.39,
+    0.4,
+    0.41,
+    0.42,
+    0.43,
+    0.44,
+    0.45,
+    0.46,
+    0.47,
+    0.48,
+    0.49,
+    0.5,
+    0.51,
+    0.52,
+    0.53,
+    0.54,
+    0.55,
+    0.56,
+    0.57,
+    0.58,
+    0.59,
+    0.6,
+    0.61,
+    0.62,
+    0.63,
+    0.64,
+    0.65,
+    0.66,
+    0.67,
+    0.68,
+    0.69,
+    0.7,
+    0.71,
+    0.72,
+    0.73,
+    0.74,
+    0.75,
+    0.76,
+    0.77,
+    0.78,
+    0.79,
+    0.8,
+    0.81,
+    0.82,
+    0.83,
+    0.84,
+    0.85,
+    0.86,
+    0.87,
+    0.88,
+    0.89,
+    0.9
+   ],
+   "n_ordered_target_pairs": 3660,
+   "n_selection_changes": 348,
+   "all_ordered_pairs": {
+    "n": 3660,
+    "median": 0.0,
+    "p95": 0.1667,
+    "max": 6.5,
+    "mean": 0.0501
+   },
+   "changed_selections": {
+    "n": 348,
+    "median": 0.1667,
+    "p95": 2.5,
+    "max": 6.5,
+    "mean": 0.5273
+   },
+   "changes_with_loss_gt_2": 24,
+   "largest_examples": [
+    {
+     "reference": 0.54,
+     "evaluation": 0.9,
+     "selected": "fedavg",
+     "best": "fedadam",
+     "reference_margin_rounds": 0.0,
+     "loss_rounds": 6.5
+    },
+    {
+     "reference": 0.55,
+     "evaluation": 0.9,
+     "selected": "fedavg",
+     "best": "fedadam",
+     "reference_margin_rounds": 0.0,
+     "loss_rounds": 6.5
+    },
+    {
+     "reference": 0.56,
+     "evaluation": 0.9,
+     "selected": "fedavg",
+     "best": "fedadam",
+     "reference_margin_rounds": 0.0,
+     "loss_rounds": 6.5
+    },
+    {
+     "reference": 0.54,
+     "evaluation": 0.89,
+     "selected": "fedavg",
+     "best": "fedadam",
+     "reference_margin_rounds": 0.0,
+     "loss_rounds": 5.0
+    },
+    {
+     "reference": 0.55,
+     "evaluation": 0.89,
+     "selected": "fedavg",
+     "best": "fedadam",
+     "reference_margin_rounds": 0.0,
+     "loss_rounds": 5.0
+    }
+   ]
+  },
+  "fashion|a0.05": {
+   "eligible_targets": [
+    0.3,
+    0.31,
+    0.32,
+    0.33,
+    0.34,
+    0.35,
+    0.36,
+    0.37,
+    0.38,
+    0.39,
+    0.4,
+    0.41,
+    0.42,
+    0.43,
+    0.44,
+    0.45,
+    0.46,
+    0.47,
+    0.48,
+    0.49,
+    0.5,
+    0.51,
+    0.52,
+    0.53,
+    0.54,
+    0.55,
+    0.56,
+    0.57,
+    0.58,
+    0.59,
+    0.6,
+    0.61,
+    0.62,
+    0.63,
+    0.64,
+    0.65,
+    0.66,
+    0.67,
+    0.68,
+    0.69,
+    0.7
+   ],
+   "n_ordered_target_pairs": 1640,
+   "n_selection_changes": 0,
+   "all_ordered_pairs": {
+    "n": 1640,
+    "median": 0.0,
+    "p95": 0.0,
+    "max": 0.0,
+    "mean": 0.0
+   },
+   "changed_selections": {
+    "n": 0,
+    "median": null,
+    "p95": null,
+    "max": null
+   },
+   "changes_with_loss_gt_2": 0,
+   "largest_examples": []
+  },
+  "fashion|a0.1": {
+   "eligible_targets": [
+    0.3,
+    0.31,
+    0.32,
+    0.33,
+    0.34,
+    0.35,
+    0.36,
+    0.37,
+    0.38,
+    0.39,
+    0.4,
+    0.41,
+    0.42,
+    0.43,
+    0.44,
+    0.45,
+    0.46,
+    0.47,
+    0.48,
+    0.49,
+    0.5,
+    0.51,
+    0.52,
+    0.53,
+    0.54,
+    0.55,
+    0.56,
+    0.57,
+    0.58,
+    0.59,
+    0.6,
+    0.61,
+    0.62,
+    0.63,
+    0.64,
+    0.65,
+    0.66,
+    0.67,
+    0.68,
+    0.69,
+    0.7,
+    0.71
+   ],
+   "n_ordered_target_pairs": 1722,
+   "n_selection_changes": 82,
+   "all_ordered_pairs": {
+    "n": 1722,
+    "median": 0.0,
+    "p95": 0.0,
+    "max": 5.3333,
+    "mean": 0.0304
+   },
+   "changed_selections": {
+    "n": 82,
+    "median": 0.1667,
+    "p95": 3.1667,
+    "max": 5.3333,
+    "mean": 0.6382
+   },
+   "changes_with_loss_gt_2": 9,
+   "largest_examples": [
+    {
+     "reference": 0.3,
+     "evaluation": 0.71,
+     "selected": "scaffold",
+     "best": "fedadam",
+     "reference_margin_rounds": 0.1667,
+     "loss_rounds": 5.3333
+    },
+    {
+     "reference": 0.3,
+     "evaluation": 0.7,
+     "selected": "scaffold",
+     "best": "fedadam",
+     "reference_margin_rounds": 0.1667,
+     "loss_rounds": 4.5
+    },
+    {
+     "reference": 0.3,
+     "evaluation": 0.69,
+     "selected": "scaffold",
+     "best": "fedadam",
+     "reference_margin_rounds": 0.1667,
+     "loss_rounds": 3.5
+    },
+    {
+     "reference": 0.3,
+     "evaluation": 0.67,
+     "selected": "scaffold",
+     "best": "fedadam",
+     "reference_margin_rounds": 0.1667,
+     "loss_rounds": 3.3333
+    },
+    {
+     "reference": 0.3,
+     "evaluation": 0.66,
+     "selected": "scaffold",
+     "best": "fedadam",
+     "reference_margin_rounds": 0.1667,
+     "loss_rounds": 3.1667
+    }
+   ]
+  },
+  "fashion|a0.3": {
+   "eligible_targets": [
+    0.3,
+    0.31,
+    0.32,
+    0.33,
+    0.34,
+    0.35,
+    0.36,
+    0.37,
+    0.38,
+    0.39,
+    0.4,
+    0.41,
+    0.42,
+    0.43,
+    0.44,
+    0.45,
+    0.46,
+    0.47,
+    0.48,
+    0.49,
+    0.5,
+    0.51,
+    0.52,
+    0.53,
+    0.54,
+    0.55,
+    0.56,
+    0.57,
+    0.58,
+    0.59,
+    0.6,
+    0.61,
+    0.62,
+    0.63,
+    0.64,
+    0.65,
+    0.66,
+    0.67,
+    0.68,
+    0.69,
+    0.7,
+    0.71,
+    0.72,
+    0.73,
+    0.74
+   ],
+   "n_ordered_target_pairs": 1980,
+   "n_selection_changes": 334,
+   "all_ordered_pairs": {
+    "n": 1980,
+    "median": 0.0,
+    "p95": 0.3333,
+    "max": 9.3333,
+    "mean": 0.1028
+   },
+   "changed_selections": {
+    "n": 334,
+    "median": 0.1667,
+    "p95": 2.0,
+    "max": 9.3333,
+    "mean": 0.6093
+   },
+   "changes_with_loss_gt_2": 16,
+   "largest_examples": [
+    {
+     "reference": 0.3,
+     "evaluation": 0.74,
+     "selected": "fedproxw",
+     "best": "fedadam",
+     "reference_margin_rounds": 0.1667,
+     "loss_rounds": 9.3333
+    },
+    {
+     "reference": 0.31,
+     "evaluation": 0.74,
+     "selected": "fedproxw",
+     "best": "fedadam",
+     "reference_margin_rounds": 0.1667,
+     "loss_rounds": 9.3333
+    },
+    {
+     "reference": 0.68,
+     "evaluation": 0.74,
+     "selected": "fedproxw",
+     "best": "fedadam",
+     "reference_margin_rounds": 0.1667,
+     "loss_rounds": 9.3333
+    },
+    {
+     "reference": 0.67,
+     "evaluation": 0.74,
+     "selected": "fedavg",
+     "best": "fedadam",
+     "reference_margin_rounds": 0.0,
+     "loss_rounds": 8.3333
+    },
+    {
+     "reference": 0.3,
+     "evaluation": 0.73,
+     "selected": "fedproxw",
+     "best": "fedadam",
+     "reference_margin_rounds": 0.1667,
+     "loss_rounds": 6.3333
+    }
+   ]
+  },
+  "cifar10|a0.1": {
+   "eligible_targets": [
+    0.3,
+    0.31,
+    0.32,
+    0.33
+   ],
+   "n_ordered_target_pairs": 12,
+   "n_selection_changes": 0,
+   "all_ordered_pairs": {
+    "n": 12,
+    "median": 0.0,
+    "p95": 0.0,
+    "max": 0.0,
+    "mean": 0.0
+   },
+   "changed_selections": {
+    "n": 0,
+    "median": null,
+    "p95": null,
+    "max": null
+   },
+   "changes_with_loss_gt_2": 0,
+   "largest_examples": []
+  },
+  "_pooled": {
+   "n_ordered_target_pairs": 15524,
+   "n_selection_changes": 764,
+   "all_ordered_pairs": {
+    "n": 15524,
+    "median": 0.0,
+    "p95": 0.0,
+    "max": 9.3333,
+    "mean": 0.0283
+   },
+   "changed_selections": {
+    "n": 764,
+    "median": 0.1667,
+    "p95": 2.5,
+    "max": 9.3333,
+    "mean": 0.575
+   },
+   "changes_with_loss_gt_2": 49
+  }
+ },
+ "selection_loss_definition": "Ordered target pairs within each cell; all seven methods reach on all six seeds at both targets. Select by six-seed mean RTT at the reference target; loss is additional mean rounds at the evaluation target relative to its best method."
+}

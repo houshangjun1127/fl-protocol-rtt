@@ -1,0 +1,34 @@
+{
+ "scaffold|decay0.90": {
+  "lr": 0.1,
+  "label": "lr=0.1",
+  "late_acc": 0.955,
+  "peak_acc": 0.9555,
+  "final_acc": 0.9555,
+  "stable": true
+ },
+ "scaffold|decay1.00": {
+  "lr": 0.025,
+  "label": "lr=0.025",
+  "late_acc": 0.9615,
+  "peak_acc": 0.9655,
+  "final_acc": 0.9655,
+  "stable": true
+ },
+ "fedavg|decay0.90": {
+  "lr": 0.1,
+  "label": "lr=0.1",
+  "late_acc": 0.9575,
+  "peak_acc": 0.959,
+  "final_acc": 0.959,
+  "stable": true
+ },
+ "fedavg|decay1.00": {
+  "lr": 0.1,
+  "label": "lr=0.1",
+  "late_acc": 0.964,
+  "peak_acc": 0.9715,
+  "final_acc": 0.968,
+  "stable": true
+ }
+}

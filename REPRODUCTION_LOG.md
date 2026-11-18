@@ -79,3 +79,23 @@ in `results/rank_inv/`, so no retraining is required to regenerate the numbers.
 - The archived traces were produced with torch 2.14.1 in the development
   environment; the smoke run used the same version. Reproducibility across
   torch versions has **not** been tested.
+
+## v0.2 addendum (2026-11-18)
+
+v0.2 adds the protocol-control traces and extended analyses behind the
+manuscript: the validation-split control (`results/valretune/`), the same-grid
+re-selection control (`results/stageAfix/`), the per-decay retune control
+(`results/decayretune/`), the sustained-k and selection-loss summary
+(`results/protocol_sensitivity_extended.json`), the checklist re-score
+(`survey/checklist_rescore.json`), and the scripts that produce them.
+
+Two derived artefacts were corrected in the process:
+
+- `results/rtt_stat_compare.json` as committed in v0.1 was a stale output of an
+  earlier code state. Regenerating it from the shipped code and shipped traces
+  reproduces the values quoted in the manuscript's Table 5; v0.2 ships the
+  regenerated file. The discrepancy affected only this derived artefact, not
+  any trace.
+- Internal task-numbering labels that had leaked into comments and docstrings
+  were rewritten as neutral descriptions of the controls. Comment-only change;
+  no functional code change.

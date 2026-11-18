@@ -17,8 +17,8 @@ abstract: >-
   reporting-practice survey of 58 studies, and one command per table and
   figure.
 type: software
-version: v0.1-submission
-date-released: "2026-10-13"
+version: v0.2-submission
+date-released: "2026-11-18"
 license: MIT
 repository-code: "https://github.com/houshangjun1127/fl-protocol-rtt"
 authors:
@@ -45,5 +45,4 @@ preferred-citation:
       given-names: "Shangjun"
   year: 2026
   # journal and DOI to be filled in on acceptance
-  # journal: "Tsinghua Science and Technology"
   # doi: "10.xxxx/xxxxx"

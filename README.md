@@ -18,9 +18,14 @@ Rounds-to-Target Rankings in Federated Learning"*.
   *every* communication round
 * **1 schedule probe** — the same two methods re-run at lr_decay ∈
   {0.90, 0.95, 0.98, 1.00} on MNIST and CIFAR-10, 6 seeds (12 result files)
+* **3 protocol controls** (MNIST α = 0.1) — Stage A re-selected on a disjoint
+  validation split with the changed methods re-run (`results/valretune/`), an
+  alternative same-grid Stage-A re-selection re-run (`results/stageAfix/`),
+  and a per-decay learning-rate retune of the schedule probe
+  (`results/decayretune/`)
 
 Nothing in the paper's tables or figures requires new training: every number is
-recomputed from the stored traces.
+recomputed from the stored traces, including the control traces above.
 
 ---
 
@@ -120,8 +125,7 @@ command line — they are injected from `results/rank_inv/tuned_<ds>_a<alpha>.js
 (Stage-A tuning records), which is what produced the tags such as
 `mnist_a0.1_fedadam_lr_s=0.01,tau=0.001_s0`.
 
-Equivalent queue scripts: `src/run_seeds45.sh` (seeds 4–5),
-`src/run_planB_resume.sh` (CIFAR-10 at lr_decay 0.9).
+Equivalent queue script: `src/run_seeds45.sh` (seeds 4–5).
 
 ### R2 — the schedule (decay) probe
 
@@ -135,6 +139,30 @@ done
 
 Replace `mnist`→`cifar10` and `_decay_mnist_s`→`_decay_cifar_s` for CIFAR-10.
 Queue script: `src/run_decay_seeds.sh`.
+
+### R3 — protocol controls (retraining; v0.2)
+
+Three controls retrain small subsets of the grid. Their traces ship with the
+repository, so the analysis-only commands in the next section work without
+re-running them. Defaults target MNIST α = 0.1, the cell the controls are
+defined on.
+
+```bash
+# Validation-split control (Section 6): Stage A re-scored on a disjoint
+# validation split, then the methods whose selection changed are re-run
+# for all six seeds (≈18 Stage-B runs).
+python src/tune_hp_val.py
+python src/run_valretune_stageB.py
+
+# Same-grid re-selection control (Section 5): re-run the three methods whose
+# stored Stage A selection differs from the documented rule's full-grid argmax
+# (≈18 Stage-B runs).
+python src/run_stageAfix_stageB.py
+
+# Per-decay retune control (Section 3.2): re-tune the learning rate under
+# each decay, then re-run the six seeds at each (method, decay).
+python src/decay_retune.py
+```
 
 ### Analysis — one command per table / figure
 
@@ -154,6 +182,11 @@ Queue script: `src/run_decay_seeds.sh`.
 | **Bootstrap CIs + full distribution** | `python src/make_ci.py --dir results/rank_inv --out results/rank_inv/bootstrap_ci.json --md results/bootstrap_ci.md --n-boot 10000 --seed 20261012` |
 | **Exact sign test over seeds** | `python src/sign_test_seeds.py --dir results/rank_inv --out results/rank_inv/sign_test_seeds.json --tau 2 --target-lo 0.30 --target-hi 0.95 --target-step 0.01 --vol-max 0.01 --drop-max 5.0` |
 | **Table 5** (first-passage vs. 5-round vs. 10-round mean) | `python src/rtt_statistic_compare.py` → stdout + `results/rtt_stat_compare.json` |
+| **Sustained k = 3/5/10 + selection loss** (§3.1, §3.3) | `python src/protocol_sensitivity_extended.py` → `results/protocol_sensitivity_extended.json` |
+| **Validation-split control** (Section 6) | `python src/compare_valretune.py` → `results/valretune/_comparison.json` |
+| **Decay-retune control** (Section 3.2) | `python src/compare_decayretune.py` → `results/decayretune/_comparison.json` |
+| **Tuning-protocol comparison** (published / same-grid re-selection / validation-split) | `python src/compare_three_protocols.py` → `results/stageAfix/_three_protocol.json` |
+| **Checklist re-score** (Section 3.4) | `python src/rescore_checklist.py` → `survey/checklist_rescore.json` |
 | **Section 4** (HEM rule sensitivity at 80%) | `python src/check_hem_applicability.py` |
 | **Table 6** (survey disclosure rates) | no training artefacts: see `survey/survey_summary.md`, backed by `survey/survey_extraction.csv` |
 
@@ -171,14 +204,18 @@ traces; re-running overwrites them in place.
 
 ```
 results/
-└── rank_inv/
-    ├── <dataset>_a<alpha>_<method>[_<hp>]_s<seed>.json   294 Stage-B traces
-    ├── _decay_{mnist,cifar}_s{0..5}.{json,txt}           schedule probe, 12 pairs
-    ├── _decay_starve.json / .txt / _decay_starve_fedavg.json
-    ├── tuned_<dataset>_a<alpha>.json                     Stage-A tuning records (7)
-    ├── rank_inv_report*.json                             analysis reports
-    ├── bootstrap_ci.json                                 bootstrap CIs + distribution
-    └── sign_test_seeds.json                              exact sign tests
+├── rank_inv/
+│   ├── <dataset>_a<alpha>_<method>[_<hp>]_s<seed>.json   294 Stage-B traces
+│   ├── _decay_{mnist,cifar}_s{0..5}.{json,txt}           schedule probe, 12 pairs
+│   ├── _decay_starve.json / .txt / _decay_starve_fedavg.json
+│   ├── tuned_<dataset>_a<alpha>.json                     Stage-A tuning records (7)
+│   ├── rank_inv_report*.json                             analysis reports
+│   ├── bootstrap_ci.json                                 bootstrap CIs + distribution
+│   └── sign_test_seeds.json                              exact sign tests
+├── stageAfix/        same-grid re-selection control (MNIST α = 0.1)
+├── valretune/        validation-split control (MNIST α = 0.1)
+├── decayretune/      per-decay lr retune control (MNIST α = 0.1)
+└── protocol_sensitivity_extended.json   sustained-k + selection-loss summary
 ```
 
 Each Stage-B trace is:
@@ -221,6 +258,14 @@ These are stated rather than hidden; see `REPRODUCTION_LOG.md` for detail.
   asserted.
 * **Resolved — `src/rtt_statistic_compare.py`** (first passage vs. 5-round vs.
   10-round mean) is shipped and reproduces Table 5.
+* **Resolved — protocol controls and extended analyses (v0.2).** The
+  validation-split control (`tune_hp_val.py`, `run_valretune_stageB.py`,
+  `compare_valretune.py`), the same-grid re-selection comparison
+  (`compare_three_protocols.py`), the per-decay retune control
+  (`decay_retune.py`, `compare_decayretune.py`), the sustained-k and
+  selection-loss analyses (`protocol_sensitivity_extended.py`) and the
+  checklist re-score (`rescore_checklist.py`) ship with their traces and
+  outputs. See `REPRODUCTION_LOG.md` for the v0.2 addendum.
 * **Resolved — seed counts.** `make_fig1.py` uses `SEEDS = [0,1,2,3,4,5]`.
   The old `make_table_knob.py` used three seeds and `final` accuracy; it has
   been **removed**, because the published Table 3 is late-ten-round accuracy
@@ -245,7 +290,7 @@ Placeholder — the DOI / venue will be added here after acceptance.
   title  = {Protocol Choices Can Reverse Rounds-to-Target Rankings in Federated Learning},
   author = {Hou, Shangjun},
   year   = {2026},
-  note   = {Code and data: \url{https://github.com/<owner>/<repo>}, tag v0.1-submission}
+  note   = {Code and data: \url{https://github.com/houshangjun1127/fl-protocol-rtt}, tag v0.2-submission}
 }
 ```
 
@@ -254,7 +299,7 @@ repository is archived, so the author name and key there are the ones that end u
 in the DOI record.
 
 If you use the traces or the analysis code before publication, please cite this
-repository by its tag `v0.1-submission`.
+repository by its tag `v0.2-submission`.
 
 ---
 

@@ -1,0 +1,22 @@
+{
+ "fedavgm": {
+  "hp": {
+   "beta": 0.7,
+   "lr_s": 1.0
+  },
+  "label": "beta=0.7,lr_s=1.0"
+ },
+ "fedproxw": {
+  "hp": {
+   "rho": 0.2
+  },
+  "label": "rho=0.2"
+ },
+ "fedadam": {
+  "hp": {
+   "lr_s": 0.03,
+   "tau": 0.001
+  },
+  "label": "lr_s=0.03,tau=0.001"
+ }
+}
